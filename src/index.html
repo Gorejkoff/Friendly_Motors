@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Index"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/Components/Header/header.html',{})
+
+      <div class="main">
+
+         @@include('html/Components/Intro/Intro.html',{})
+         @@include('html/Components/Banner-About/Banner-About.html',{})
+         @@include('html/Components/Achievements/Achievements.html',{})
+         @@include('html/Components/Services/Services.html',{})
+
+      </div>
+
+      @@include('html/Components/Footer/footer.html',{})
+
+   </div>
+
+
+   @@include('html/scripts.html',{
+   swiper: false,
+   })
+
+
+</body>
+
+</html>

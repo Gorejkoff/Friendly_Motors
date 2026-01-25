@@ -1,0 +1,81 @@
+@use '../../../scss/utils' as *;
+
+.banner-about {
+   --padding: 30px;
+
+   @media (min-width:1920px) {
+      --padding: 40px;
+   }
+
+   &__container {}
+
+   &__body {
+      display: flex;
+      border-bottom: 1px solid var(--color-border-2);
+   }
+
+   &__content {
+      flex: 1 1 auto;
+      padding-bottom: var(--padding);
+      padding-right: var(--padding);
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding-container);
+
+   }
+
+   &__title {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      @include size_adaptive (font-size, 42, 60, 1366, 1920);
+      @include size_adaptive (font-size, 60, 80, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 80px;
+      }
+
+      span {
+         color: #696969;
+      }
+   }
+
+   &__text {
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+
+      @include size_adaptive (font-size, 18, 23, 1366, 1920);
+      @include size_adaptive (font-size, 23, 32, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 32px;
+      }
+
+      b {
+         font-weight: 600;
+      }
+   }
+
+   &__button {}
+
+   &__image {
+      padding-left: var(--padding);
+      flex: 0 0 50%;
+      display: flex;
+      align-items: flex-end;
+      border-left: 1px solid var(--color-border-2);
+   }
+
+   &__image-shell {
+      margin-top: -20px;
+      width: 100%;
+
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+}

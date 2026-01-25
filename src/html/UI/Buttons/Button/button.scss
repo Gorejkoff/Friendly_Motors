@@ -1,0 +1,62 @@
+@use '../../../../scss/utils' as *;
+
+.button {
+   --height: 40px;
+   padding: 20px 40px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: space-between;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: -0.04em;
+   text-transform: uppercase;
+   text-align: center;
+   color: #ffffff;
+   background-color: #DB0E0E;
+   min-width: 385px;
+   min-height: var(--height);
+   clip-path: polygon(calc(var(--height) / 3) 0%, 100% 0%, 100% calc(100% - var(--height) / 3), calc(100% - var(--height) / 3) 100%, 0% 100%, 0% calc(var(--height) / 3));
+   transition: background-color 0.3s;
+
+
+   @include size_adaptive (--height, 40, 58, 1366, 1920);
+   @include size_adaptive (--height, 58, 77, 1920, 2560);
+   @include size_adaptive (font-size, 14, 17, 1366, 1920);
+   @include size_adaptive (font-size, 17, 24, 1920, 2560);
+
+   @media (min-width:2560px) {
+      --height: 77px;
+      font-size: 24px;
+   }
+
+   ._pc &:hover {
+      background-color: #FF1818;
+
+      .button__text {
+         left: 0;
+         transform: translateX(0);
+      }
+
+      .button__icon {
+         right: 0;
+         transform: translateX(0);
+         opacity: 1;
+      }
+   }
+
+   &__text {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: transform 0.3s, left 0.3s;
+   }
+
+   &__icon {
+      flex: 0 0 0.75em;
+      position: relative;
+      right: 50%;
+      transform: translateX(50%);
+      opacity: 0;
+      transition: transform 0.3s, right 0.3s, opacity 0.3s;
+   }
+}

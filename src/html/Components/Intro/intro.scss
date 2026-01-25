@@ -1,0 +1,114 @@
+@use '../../../scss/utils' as *;
+
+.intro {
+   position: relative;
+   margin-top: calc(var(--height-header, 163px) * -1);
+   height: var(--vh);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   overflow: hidden;
+
+   &__body {
+      border-top: 1px solid var(--color-border);
+   }
+
+   &__container {}
+
+   &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   &__left {
+      padding-top: var(--padding-container);
+      padding-bottom: var(--padding-container);
+      padding-right: calc(var(--padding-container) * 0.5);
+      border-right: 1px solid var(--color-border);
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 100%;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      @include size_adaptive (font-size, 60, 82, 1366, 1920);
+      @include size_adaptive (font-size, 82, 110, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 110px;
+      }
+
+      span {
+         color: #DB0E0E;
+      }
+   }
+
+   &__right {}
+
+   &__nav {
+      position: relative;
+      display: flex;
+      --color-hover: #ffffff;
+
+      @include size_adaptive (min-height, 58, 80, 1366, 1920);
+      @include size_adaptive (min-height, 80, 108, 1920, 2560);
+
+      @media (min-width:2560px) {
+         min-height: 108px;
+      }
+
+      &::before {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100vw;
+         border-bottom: 1px solid var(--color-border);
+      }
+
+      .link:last-child {
+         padding-right: 0;
+      }
+   }
+
+   &__content {
+      padding-top: calc(var(--padding-container) * 0.875);
+      padding-bottom: calc(var(--padding-container) * 0.875);
+      padding-left: calc(var(--padding-container) * 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: calc(var(--padding-container) * 0.875);
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      text-align: right;
+      color: #ffffff;
+      max-width: 23.5em;
+      @include size_adaptive (font-size, 18, 23, 23, 1920);
+      @include size_adaptive (font-size, 23, 32, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 32px;
+      }
+   }
+
+   &__bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
