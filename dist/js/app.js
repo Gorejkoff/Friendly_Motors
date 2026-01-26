@@ -67,3 +67,160 @@ function closeHeaderMenu() {
    document.body.classList.remove('menu-is-open')
 }
 
+
+const CARD_SLIDERS = document.querySelectorAll('.card__slider');
+if (CARD_SLIDERS.length > 0) {
+   CARD_SLIDERS.forEach(element => {
+      const images = element.querySelectorAll('img');
+      const sections = element.querySelector('.card__sections');
+      const pagination = element.querySelector('.card__pagination');
+      if (images.length > 0) {
+         images.forEach((e, index) => {
+            if (index === 0) e.classList.add('active');
+            e.dataset.ns = index;
+            pagination.insertAdjacentHTML(
+               'beforeend',
+               `<span class="${index == 0 ? 'active' : ''}" data-ns="${index}"></span>`
+            );
+            sections.insertAdjacentHTML(
+               'beforeend',
+               `<div class="card__section" data-ns="${index}" ></div>`
+            );
+         })
+      }
+   })
+   document.body.addEventListener('mouseover', (event) => {
+      if (event.target.closest('.card__section')) {
+         const section = event.target.closest('.card__section');
+         const number = section.dataset.ns;
+         if (!number) return;
+         const slider = event.target.closest('.card__slider');
+         if (!slider) return;
+         const images = slider.querySelectorAll(`img`);
+         if (images.length === 0) return;
+         images.forEach(e => e.classList.toggle('active', e.dataset.ns === number));
+         const pagination = slider.querySelectorAll('.card__pagination span');
+         if (pagination.length === 0) return;
+         pagination.forEach(e => e.classList.toggle('active', e.dataset.ns === number));
+      }
+   })
+
+}
+if (document.querySelector('.slider__body')) {
+   const list = document.querySelectorAll('.slider__body');
+   list.length > 0 && list.forEach(e => {
+      const swiper = new Swiper(e, {
+         allowTouchMove: true,
+         spaceBetween: 10,
+         speed: 300,
+         slidesPerView: 3,
+         grabCursor: true,
+         // breakpoints: {
+         //    1024: {
+         //       spaceBetween: 20,
+         //       slidesPerView: 3
+         //    },
+         //    768: {
+         //       slidesPerView: 2
+         //    }
+         // },
+         navigation: {
+            nextEl: e.querySelector('.next'),
+            prevEl: e.querySelector('.prev'),
+         },
+      });
+   })
+}
+
+
+
+/* пример инициализации слайдера */
+// if (document.querySelector('.swiper')) {
+//    const swiper = new Swiper('.swiper', {
+//       keyboard: {
+//          enabled: true,
+//          onlyInViewport: true,
+//       },
+//       allowTouchMove: false,
+//       loop: true,
+//       spaceBetween: 10,
+//       speed: 300,
+//       slidesPerView: 2.5,
+//       slidesPerView: 'auto', // количаство слайдеров без авто ширины
+//       grabCursor: true,
+//       initialSlide: 2,
+//       centeredSlides: true,
+//       effect: "fade",
+//       breakpoints: {
+//          1024: {
+//             spaceBetween: 20,
+//             slidesPerView: 3
+//          },
+//          768: {
+//             slidesPerView: 2
+//          }
+//       },
+//       navigation: {
+//          nextEl: ".next",
+//          prevEl: ".prev",
+//       },
+//       pagination: {
+//          el: '.pagination__body',
+//          type: 'bullets',
+//          type: 'fraction',
+//          clickable: true,
+//       },
+//       scrollbar: {
+//          el: ".projects__swiper-pagination",
+//       },
+//       autoplay: {
+//          delay: 2000,
+//       },
+//       virtual: {
+//          enabled: true,
+//       },
+//       freeMode: {
+//          enabled: true,
+//          momentum: false // Отключаем инерцию для точного позиционирования
+//       },
+//    });
+// }
+
+
+
+
+/* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
+// if (document.querySelector('.swiper')) {
+//    let swiperState;
+//    let swiper;
+//    changeStateSlider();
+//    window.addEventListener('resize', () => {
+//       changeStateSlider();
+//    })
+//    function initswiper() {
+//       swiper = new Swiper('.swiper', {
+//          keyboard: {
+//             enabled: true,
+//             onlyInViewport: true,
+//          },
+//          allowTouchMove: true,
+//          loop: false,
+//          speed: 300,
+//          slidesPerView: 1.3,
+//          spaceBetween: 24,
+//       });
+//    }
+//    function changeStateSlider() {
+//       if (!MIN768.matches) {
+//          if (!swiperState) {
+//             swiperState = true;
+//             initswiper();
+//          }
+//       } else {
+//          if (swiperState) {
+//             swiperState = false;
+//             swiper.destroy(true, true);
+//          }
+//       }
+//    }
+// }

@@ -1,0 +1,28 @@
+.slider {
+   &__shell {
+      position: relative;
+   }
+
+   &__body {
+      overflow: hidden;
+   }
+
+   &__button {
+      position: absolute;
+      z-index: 2;
+      top: var(--offset, 50%);
+      transform: translateY(-50%);
+
+      &.next {
+         right: 0;
+         transform: translate(50%, -50%);
+      }
+
+      &.prev {
+         left: 0;
+         transform: translate(-50%, -50%);
+      }
+   }
+
+
+}

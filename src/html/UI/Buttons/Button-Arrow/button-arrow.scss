@@ -1,0 +1,30 @@
+.button-arrow {
+   --size: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: var(--size);
+   width: var(--size);
+   height: var(--size);
+   color: #ffffff;
+   clip-path: polygon(0% 100%, 0% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 100%);
+   background-color: #DB0E0E;
+   transition: background-color 0.3s;
+
+   &:hover {
+      background-color: #FF1818;
+   }
+
+   &.black {
+      background-color: #1C1C1C;
+
+      &:hover {
+         background-color: #1C1C1C;
+      }
+   }
+
+   svg {
+      width: 34.28%;
+      height: auto;
+   }
+}

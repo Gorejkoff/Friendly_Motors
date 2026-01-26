@@ -31,12 +31,39 @@ body {
 }
 
 .mask-card {
+   position: relative;
+   padding-bottom: 63.53%;
+   overflow: hidden;
+   clip-path: polygon(0% 100%, 0% 16%, 10.16% 0%, 100% 0%, 100% 93.6%, 95.934% 100%);
 
-   clip-path: polygon(0% 100%, 0% 16%, 10.16% 0%, 100% 0%, 100% 93.6%, 95.934% 100%)
+   img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
 }
 
 .header-section {
    margin-bottom: 50px;
+   display: flex;
+   justify-content: space-between;
+
+   &__text {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #696969;
+
+      @include size_adaptive (font-size, 15, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 26px;
+      }
+   }
 }
 
 .title-page {}
@@ -142,60 +169,20 @@ body {
    margin-bottom: var(--margin-section);
 }
 
-// .hidden-max1024 {
-//    @media (max-width:1023.98px) {
-//       display: none !important;
-//    }
-// }
+.swiper-wrapper {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   transition-property: transform;
+}
 
-// .hidden-max768 {
-//    @media (max-width:767.98px) {
-//       display: none !important;
-//    }
-// }
-
-// .title-header {
-//    margin-bottom: 10px;
-//    font-weight: 700;
-//    font-size: 18px;
-//    line-height: 133%;
-//    text-transform: uppercase;
-//    color: var(--color-yellow-broom);
-
-//    @media (min-width:768px) {
-//       margin-bottom: 20px;
-//       font-size: 20px;
-//    }
-
-//    @media (min-width:1024px) {
-//       font-size: 24px;
-//    }
-// }
-
-// .title-section {
-//    font-weight: 700;
-//    font-size: 40px;
-
-//    @media (min-width:768px) {
-//       font-size: 50px;
-//    }
-
-//    @media (min-width:1024px) {
-//       font-size: 60px;
-//    }
-// }
-
-// .margin-section {
-//    margin-bottom: 40px;
-
-//    @media (min-width:768px) {
-//       margin-bottom: 70px;
-//    }
-
-//    @media (min-width:1024px) {
-//       margin-bottom: 100px;
-//    }
-// }
+.swiper-slide {
+   flex-shrink: 0;
+   width: 100%;
+   position: relative;
+   transition-property: transform;
+   touch-action: pan-y;
+}
 
 // .scroll::-webkit-scrollbar {
 //    width: 11px;
@@ -214,20 +201,6 @@ body {
 //    border-radius: 6px;
 // }
 
-// .swiper-wrapper {
-//    position: relative;
-//    z-index: 1;
-//    display: flex;
-//    transition-property: transform;
-// }
-
-// .swiper-slide {
-//    flex-shrink: 0;
-//    width: 100%;
-//    position: relative;
-//    transition-property: transform;
-//    touch-action: pan-y;
-// }
 
 // .js-tabs-shell {
 //    will-change: height;

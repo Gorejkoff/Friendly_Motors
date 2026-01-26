@@ -1,0 +1,70 @@
+<section class="slider margin-section">
+   <div class="slider__container">
+      <div class="header-section">
+         <div>
+            <h2 class="title-lg">@@title</h2>
+            <p class="header-section__text">@@text</p>
+         </div>
+         @@include('../../UI/Buttons/Button/Button.html',{
+         text: 'смотреть все',
+         link:'#0'
+         })
+      </div>
+      <div class="slider__shell">
+         <div class="slider__body swiper">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/Card.html',{
+                  price: '13 334 560 Р.',
+                  pricetext: '9800 км',
+                  model: 'BМW M3 Competition',
+                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
+                  })
+               </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/Card.html',{
+                  price: '13 334 560 Р.',
+                  pricetext: '9800 км',
+                  model: 'BМW M3 Competition',
+                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
+                  })
+               </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/Card.html',{
+                  price: '13 334 560 Р.',
+                  pricetext: '9800 км',
+                  model: 'BМW M3 Competition',
+                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
+                  })
+               </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/Card.html',{
+                  price: '13 334 560 Р.',
+                  pricetext: '9800 км',
+                  model: 'BМW M3 Competition',
+                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
+                  })
+               </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/Card.html',{
+                  price: '13 334 560 Р.',
+                  pricetext: '9800 км',
+                  model: 'BМW M3 Competition',
+                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
+                  })
+               </div>
+            </div>
+         </div>
+         @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+         button:true,
+         class:'slider__button prev',
+         left: true,
+         })
+         @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+         button:true,
+         class:'slider__button next',
+         right: true
+         })
+      </div>
+   </div>
+</section>

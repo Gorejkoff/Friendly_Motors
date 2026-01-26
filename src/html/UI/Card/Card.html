@@ -1,0 +1,23 @@
+<a href="#0">
+   <div class="card__slider">
+      <div class="card__images mask-card">
+         <img src="@img/webp/image-13-1.webp" alt="фото машины">
+         <img src="@img/webp/image-13-2.webp" alt="фото машины">
+         <img src="@img/webp/image-13-3.webp" alt="фото машины">
+         <img src="@img/webp/image-13-4.webp" alt="фото машины">
+         <img src="@img/webp/image-13-5.webp" alt="фото машины">
+      </div>
+      <div class="card__pagination"></div>
+      <div class="card__sections"></div>
+   </div>
+   <div class="card__info">
+      <div class="card__info-left">
+         @@if(context.price){<div class="card__info-price">@@price</div>}
+         @@if(context.pricetext){<div class="card__info-text">@@pricetext</div>}
+      </div>
+      <div class="card__info-right">
+         @@if(context.model){<div class="card__info-model">@@model</div>}
+         @@if(context.modeltext){<div class="card__info-text">@@modeltext</div>}
+      </div>
+   </div>
+</a>
