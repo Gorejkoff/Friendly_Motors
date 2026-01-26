@@ -5,7 +5,7 @@ body {
    font-weight: 400;
    color: #1C1C1C;
    --container-width: 2400px;
-   --max-width-container: calc(var(--container-width) + var(--padding-container) * 2);
+   --max-width-container: calc(var(--container-width) + var(--padding-global) * 2);
 }
 
 .wrapper {
@@ -23,11 +23,16 @@ body {
 // }
 
 [class*="container"] {
-   padding-left: var(--padding-container);
-   padding-right: var(--padding-container);
+   padding-left: var(--padding-global);
+   padding-right: var(--padding-global);
    margin: 0 auto;
    width: 100%;
    max-width: var(--max-width-container);
+}
+
+[class*="container-wide"] {
+   padding-left: var(--padding-global-25);
+   padding-right: var(--padding-global-25);
 }
 
 .mask-card {
@@ -47,22 +52,26 @@ body {
    }
 }
 
+.mask-rt {
+   clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+}
+
 .header-section {
    margin-bottom: 50px;
    display: flex;
    justify-content: space-between;
+}
 
-   &__text {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #696969;
+.text-lg {
+   margin-top: 10px;
+   font-size: 14px;
+   color: #696969;
 
-      @include size_adaptive (font-size, 15, 20, 1366, 1920);
-      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+   @include size_adaptive (font-size, 15, 20, 1366, 1920);
+   @include size_adaptive (font-size, 20, 26, 1920, 2560);
 
-      @media (min-width:2560px) {
-         font-size: 26px;
-      }
+   @media (min-width:2560px) {
+      font-size: 26px;
    }
 }
 
@@ -91,7 +100,7 @@ body {
 
 .link {
    position: relative;
-   padding: 0 calc(var(--padding-container) / 2);
+   padding: 0 calc(var(--padding-global) / 2);
    display: flex;
    align-items: stretch;
    justify-content: center;

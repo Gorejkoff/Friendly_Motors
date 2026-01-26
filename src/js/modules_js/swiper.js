@@ -1,7 +1,7 @@
 if (document.querySelector('.slider__body')) {
-   const list = document.querySelectorAll('.slider__body');
+   const list = document.querySelectorAll('.slider__shell');
    list.length > 0 && list.forEach(e => {
-      const swiper = new Swiper(e, {
+      const swiper = new Swiper(e.querySelector('.swiper'), {
          allowTouchMove: true,
          spaceBetween: 10,
          speed: 300,

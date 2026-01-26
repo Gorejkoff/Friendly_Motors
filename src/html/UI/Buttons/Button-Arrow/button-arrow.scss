@@ -11,20 +11,15 @@
    background-color: #DB0E0E;
    transition: background-color 0.3s;
 
-   &:hover {
-      background-color: #FF1818;
-   }
-
-   &.black {
-      background-color: #1C1C1C;
-
-      &:hover {
-         background-color: #1C1C1C;
-      }
-   }
-
    svg {
       width: 34.28%;
       height: auto;
+   }
+}
+
+a.button-arrow,
+button.button-arrow {
+   &:hover {
+      background-color: #1C1C1C;
    }
 }

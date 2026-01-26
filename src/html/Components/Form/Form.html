@@ -1,0 +1,71 @@
+<section class="form margin-section">
+   <div class="form__container-wide">
+      <div class="form__wrapper">
+         <div class="form__header mask-rt">
+            <div class="form__title title-lg">оставить заявку</div>
+            <div class="form__text text-lg">Мы свяжемся с вами в самое ближайшее время</div>
+            <img src="@img/webp/image-24.webp" alt="img">
+         </div>
+         <form class="form__body" action="#" method="post" name="request">
+            <div class="form__grid">
+               <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+               <input class="form__input" type="tel" name="phone" placeholder="Номер телефона">
+               <div class="form__dropdown js-tabs-body js-tabs-closing js-data-scope">
+                  <button class="form__dropdown-button js-tabs-toggle" type="button">
+                     <span class="js-data-replace">Выберите услугу</span>
+                     <span class="form__dropdown-icon">
+                        <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M9.66431 0.747559L5.16431 4.74756L0.664307 0.747559" stroke="#1C1C1C" stroke-width="2" />
+                        </svg>
+                     </span>
+                  </button>
+                  <div class="form__dropdown-shell js-tabs-shell">
+                     <div class="form__dropdown-inner js-tabs-inner">
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="1" hidden>
+                           <span class=" js-data-get">Покупка авто на аукционе</span>
+                        </label>
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="2" hidden>
+                           <span class="js-data-get">Поиск автомобиля под ключ</span>
+                        </label>
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="3" hidden>
+                           <span class="js-data-get">Выездная диагностика автомобиля</span>
+                        </label>
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="4" hidden>
+                           <span class="js-data-get">Сопровождение на СТО</span>
+                        </label>
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="5" hidden>
+                           <span class="js-data-get">Комиссионная продажа</span>
+                        </label>
+                        <label class="form__dropdown-radio js-data-target">
+                           <input type="radio" name="services" value="6" hidden>
+                           <span class="js-data-get">Срочный выкуп авто</span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <textarea class="form__textarea" name="message" placeholder="Сообщение"></textarea>
+            <div class="form__actions">
+               <label class="form__checkbox">
+                  <input type="checkbox" name="rules" hidden>
+                  <span class="form__checkbox-icon">
+                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.03813 7.2773L12.3155 0L13.435 1.11958L5.03813 9.51645L0 4.47836L1.11959 3.35879L5.03813 7.2773Z" fill="currentColor" />
+                     </svg>
+                  </span>
+                  <span class="form__checkbox-text">С <a href="#0">Правилами конфиденциальности</a> хранением личных данных ознакомлен и согласен</span>
+               </label>
+               @@include('../../UI/Buttons/Button/Button.html',{
+               text:'отправить',
+               link:'#0'
+               })
+            </div>
+         </form>
+      </div>
+   </div>
+</section>

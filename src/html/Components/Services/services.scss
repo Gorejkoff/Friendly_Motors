@@ -1,6 +1,7 @@
 @use '../../../scss/utils' as *;
 
 .services {
+   --tr-time: 0.5s;
 
    &__container {}
 
@@ -12,12 +13,79 @@
       gap: 20px;
    }
 
-   &__text {
+   &__card {
+      position: relative;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(#1a181800, #1A1818);
+         opacity: 1;
+         transition: opacity var(--tr-time);
+      }
+
+      .button-arrow {
+         opacity: 0;
+         transition: opacity var(--tr-time);
+      }
+
+      &:hover {
+         &::before {
+            opacity: 0;
+         }
+
+         .services__image {
+            filter: grayscale(0%);
+            transform: translate(-50%, -50%) scale(1.1);
+         }
+
+         .button-arrow {
+            opacity: 1;
+         }
+
+         .services__card-content {
+            background-color: rgba(26, 24, 24, 0.86);
+         }
+
+         .services__card-text {
+            height: var(--height-text, calc(2em + 30px));
+            opacity: 1;
+         }
+      }
+   }
+
+   &__image {
+      z-index: -1;
+      filter: grayscale(100%);
+      transition: filter var(--tr-time), transform var(--tr-time);
+   }
+
+   &__card-content {
       padding: 50px;
       position: absolute;
       bottom: 0;
       left: 0;
       z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      background-color: rgba(26, 24, 24, 0);
+      transition: background-color var(--tr-time);
+   }
+
+   &__card-shell {
+      flex: 1 1 auto;
+      position: relative;
+   }
+
+   &__card-title {
       font-weight: 600;
       font-size: 45px;
       line-height: 100%;
@@ -36,4 +104,26 @@
          color: #DB0E0E;
       }
    }
+
+   &__card-text {
+      position: relative;
+      width: 100%;
+      height: 0;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -0.05em;
+      color: #D9D9D9;
+      opacity: 0;
+      transition: opacity var(--tr-time), height var(--tr-time);
+
+   }
+
+   &__card-text-item {
+      padding-top: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+   }
+
 }

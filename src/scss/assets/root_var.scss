@@ -2,6 +2,8 @@
 
 :root {
    --font-family: "RobotoCondensed", sans-serif;
+   --tr-time: 0.3s;
+   --tr-cubic-bezier: cubic-bezier(0.42, 0.00, 0.58, 1.00);
    // color
    --color-modal-bg: rgba(0, 0, 0, 0.6);
    --color-border: rgba(255, 255, 255, 0.2);
@@ -16,11 +18,13 @@
 
    // indent
    --margin-section: 40px;
-   --padding-container: 20px;
+   --padding-global: 20px;
+   --padding-global-25: 10px;
+   --padding-global-75: 20px;
 
-   @include size_adaptive (--padding-container, 20, 40, 768, 1366);
-   @include size_adaptive (--padding-container, 40, 60, 1366, 1920);
-   @include size_adaptive (--padding-container, 60, 80, 1920, 2560);
+   @include size_adaptive (--padding-global, 20, 40, 768, 1366);
+   @include size_adaptive (--padding-global, 40, 60, 1366, 1920);
+   @include size_adaptive (--padding-global, 60, 80, 1920, 2560);
 
    @include size_adaptive (--margin-section, 50, 75, 1366, 1920);
    @include size_adaptive (--margin-section, 75, 100, 1920, 2560);
@@ -34,8 +38,13 @@
    @include size_adaptive (--fs-lg, 32, 45, 1366, 1920);
    @include size_adaptive (--fs-lg, 45, 60, 1920, 2560);
 
+   @media (min-width:1366px) {
+      --padding-global-25: calc(var(--padding-global) * 0.25);
+      --padding-global-75: calc(var(--padding-global) * 0.75);
+   }
+
    @media (min-width:2560px) {
-      --padding-container: 80px;
+      --padding-global: 80px;
       --margin-section: 100px;
       --link-fs: 26px;
       --fs-xl: 80px;

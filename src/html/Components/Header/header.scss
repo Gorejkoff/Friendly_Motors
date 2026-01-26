@@ -23,7 +23,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-right: var(--padding-container);
+      padding-right: var(--padding-global);
       border-right: 1px solid var(--color-border);
 
       svg,
@@ -42,12 +42,12 @@
 
    &__nav {
       flex: 1 1 auto;
-      padding: 0 calc(var(--padding-container) / 2);
+      padding: 0 calc(var(--padding-global) / 2);
       display: flex;
 
       &>*:first-child {
          .header__dropdown-body {
-            left: calc(var(--padding-container) / -2);
+            left: calc(var(--padding-global) / -2);
          }
       }
 
@@ -66,7 +66,7 @@
    }
 
    &__contacts {
-      padding-left: var(--padding-container);
+      padding-left: var(--padding-global);
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -94,7 +94,7 @@
    }
 
    &__language {
-      padding: 0 calc(var(--padding-container) * 0.75);
+      padding: 0 calc(var(--padding-global) * 0.75);
    }
 
    &__dropdown {

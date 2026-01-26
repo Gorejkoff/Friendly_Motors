@@ -1,0 +1,72 @@
+.staps {
+   --clip: 45px;
+   position: relative;
+
+   &__padding {
+      padding-top: var(--padding-global);
+      padding-bottom: var(--padding-global);
+      padding-left: var(--padding-global-75);
+      padding-right: var(--padding-global-75);
+      background-color: rgba(217, 217, 217, 0.3);
+   }
+
+   &__container {}
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+   }
+
+   &__card {
+      display: flex;
+      gap: 30px;
+      font-size: 200px;
+   }
+
+   &__number {
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -0.08em;
+      color: #ffffff;
+      text-shadow: 0 5px 1px rgba(0, 0, 0, 0.04), 0 12px 5px rgba(0, 0, 0, 0.06), 0 21px 11px rgba(0, 0, 0, 0.08), 0 34px 22px rgba(0, 0, 0, 0.09), 0 57px 45px rgba(0, 0, 0, 0.11), 0 100px 88px rgba(0, 0, 0, 0.15);
+   }
+
+   &__content {
+      padding-top: 0.45em;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   &__icon {
+      font-size: 0;
+
+      svg,
+      img {
+         width: 50px;
+         height: auto;
+      }
+   }
+
+   &__line {
+      height: 5px;
+      width: 100px;
+      background-color: #DB0E0E;
+   }
+
+   &__name {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+   }
+
+   &__text {
+      font-size: 24px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      color: #696969;
+   }
+}
