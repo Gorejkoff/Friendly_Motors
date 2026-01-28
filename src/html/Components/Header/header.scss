@@ -117,12 +117,17 @@
       line-height: 100%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
+      @include size_adaptive (font-size, 16, 19, 1366, 1920);
+      @include size_adaptive (font-size, 19, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
    }
 
    &__dropdown-link {
       display: block;
-      padding: 16px 30px;
-      min-height: 64px;
+      padding: 1.12em 30px;
       line-height: 130%;
       transition: background-color 0.3s, color 0.3s;
 

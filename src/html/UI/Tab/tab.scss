@@ -1,10 +1,19 @@
+@use '../../../scss/utils' as *;
+
 .tab {
+   --padding: 16px;
    border-bottom: 1px solid rgba(28, 28, 28, 0.2);
    color: #696969;
    transition: border-color 0.3s;
+   @include size_adaptive (--padding, 16, 20, 1366, 1920);
+   @include size_adaptive (--padding, 20, 30, 1920, 2560);
+
+   @media (min-width:2560px) {
+      --padding: 30px;
+   }
 
    &__button {
-      padding: 30px 0;
+      padding: var(--padding) 0;
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -12,11 +21,12 @@
 
    &__title {
       font-weight: 600;
-      font-size: 40px;
+      font-size: var(--fs-md);
       line-height: 100%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       transition: color 0.3s;
+
    }
 
    &__icon {
@@ -44,10 +54,16 @@
    }
 
    &__text {
-      padding-bottom: 30px;
-      font-size: 26px;
+      padding-bottom: var(--padding);
+      font-size: 15px;
       line-height: 130%;
       letter-spacing: -0.05em;
+      @include size_adaptive (font-size, 15, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 26px;
+      }
    }
 
    &.js-tabs-open {

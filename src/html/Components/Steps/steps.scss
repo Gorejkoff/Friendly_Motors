@@ -1,3 +1,5 @@
+@use '../../../scss/utils' as *;
+
 .staps {
    --clip: 45px;
    position: relative;
@@ -21,7 +23,7 @@
    &__card {
       display: flex;
       gap: 30px;
-      font-size: 200px;
+
    }
 
    &__number {
@@ -30,13 +32,28 @@
       letter-spacing: -0.08em;
       color: #ffffff;
       text-shadow: 0 5px 1px rgba(0, 0, 0, 0.04), 0 12px 5px rgba(0, 0, 0, 0.06), 0 21px 11px rgba(0, 0, 0, 0.08), 0 34px 22px rgba(0, 0, 0, 0.09), 0 57px 45px rgba(0, 0, 0, 0.11), 0 100px 88px rgba(0, 0, 0, 0.15);
+      font-size: 106px;
+
+      @include size_adaptive (font-size, 106, 150, 1366, 1920);
+      @include size_adaptive (font-size, 150, 200, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 200px;
+      }
+
    }
 
    &__content {
       padding-top: 0.45em;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 14px;
+
+      @include size_adaptive (font-size, 14, 30, 1366, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 30px;
+      }
    }
 
    &__icon {
@@ -44,29 +61,47 @@
 
       svg,
       img {
-         width: 50px;
+         width: 26px;
          height: auto;
+         @include size_adaptive (width, 26, 38, 1366, 1920);
+         @include size_adaptive (width, 38, 50, 1920, 2560);
+
+         @media (min-width:2560px) {
+            width: 50px;
+         }
       }
    }
 
    &__line {
       height: 5px;
-      width: 100px;
+      width: 52px;
       background-color: #DB0E0E;
+
+      @include size_adaptive (width, 52, 100, 1920, 2560);
+
+      @media (min-width:2560px) {
+         width: 100px;
+      }
    }
 
    &__name {
       font-weight: 600;
-      font-size: 40px;
+      font-size: var(--fs-md);
       line-height: 100%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
    }
 
    &__text {
-      font-size: 24px;
+      font-size: 14px;
       line-height: 130%;
       letter-spacing: -0.05em;
       color: #696969;
+      @include size_adaptive (font-size, 14, 17, 1366, 1920);
+      @include size_adaptive (font-size, 17, 24, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
    }
 }

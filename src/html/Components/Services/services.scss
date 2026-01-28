@@ -65,7 +65,7 @@
    }
 
    &__card-content {
-      padding: 50px;
+      padding: 24px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -78,6 +78,12 @@
       gap: 30px;
       background-color: rgba(26, 24, 24, 0);
       transition: background-color var(--tr-time);
+      @include size_adaptive (padding, 24, 38, 1366, 1920);
+      @include size_adaptive (padding, 38, 50, 1920, 2560);
+
+      @media (min-width:2560px) {
+         padding: 50px;
+      }
    }
 
    &__card-shell {
@@ -93,8 +99,8 @@
       text-transform: uppercase;
       color: #ffffff;
 
-      @include size_adaptive (--fs-lg, 24, 34, 1366, 1920);
-      @include size_adaptive (--fs-lg, 34, 45, 1920, 2560);
+      @include size_adaptive (font-size, 24, 34, 1366, 1920);
+      @include size_adaptive (font-size, 34, 45, 1920, 2560);
 
       @media (min-width:2560px) {
          font-size: 45px;

@@ -14,6 +14,7 @@
    --vh: 100vh;
    --link-fs: 16px;
 
+   --fs-md: 22px;
    --fs-xl: 30px;
    --fs-lg: 30px;
 
@@ -33,6 +34,9 @@
    @include size_adaptive (--link-fs, 16, 19, 1366, 1920);
    @include size_adaptive (--link-fs, 19, 26, 1920, 2560);
 
+   @include size_adaptive (--fs-md, 22, 30, 1366, 1920);
+   @include size_adaptive (--fs-md, 30, 40, 1920, 2560);
+
    @include size_adaptive (--fs-xl, 42, 60, 1366, 1920);
    @include size_adaptive (--fs-xl, 60, 80, 1920, 2560);
 
@@ -48,6 +52,7 @@
       --padding-global: 80px;
       --margin-section: 100px;
       --link-fs: 26px;
+      --fs-md: 40px;
       --fs-xl: 80px;
       --fs-lg: 60px;
    }

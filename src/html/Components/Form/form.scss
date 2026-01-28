@@ -1,3 +1,5 @@
+@use '../../../scss/utils' as *;
+
 .form {
    margin-bottom: var(--padding-global-25);
 
@@ -63,13 +65,19 @@
 
    &__textarea,
    &__input {
-      font-size: 24px;
+      font-size: 14px;
       line-height: 130%;
       letter-spacing: -0.05em;
       background-color: #ffffff;
       border: 1px solid #ffffff;
       width: 100%;
       transition: border-color 0.3s, color 0.3s;
+      @include size_adaptive (font-size, 14, 18, 1366, 1920);
+      @include size_adaptive (font-size, 18, 24, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
 
       &::placeholder {
          color: #696969;
@@ -83,8 +91,13 @@
 
    &__input {
       padding: 0 var(--padding-global-25);
-      height: 65px;
+      height: 34px;
+      @include size_adaptive (height, 34, 48, 1366, 1920);
+      @include size_adaptive (height, 48, 65, 1920, 2560);
 
+      @media (min-width:2560px) {
+         height: 65px;
+      }
    }
 
    &__textarea {
@@ -96,9 +109,6 @@
       display: flex;
       align-items: center;
       gap: 0.5em;
-      font-size: 20px;
-      line-height: 130%;
-      letter-spacing: -0.05em;
    }
 
    &__checkbox-icon {
@@ -132,9 +142,15 @@
 
    &__checkbox-text {
       font-weight: 300;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 130%;
       letter-spacing: -0.05em;
+
+      @include size_adaptive (font-size, 18, 20, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 20px;
+      }
 
       a {
          font-weight: 500;
@@ -147,22 +163,34 @@
    &__dropdown {
       position: relative;
       z-index: 5;
-      font-size: 24px;
+      font-size: 13px;
       line-height: 130%;
       letter-spacing: -0.05em;
       color: #696969;
+
+      @include size_adaptive (font-size, 13, 24, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
    }
 
    &__dropdown-button {
       padding: 0.5em var(--padding-global-25);
       width: 100%;
-      min-height: 65px;
+      height: 34px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border: 1px solid #ffffff;
       background-color: #ffffff;
       transition: border-color 0.3s, color 0.3s;
+      @include size_adaptive (height, 34, 48, 1366, 1920);
+      @include size_adaptive (height, 48, 65, 1920, 2560);
+
+      @media (min-width:2560px) {
+         height: 65px;
+      }
 
       .js-tabs-open & {
          border-color: #000000;
@@ -209,7 +237,6 @@
       cursor: pointer;
       padding: 0.5em var(--padding-global-25);
       width: 100%;
-      min-height: 65px;
       display: flex;
       align-items: center;
       transition: color 0.3s;

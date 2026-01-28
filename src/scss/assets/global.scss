@@ -57,9 +57,15 @@ body {
 }
 
 .header-section {
-   margin-bottom: 50px;
+   margin-bottom: 20px;
    display: flex;
    justify-content: space-between;
+   @include size_adaptive (font-size, 28, 36, 1366, 1920);
+   @include size_adaptive (font-size, 36, 50, 1920, 2560);
+
+   @media (min-width:2560px) {
+      font-size: 50px;
+   }
 }
 
 .text-lg {
