@@ -1,19 +1,29 @@
 @use '../../../scss/utils' as *;
 
 .form {
-   margin-bottom: var(--padding-global-25);
+   margin-bottom: 0;
+
+   @media (min-width:768px) {
+      margin-bottom: var(--padding-global-25);
+   }
 
    &__container-wide {}
 
    &__wrapper {
-      display: flex;
-      gap: 20px;
+      @media (min-width:768px) {
+         display: flex;
+         gap: 8px;
+      }
+
+      @media (min-width:1024px) {
+         gap: 20px;
+      }
    }
 
    &__header {
       position: relative;
-      padding-top: var(--padding-global);
-      padding-bottom: var(--padding-global);
+      padding-top: max(40px, var(--padding-global));
+      padding-bottom: max(40px, var(--padding-global));
       padding-right: var(--padding-global);
       padding-left: calc(var(--padding-global) * 0.75);
       background-color: #0A0A0A;
@@ -33,8 +43,13 @@
    }
 
    &__title {
+
       @media (min-width:1024px) {
          max-width: 5em;
+      }
+
+      @media (min-width:1024px) and (max-width:1365.98px) {
+         font-size: 24px;
       }
    }
 
@@ -46,26 +61,40 @@
       flex: 1 1 auto;
       padding: var(--padding-global);
       background-color: #EFEFEF;
+
+      @media (max-width:767.98px) {
+         padding-bottom: 40px;
+      }
    }
 
    &__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: var(--padding-global-25);
       margin-bottom: var(--padding-global-25);
+
+      @media (min-width:768px) {
+         grid-template-columns: 1fr 1fr 1fr;
+      }
    }
 
    &__actions {
-      margin-top: 30px;
+      margin-top: 10px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
       gap: 20px;
+
+      @media (min-width:768px) {
+         margin-top: 30px;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+      }
    }
 
    &__textarea,
    &__input {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 130%;
       letter-spacing: -0.05em;
       background-color: #ffffff;
@@ -102,7 +131,13 @@
 
    &__textarea {
       padding: var(--padding-global-25);
-      height: 235px;
+      height: 125px;
+
+      @include size_adaptive (height, 125, 235, 1366, 2560);
+
+      @media (min-width:2560px) {
+         height: 235px;
+      }
    }
 
    &__checkbox {
@@ -142,11 +177,12 @@
 
    &__checkbox-text {
       font-weight: 300;
-      font-size: 18px;
+      font-size: 12px;
       line-height: 130%;
       letter-spacing: -0.05em;
 
-      @include size_adaptive (font-size, 18, 20, 1920, 2560);
+      @include size_adaptive (font-size, 12, 14, 1366, 1920);
+      @include size_adaptive (font-size, 14, 20, 1920, 2560);
 
       @media (min-width:2560px) {
          font-size: 20px;
@@ -168,7 +204,8 @@
       letter-spacing: -0.05em;
       color: #696969;
 
-      @include size_adaptive (font-size, 13, 24, 1920, 2560);
+      @include size_adaptive (font-size, 14, 18, 1366, 1920);
+      @include size_adaptive (font-size, 18, 24, 1920, 2560);
 
       @media (min-width:2560px) {
          font-size: 24px;

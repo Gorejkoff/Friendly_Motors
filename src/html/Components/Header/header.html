@@ -7,10 +7,10 @@
          </a>
 
          <nav class="header__nav">
-            <div class="header__dropdown">
+            <div class="header__dropdown js-tabs-body js-tabs-toggle js-tabs-closing">
                <button type="button" class="link link-hover-underline"><span>Услуги</span></button>
-               <div class="header__dropdown-body">
-                  <div class="header__dropdown-list">
+               <div class="header__dropdown-body js-tabs-shell">
+                  <div class="header__dropdown-list js-tabs-inner">
                      <a href="#0" class="header__dropdown-link"><span>Покупка</span>авто на аукционе</a>
                      <a href="#0" class="header__dropdown-link"> <span>Поиск</span>автомобиля под ключ</a>
                      <a href="#0" class="header__dropdown-link"><span>Выездная</span>диагностика автомобиля</a>
@@ -26,14 +26,27 @@
          </nav>
 
          <div class="header__more">
-            <a class="link link-hover-underline" href="#0"><span>Контакты</span></a>
-            <button class="header__language link" type="button"><span>eng</span></button>
-            <div class="header__contacts">
+            <a class="header__contacts link link-hover-underline" href="#0"><span>Контакты</span></a>
+            <div class="header__language-body js-tabs-body js-tabs-toggle js-data-scope">
+               <button class="header__language header__language-menu js-tabs-button js-data-replace red link" type="button"><span>eng</span></button>
+               <div class="header__language-shell js-tabs-shell">
+                  <div class="js-tabs-inner">
+                     <button class="header__language link js-data-target js-data-get" type="button"><span>eng</span></button>
+                     <button class="header__language link js-data-target js-data-get" type="button"><span>rus</span></button>
+                     <button class="header__language link js-data-target js-data-get" type="button"><span>ger</span></button>
+                  </div>
+               </div>
+            </div>
+            <div class="header__contacts-shell">
                <a class="header__phone" href="tel:+4917620909738">+4917620909738</a>
                <a class="header__mail" href="mailto:info@friendlymotors.de"><span class="red-underline">info</span><span class="red">@</span><span class="underline">friendlymotors.de</span></a>
             </div>
          </div>
 
+         <button type="button" class="header__button-menu open-mobile-menu">
+            <span></span>
+            <span></span>
+         </button>
 
       </div>
    </div>

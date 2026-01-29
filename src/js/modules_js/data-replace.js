@@ -1,7 +1,7 @@
 // подмена на выбранный контент
+// js-data-scope - оболочка внутри которой работает логика
 // js-data-target - область клика
 // js-data-get - источник данных
-// js-data-scope - оболочка внутри которой работает логика
 // js-data-replace - сюда записывается выбранное
 document.addEventListener('click', (event) => {
    if (event.target.closest('.js-data-target')) {

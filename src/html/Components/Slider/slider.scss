@@ -1,10 +1,14 @@
 .slider {
+   overflow: hidden;
+
    &__shell {
       position: relative;
    }
 
    &__body {
-      overflow: hidden;
+      @media (min-width:1024px) {
+         overflow: hidden;
+      }
    }
 
    &__button {
@@ -13,14 +17,23 @@
       top: var(--offset, 50%);
       transform: translateY(-50%);
 
+
       &.next {
          right: 0;
          transform: translate(50%, -50%);
+
+         @media (max-width:767.98px) {
+            display: none;
+         }
       }
 
       &.prev {
          left: 0;
          transform: translate(-50%, -50%);
+
+         @media (max-width:767.98px) {
+            display: none;
+         }
       }
 
       &.swiper-button-disabled {

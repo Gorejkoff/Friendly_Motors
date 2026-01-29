@@ -6,6 +6,10 @@ body {
    color: #1C1C1C;
    --container-width: 2400px;
    --max-width-container: calc(var(--container-width) + var(--padding-global) * 2);
+
+   &.mobile-menu-is-open {
+      overflow: hidden;
+   }
 }
 
 .wrapper {
@@ -31,8 +35,13 @@ body {
 }
 
 [class*="container-wide"] {
-   padding-left: var(--padding-global-25);
-   padding-right: var(--padding-global-25);
+   padding-left: 0;
+   padding-right: 0;
+
+   @media (min-width:768px) {
+      padding-left: var(--padding-global-25);
+      padding-right: var(--padding-global-25);
+   }
 }
 
 .mask-card {
@@ -53,12 +62,15 @@ body {
 }
 
 .mask-rt {
-   clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+   @media (min-width:768px) {
+      clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+   }
 }
 
 .header-section {
    margin-bottom: 20px;
    display: flex;
+   align-items: flex-start;
    justify-content: space-between;
    @include size_adaptive (font-size, 28, 36, 1366, 1920);
    @include size_adaptive (font-size, 36, 50, 1920, 2560);
@@ -116,26 +128,27 @@ body {
    text-transform: uppercase;
    color: #ffffff;
 
-   &:not(:last-child) {
-      &::after {
-         content: '';
-         position: absolute;
-         top: 50%;
-         right: 0;
-         transform: translateY(-50%);
-         width: 0;
-         height: 1em;
-         border-left: 1px solid rgba(255, 255, 255, 0.2);
+   @media (min-width:1024px) {
+      &:not(:last-child) {
+         &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 0;
+            height: 1em;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+         }
       }
    }
 
-   &:hover {
-      span {
-         color: #DB0E0E;
-      }
+   ._pc &:hover {
+      color: #DB0E0E;
    }
 
    span {
+      padding: 20px 0;
       position: relative;
       display: flex;
       align-items: center;
@@ -157,7 +170,7 @@ body {
 }
 
 .link-hover-underline {
-   &:hover {
+   ._pc &:hover {
       span {
          &::before {
             opacity: 1;
@@ -197,6 +210,17 @@ body {
    position: relative;
    transition-property: transform;
    touch-action: pan-y;
+}
+
+.swiper-pagination-bullet {
+   width: 10px;
+   height: 10px;
+   background-color: #696969;
+   transition: background-color 0.2s;
+
+   &.swiper-pagination-bullet-active {
+      background-color: #DB0E0E;
+   }
 }
 
 // .scroll::-webkit-scrollbar {

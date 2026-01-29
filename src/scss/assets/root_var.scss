@@ -14,6 +14,8 @@
    --vh: 100vh;
    --link-fs: 16px;
 
+   --clip: 24px;
+
    --fs-md: 22px;
    --fs-xl: 30px;
    --fs-lg: 30px;
@@ -43,6 +45,9 @@
    @include size_adaptive (--fs-lg, 32, 45, 1366, 1920);
    @include size_adaptive (--fs-lg, 45, 60, 1920, 2560);
 
+   @include size_adaptive (--clip, 24, 34, 1366, 1920);
+   @include size_adaptive (--clip, 34, 45, 1920, 2560);
+
    @media (min-width:1366px) {
       --padding-global-25: calc(var(--padding-global) * 0.25);
       --padding-global-75: calc(var(--padding-global) * 0.75);
@@ -55,6 +60,8 @@
       --fs-md: 40px;
       --fs-xl: 80px;
       --fs-lg: 60px;
+
+      --clip: 45px;
    }
 
    @supports (height: 100dvh) {

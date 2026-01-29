@@ -51,19 +51,20 @@ addHeightVariable();
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
    addHeightVariable();
-   // closeHeaderMenu();
+   closeMobileMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-   if (event.target.closest('.open-menu')) { openHeaderMenu() }
+   if (event.target.closest('.open-mobile-menu')) { openMobileMenu() }
+   if (event.target.closest('.close-mobile-menu')) { closeMobileMenu() }
 })
 
-function openHeaderMenu() {
-   document.body.classList.toggle('menu-is-open')
+function openMobileMenu() {
+   document.body.classList.toggle('mobile-menu-is-open')
 }
-function closeHeaderMenu() {
-   document.body.classList.remove('menu-is-open')
+function closeMobileMenu() {
+   document.body.classList.remove('mobile-menu-is-open')
 }
 

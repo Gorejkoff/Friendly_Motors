@@ -10,8 +10,11 @@
    &__container {}
 
    &__body {
-      display: flex;
-      border-bottom: 1px solid var(--color-border-2);
+
+      @media (min-width:1024px) {
+         display: flex;
+         border-bottom: 1px solid var(--color-border-2);
+      }
    }
 
    &__content {
@@ -59,14 +62,31 @@
       }
    }
 
-   &__button {}
+   &__button {
+      @media (max-width:1023.98px) {
+         display: none;
+      }
+   }
 
    &__image {
-      padding-left: var(--padding);
-      flex: 0 0 50%;
       display: flex;
+      flex-direction: column;
       align-items: flex-end;
-      border-left: 1px solid var(--color-border-2);
+
+      @media (min-width:1024px) {
+         flex: 0 0 50%;
+         flex-direction: row;
+         padding-left: var(--padding);
+         border-left: 1px solid var(--color-border-2);
+      }
+
+      .button {
+         width: 100%;
+
+         @media (min-width:1024px) {
+            display: none;
+         }
+      }
    }
 
    &__image-shell {

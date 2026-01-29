@@ -1,53 +1,86 @@
 @use '../../../scss/utils' as *;
 
 .staps {
-   --clip: 45px;
    position: relative;
+   overflow: hidden;
 
    &__padding {
-      padding-top: var(--padding-global);
-      padding-bottom: var(--padding-global);
-      padding-left: var(--padding-global-75);
-      padding-right: var(--padding-global-75);
+      padding: var(--margin-section) var(--padding-global);
       background-color: rgba(217, 217, 217, 0.3);
+
+      @media (min-width:768px) {
+         padding-top: var(--padding-global);
+         padding-bottom: var(--padding-global);
+         padding-left: var(--padding-global-75);
+         padding-right: var(--padding-global-75);
+      }
    }
 
-   &__container {}
-
    &__body {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
+      @media (min-width:768px) {
+         display: flex;
+         justify-content: space-between;
+         gap: 16px;
+      }
+
+      @media (min-width:1366px) {
+         gap: 30px;
+      }
    }
 
    &__card {
+      --number-fs: 120px;
       display: flex;
-      gap: 30px;
+      flex-direction: column;
+      align-items: center;
 
+      @media (max-width:767.98px) {
+         gap: 16px;
+      }
+
+
+      @media (min-width:768px) {
+         flex-shrink: 1;
+         width: auto;
+      }
+
+      @media (min-width:1024px) {
+         flex-direction: row;
+         align-items: flex-start;
+      }
+
+      @media (min-width:1366px) {
+         gap: 30px;
+      }
+
+      @include size_adaptive (--number-fs, 80, 106, 1024, 1366);
+      @include size_adaptive (--number-fs, 106, 150, 1366, 1920);
+      @include size_adaptive (--number-fs, 150, 200, 1920, 2560);
+
+      @media (min-width:2560px) {
+         --number-fs: 200px;
+      }
    }
 
    &__number {
+      font-size: var(--number-fs);
       font-weight: 600;
       line-height: 100%;
       letter-spacing: -0.08em;
       color: #ffffff;
       text-shadow: 0 5px 1px rgba(0, 0, 0, 0.04), 0 12px 5px rgba(0, 0, 0, 0.06), 0 21px 11px rgba(0, 0, 0, 0.08), 0 34px 22px rgba(0, 0, 0, 0.09), 0 57px 45px rgba(0, 0, 0, 0.11), 0 100px 88px rgba(0, 0, 0, 0.15);
-      font-size: 106px;
-
-      @include size_adaptive (font-size, 106, 150, 1366, 1920);
-      @include size_adaptive (font-size, 150, 200, 1920, 2560);
-
-      @media (min-width:2560px) {
-         font-size: 200px;
-      }
-
    }
 
    &__content {
-      padding-top: 0.45em;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 14px;
+
+      @media (min-width:1024px) {
+         padding-top: calc(var(--number-fs) * 0.45);
+         align-items: flex-start;
+      }
 
       @include size_adaptive (font-size, 14, 30, 1366, 2560);
 
@@ -90,6 +123,10 @@
       line-height: 100%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
+
+      @media (max-width:767.98px) {
+         text-align: center;
+      }
    }
 
    &__text {
@@ -97,11 +134,29 @@
       line-height: 130%;
       letter-spacing: -0.05em;
       color: #696969;
+      text-align: center;
+
+      @media (min-width:1024px) {
+         text-align: left;
+      }
+
       @include size_adaptive (font-size, 14, 17, 1366, 1920);
       @include size_adaptive (font-size, 17, 24, 1920, 2560);
 
       @media (min-width:2560px) {
          font-size: 24px;
+      }
+   }
+
+   &__pagination {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      @media (min-width:768px) {
+         display: none;
       }
    }
 }

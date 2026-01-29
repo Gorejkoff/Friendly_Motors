@@ -1,0 +1,141 @@
+.mobile-menu {
+   position: fixed;
+   top: 0;
+   left: 120vw;
+   z-index: 20;
+   width: 100%;
+   height: 100vh;
+   color: #ffffff;
+   background-color: #1C1C1C;
+   overflow-y: auto;
+   transition: left 0.5s;
+
+   .mobile-menu-is-open & {
+      left: 0;
+   }
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+   }
+
+   &__header {
+      padding: 0 var(--padding-global);
+      min-height: var(--height-header, 86px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+   }
+
+   &__close {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #DB0E0E;
+
+      svg,
+      img {
+         width: 40%;
+         height: auto;
+      }
+   }
+
+   &__list {
+      flex: 1 1 auto;
+      padding: 30px var(--padding-global);
+      border-top: 1px solid var(--color-border-1);
+      border-bottom: 1px solid var(--color-border-1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+
+      li {
+         list-style: none;
+      }
+   }
+
+   &__link {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+   }
+
+   &__link-arrow {
+      // width: 39px;
+      height: 100%;
+      overflow: hidden;
+      width: 0;
+      transition: width 0.3s;
+
+      svg,
+      img {
+         width: 24px;
+         height: auto;
+      }
+   }
+
+   &__link-text {
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+   }
+
+   &__footer {
+      padding: 30px var(--padding-global);
+   }
+
+   &__logo {
+      margin-bottom: 20px;
+
+      svg,
+      img {
+         width: 65px;
+         height: auto;
+      }
+   }
+
+   &__contacts {
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   &__phone {
+      margin-bottom: 5px;
+      font-weight: 400;
+      font-size: 30px;
+      letter-spacing: -0.03em;
+   }
+
+   &__mail {}
+
+   &__social {
+      margin-bottom: 26px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+   }
+
+   &__time {
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #a9a9a9;
+   }
+
+   &__address {
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+   }
+}

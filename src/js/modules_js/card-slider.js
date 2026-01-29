@@ -1,5 +1,5 @@
 const CARD_SLIDERS = document.querySelectorAll('.card__slider');
-if (CARD_SLIDERS.length > 0) {
+if (isPC && CARD_SLIDERS.length > 0) {
    CARD_SLIDERS.forEach(element => {
       const images = element.querySelectorAll('img');
       const sections = element.querySelector('.card__sections');

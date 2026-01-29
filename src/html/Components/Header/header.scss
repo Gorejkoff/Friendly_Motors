@@ -1,9 +1,21 @@
 @use '../../../scss/utils' as *;
 
 .header {
+   --size: 50px;
    position: relative;
    border-bottom: 1px solid var(--color-border);
    z-index: 5;
+
+   @media (min-width:1024px) {
+      --size: 86px;
+   }
+
+   @include size_adaptive (--size, 86, 120, 1366, 1920);
+   @include size_adaptive (--size, 120, 162, 1920, 2560);
+
+   @media (min-width:2560px) {
+      --size: 162px;
+   }
 
    &__container {}
 
@@ -11,6 +23,11 @@
       display: flex;
       align-items: stretch;
       min-height: 86px;
+
+      @media (max-width:1023.98px) {
+         justify-content: space-between;
+      }
+
       @include size_adaptive (min-height, 86, 120, 1366, 1920);
       @include size_adaptive (min-height, 120, 162, 1920, 2560);
 
@@ -24,12 +41,23 @@
       align-items: center;
       justify-content: center;
       padding-right: var(--padding-global);
-      border-right: 1px solid var(--color-border);
+
+      @media (max-width:1023.98px) {
+         order: 2;
+      }
+
+      @media (min-width:1024px) {
+         border-right: 1px solid var(--color-border);
+      }
 
       svg,
       img {
-         width: 412px;
+         width: 195px;
          height: auto;
+
+         @media (min-width:1024px) {
+            width: 160px;
+         }
 
          @include size_adaptive (width, 220, 309, 1366, 1920);
          @include size_adaptive (width, 309, 412, 1920, 2560);
@@ -43,36 +71,53 @@
    &__nav {
       flex: 1 1 auto;
       padding: 0 calc(var(--padding-global) / 2);
-      display: flex;
+      display: none;
+
+      @media (min-width:1024px) {
+         display: flex;
+      }
 
       &>*:first-child {
          .header__dropdown-body {
             left: calc(var(--padding-global) / -2);
          }
       }
-
    }
 
-   &__button {
-      font-weight: 600;
-      font-size: 26px;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
-   }
+   // &__button {
+   //    font-weight: 600;
+   //    font-size: 26px;
+   //    letter-spacing: -0.05em;
+   //    text-transform: uppercase;
+   // }
 
    &__more {
       display: flex;
 
+      @media (max-width:1023.98px) {
+         order: 1;
+      }
    }
 
    &__contacts {
+      @media (max-width:1023.98px) {
+         display: none;
+      }
+   }
+
+   &__contacts-shell {
       padding-left: var(--padding-global);
-      display: flex;
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
       color: #ffffff;
       font-size: 22px;
+      display: none;
+
+      @media (min-width:1024px) {
+         display: flex;
+         font-size: 18px;
+      }
 
       @include size_adaptive (font-size, 22, 28, 1366, 1920);
       @include size_adaptive (font-size, 28, 40, 1920, 2560);
@@ -90,11 +135,51 @@
       font-weight: 600;
       font-size: 0.5em;
       letter-spacing: -0.03em;
+   }
 
+   &__language-body {
+      position: relative;
+      align-self: center;
    }
 
    &__language {
       padding: 0 calc(var(--padding-global) * 0.75);
+      width: var(--size);
+      min-width: var(--size);
+      height: var(--size);
+      align-self: center;
+      color: #ffffff;
+      text-transform: uppercase;
+
+
+      &.header__language-menu {
+         color: #ffffff;
+         background-color: #DB0E0E;
+      }
+
+      .js-tabs-inner &:nth-child(1) {
+         color: #ffffff;
+         background-color: #696969;
+      }
+
+      .js-tabs-inner &:nth-child(2) {
+         color: #ffffff !important;
+         background-color: #D9D9D9;
+      }
+
+      .js-tabs-inner &:nth-child(3) {
+         color: #1C1C1C !important;
+         background-color: #ffffff;
+      }
+   }
+
+   &__language-shell {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 0;
+      transition: height 0.5s;
+      overflow: hidden;
    }
 
    &__dropdown {
@@ -107,8 +192,16 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 540px;
+      width: 400px;
       background-color: #ffffff;
+      height: 0;
+      transition: height 0.3s;
+      overflow: hidden;
+
+      @media (min-width:1366px) {
+         width: 540px;
+      }
+
    }
 
    &__dropdown-list {
@@ -117,8 +210,13 @@
       line-height: 100%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
+
+      @media (min-width:1024px) {
+         font-size: 16px;
+      }
+
       @include size_adaptive (font-size, 16, 19, 1366, 1920);
-      @include size_adaptive (font-size, 19, 26, 1920, 2560);
+      @include size_adaptive (font-size, 19, 24, 1920, 2560);
 
       @media (min-width:2560px) {
          font-size: 24px;
@@ -127,9 +225,13 @@
 
    &__dropdown-link {
       display: block;
-      padding: 1.12em 30px;
+      padding: 1.12em 20px;
       line-height: 130%;
       transition: background-color 0.3s, color 0.3s;
+
+      @media (min-width:1366px) {
+         padding: 1.12em 30px;
+      }
 
       ._pc &:hover {
          color: #ffffff;
@@ -145,6 +247,43 @@
          color: #DB0E0E;
          transition: color 0.3s;
       }
+   }
+
+   &__button-menu {
+      position: relative;
+      width: var(--size);
+      min-width: var(--size);
+      height: var(--size);
+      align-self: center;
+      background-color: #ffffff;
+
+      @media (max-width:1023.98px) {
+         order: 3;
+      }
+
+      @media (min-width:1024px) {
+         display: none;
+      }
+
+      span:nth-child(1),
+      span:nth-child(2) {
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         height: 2px;
+         width: 54%;
+         background-color: #DB0E0E;
+      }
+
+      span:nth-child(1) {
+         transform: translate(-50%, calc(-50% - 3px));
+      }
+
+      span:nth-child(2) {
+         transform: translate(-50%, calc(-50% + 3px));
+      }
 
    }
+
 }

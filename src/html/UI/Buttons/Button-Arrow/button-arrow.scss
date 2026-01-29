@@ -1,5 +1,7 @@
+@use '../../../../scss/utils' as *;
+
 .button-arrow {
-   --size: 70px;
+   --size: 36px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -7,9 +9,15 @@
    width: var(--size);
    height: var(--size);
    color: #ffffff;
-   clip-path: polygon(0% 100%, 0% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 100%);
    background-color: #DB0E0E;
+   clip-path: polygon(0% 100%, 0% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 100%);
    transition: background-color 0.3s;
+   @include size_adaptive (--size, 36, 52, 1366, 1920);
+   @include size_adaptive (--size, 52, 70, 1920, 2560);
+
+   @media (min-width:2560px) {
+      --size: 70px;
+   }
 
    svg {
       width: 34.28%;

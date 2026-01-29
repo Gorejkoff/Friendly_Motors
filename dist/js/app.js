@@ -51,25 +51,26 @@ addHeightVariable();
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
    addHeightVariable();
-   // closeHeaderMenu();
+   closeMobileMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-   if (event.target.closest('.open-menu')) { openHeaderMenu() }
+   if (event.target.closest('.open-mobile-menu')) { openMobileMenu() }
+   if (event.target.closest('.close-mobile-menu')) { closeMobileMenu() }
 })
 
-function openHeaderMenu() {
-   document.body.classList.toggle('menu-is-open')
+function openMobileMenu() {
+   document.body.classList.toggle('mobile-menu-is-open')
 }
-function closeHeaderMenu() {
-   document.body.classList.remove('menu-is-open')
+function closeMobileMenu() {
+   document.body.classList.remove('mobile-menu-is-open')
 }
 
 
 const CARD_SLIDERS = document.querySelectorAll('.card__slider');
-if (CARD_SLIDERS.length > 0) {
+if (isPC && CARD_SLIDERS.length > 0) {
    CARD_SLIDERS.forEach(element => {
       const images = element.querySelectorAll('img');
       const sections = element.querySelector('.card__sections');
@@ -107,9 +108,9 @@ if (CARD_SLIDERS.length > 0) {
 
 }
 // подмена на выбранный контент
+// js-data-scope - оболочка внутри которой работает логика
 // js-data-target - область клика
 // js-data-get - источник данных
-// js-data-scope - оболочка внутри которой работает логика
 // js-data-replace - сюда записывается выбранное
 document.addEventListener('click', (event) => {
    if (event.target.closest('.js-data-target')) {
@@ -134,24 +135,27 @@ if (document.querySelector('.slider__body')) {
    list.length > 0 && list.forEach(e => {
       const swiper = new Swiper(e.querySelector('.swiper'), {
          allowTouchMove: true,
-         spaceBetween: 10,
+         spaceBetween: 20,
          speed: 300,
-         slidesPerView: 3,
+         slidesPerView: 1.1,
          grabCursor: true,
-         // breakpoints: {
-         //    1024: {
-         //       spaceBetween: 20,
-         //       slidesPerView: 3
-         //    },
-         //    768: {
-         //       slidesPerView: 2
-         //    }
-         // },
+         breakpoints: {
+            1024: {
+               spaceBetween: 10,
+               slidesPerView: 3
+            },
+            768: {
+               spaceBetween: 20,
+               slidesPerView: 2
+            }
+         },
          navigation: {
             nextEl: e.querySelector('.next'),
             prevEl: e.querySelector('.prev'),
          },
       });
+      const card_slider = e.querySelector('.card__slider');
+      swiper.on('resize', function () { e.style.setProperty('--offset', card_slider.offsetHeight / 2 + 'px') })
    })
 }
 
@@ -210,7 +214,43 @@ if (document.querySelector('.slider__body')) {
 // }
 
 
-
+if (document.querySelector('.staps')) {
+   const staps = document.querySelector('.staps .swiper');
+   const pagination = document.querySelector('.staps__pagination');
+   let swiperState;
+   let swiper;
+   changeStateSlider();
+   window.addEventListener('resize', () => {
+      changeStateSlider();
+   })
+   function initswiper() {
+      swiper = new Swiper(staps, {
+         allowTouchMove: true,
+         loop: false,
+         speed: 300,
+         slidesPerView: 1,
+         spaceBetween: 20,
+         pagination: {
+            el: pagination,
+            type: 'bullets',
+            clickable: true,
+         },
+      });
+   }
+   function changeStateSlider() {
+      if (!MIN768.matches) {
+         if (!swiperState) {
+            swiperState = true;
+            initswiper();
+         }
+      } else {
+         if (swiperState) {
+            swiperState = false;
+            swiper.destroy(true, true);
+         }
+      }
+   }
+}
 
 /* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
 // if (document.querySelector('.swiper')) {

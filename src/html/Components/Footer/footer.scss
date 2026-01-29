@@ -5,7 +5,9 @@
    color: #ffffff;
 
    &__body {
-      display: flex;
+      @media (min-width:1024px) {
+         display: flex;
+      }
    }
 
    &__left {
@@ -25,11 +27,26 @@
       align-items: center;
       justify-content: center;
       padding: var(--padding-global);
-      border-right: 1px solid var(--color-border-1);
+
+      @media (min-width:1024px) {
+         border-right: 1px solid var(--color-border-1);
+      }
 
       svg,
       img {
-         width: 134px;
+         width: 65px;
+         height: auto;
+
+         @media (min-width:768px) {
+            width: 70px;
+         }
+
+         @include size_adaptive (font-size, 70, 100, 1366, 1920);
+         @include size_adaptive (font-size, 100, 134, 1920, 2560);
+
+         @media (min-width:2560px) {
+            width: 134px;
+         }
       }
    }
 
@@ -49,7 +66,10 @@
       justify-content: center;
       gap: 5px;
       padding: var(--padding-global);
-      background: rgba(20, 20, 20, 0.86);
+
+      @media (min-width:768px) {
+         background: rgba(20, 20, 20, 0.86);
+      }
    }
 
    &__copyright-title {
@@ -81,20 +101,30 @@
    }
 
    &__contacts {
-      display: flex;
-      justify-content: space-between;
+      @media (min-width:1024px) {
+         display: flex;
+         justify-content: space-between;
+      }
    }
 
    &__contacts-shell {
+      margin-bottom: var(--padding-global);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
+      @media (min-width:1024px) {
+         margin-bottom: 0;
+      }
    }
 
    &__phone {
       margin-bottom: 10px;
       font-size: 30px;
       letter-spacing: -0.03em;
+
+
+      @include size_adaptive (font-size, 24, 30, 1024, 1366);
       @include size_adaptive (font-size, 30, 40, 1366, 1920);
       @include size_adaptive (font-size, 40, 55, 1920, 2560);
 
@@ -122,6 +152,8 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: #a9a9a9;
+
+      @include size_adaptive (font-size, 10, 14, 1024, 1366);
       @include size_adaptive (font-size, 14, 16, 1366, 1920);
       @include size_adaptive (font-size, 16, 22, 1920, 2560);
 
@@ -140,6 +172,7 @@
       line-height: 130%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
+
       @include size_adaptive (font-size, 15, 17, 1366, 1920);
       @include size_adaptive (font-size, 17, 24, 1920, 2560);
 
@@ -160,18 +193,28 @@
    }
 
    &__nav {
-      flex: 0 0 min(604px, 50%);
       padding: var(--padding-global);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: calc(var(--padding-global) / 2);
+      width: 100%;
       font-weight: 600;
-      font-size: 26px;
+      font-size: 30px;
       letter-spacing: -0.02em;
       text-transform: uppercase;
-      border-right: 1px solid var(--color-border-1);
-      background: rgba(50, 50, 50, 0.85);
+
+      @media (min-width:1024px) {
+         background: rgba(50, 50, 50, 0.85);
+      }
+
+      @media (min-width:1024px) {
+         width: auto;
+         flex: 0 0 min(604px, 50%);
+         border-right: 1px solid var(--color-border-1);
+         font-size: 26px;
+      }
+
       @include size_adaptive (font-size, 26, 38, 1366, 1920);
       @include size_adaptive (font-size, 38, 50, 1920, 2560);
 
@@ -183,7 +226,6 @@
    &__links {
       flex: 1 1 auto;
       padding: var(--padding-global);
-      display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: calc(var(--padding-global) / 2);
@@ -193,6 +235,12 @@
       line-height: 130%;
       text-transform: uppercase;
       background: rgba(33, 33, 33, 0.83);
+      display: none;
+
+      @media (min-width:1024px) {
+         display: flex;
+      }
+
       @include size_adaptive (font-size, 18, 24, 1366, 1920);
       @include size_adaptive (font-size, 24, 50, 1920, 2560);
 
@@ -220,6 +268,10 @@
    }
 
    &__bottom-links {
+      @media (max-width:767.98px) {
+         display: none;
+      }
+
       a {
          position: relative;
          --offset: 1.5em;

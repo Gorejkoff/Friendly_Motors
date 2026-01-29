@@ -2,7 +2,7 @@
 
 .button {
    --height: 40px;
-   padding: 20px 40px;
+   padding: calc(var(--height) / 4) calc(var(--height) / 2);
    display: inline-flex;
    align-items: center;
    justify-content: space-between;
@@ -13,7 +13,7 @@
    text-align: center;
    color: #ffffff;
    background-color: #DB0E0E;
-   min-width: 385px;
+   min-width: 205px;
    min-height: var(--height);
    clip-path: polygon(calc(var(--height) / 3) 0%, 100% 0%, 100% calc(100% - var(--height) / 3), calc(100% - var(--height) / 3) 100%, 0% 100%, 0% calc(var(--height) / 3));
    transition: background-color 0.3s;
@@ -22,10 +22,13 @@
    @include size_adaptive (--height, 58, 77, 1920, 2560);
    @include size_adaptive (font-size, 14, 17, 1366, 1920);
    @include size_adaptive (font-size, 17, 24, 1920, 2560);
+   @include size_adaptive (min-width, 205, 288, 1366, 1920);
+   @include size_adaptive (min-width, 288, 385, 1920, 2560);
 
    @media (min-width:2560px) {
       --height: 77px;
       font-size: 24px;
+      min-width: 385px;
    }
 
    ._pc &:hover {
