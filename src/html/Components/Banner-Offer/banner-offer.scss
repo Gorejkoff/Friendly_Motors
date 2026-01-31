@@ -1,0 +1,133 @@
+@use '../../../scss/utils' as *;
+
+.banner-offer {
+   position: relative;
+   min-height: min(22.2vw, 570px);
+   display: flex;
+   align-items: stretch;
+
+   @media (max-width:767.98px) {
+      .button {
+         width: 100%;
+      }
+   }
+
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   &__container {
+      min-height: 100%;
+   }
+
+   &__body {
+      min-height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+
+      @media (min-width:768px) {
+         grid-template-columns: 1fr 1fr;
+      }
+   }
+
+   &__title {
+      padding: var(--padding-global) 0;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      @media (min-width:768px) {
+         padding-right: var(--padding-global);
+         border-right: 1px solid var(--color-border-1);
+      }
+
+      @media (min-width:1024px) {
+         padding: var(--padding-global);
+      }
+
+      @include size_adaptive (font-size, 38, 52, 1366, 1920);
+      @include size_adaptive (font-size, 52, 70, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 70px;
+      }
+   }
+
+   &__contant {
+      padding: var(--padding-global) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (min-width:768px) {
+         padding-left: var(--padding-global);
+         align-items: flex-start;
+         gap: 40px;
+         backdrop-filter: blur(7px);
+      }
+
+      @media (min-width:1024px) {
+         padding: var(--padding-global);
+      }
+   }
+
+   &__info {
+      padding: 0.625em;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      text-align: center;
+      border: max(4px, 0.225em) solid #DB0E0E;
+      color: #ffffff;
+
+      @media (min-width:768px) {
+         padding: 0.625em 1.25em;
+         font-size: var(--fs-md);
+      }
+
+      span {
+         color: #DB0E0E;
+      }
+   }
+
+   &__text {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: -0.05em;
+      text-align: center;
+      color: #ffffff;
+
+      @media (min-width:768px) {
+         margin-top: 30px;
+         max-width: max-content;
+      }
+
+      @include size_adaptive (font-size, 16, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 26px;
+      }
+
+      strong {
+         text-transform: uppercase;
+         font-weight: 600;
+         color: #DB0E0E;
+      }
+   }
+}

@@ -1,11 +1,10 @@
-<header id="header" class="header blur">
+<header id="header" class="header @@if(!context.light){blur} @@if(context.light){header--light}">
    <div class="header__container">
       <div class="header__body">
-
          <a href="/" class="header__logo">
-            <img src="@img/svg/logo.svg" alt="friendly motors">
+            <img class="header__logo-img-white" src="@img/svg/logo-1-1.svg" alt="friendly motors">
+            <img class="header__logo-img-black" src="@img/svg/logo-1-2.svg" alt="friendly motors">
          </a>
-
          <nav class="header__nav">
             <div class="header__dropdown js-tabs-body js-tabs-toggle js-tabs-closing">
                <button type="button" class="link link-hover-underline"><span>Услуги</span></button>
@@ -24,7 +23,6 @@
             <a class="link link-hover-underline" href="#0"><span>Авто в продаже</span></a>
             <a class="link link-hover-underline" href="#0"><span>О нас</span></a>
          </nav>
-
          <div class="header__more">
             <a class="header__contacts link link-hover-underline" href="#0"><span>Контакты</span></a>
             <div class="header__language-body js-tabs-body js-tabs-toggle js-data-scope">
@@ -42,12 +40,10 @@
                <a class="header__mail" href="mailto:info@friendlymotors.de"><span class="red-underline">info</span><span class="red">@</span><span class="underline">friendlymotors.de</span></a>
             </div>
          </div>
-
          <button type="button" class="header__button-menu open-mobile-menu">
             <span></span>
             <span></span>
          </button>
-
       </div>
    </div>
 </header>

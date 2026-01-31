@@ -10,6 +10,10 @@
    overflow-y: auto;
    transition: left 0.5s;
 
+   @media (min-width:1024px) {
+      display: none;
+   }
+
    .mobile-menu-is-open & {
       left: 0;
    }
@@ -65,16 +69,20 @@
    }
 
    &__link-arrow {
-      // width: 39px;
       height: 100%;
       overflow: hidden;
-      width: 0;
       transition: width 0.3s;
+      display: none;
 
       svg,
       img {
+         margin-right: 12px;
          width: 24px;
          height: auto;
+      }
+
+      .link-active & {
+         display: block;
       }
    }
 
@@ -84,6 +92,10 @@
       letter-spacing: -0.02em;
       text-transform: uppercase;
       transition: color 0.3s;
+
+      .link-active & {
+         color: #DB0E0E;
+      }
    }
 
    &__footer {

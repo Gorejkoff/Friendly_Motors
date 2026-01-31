@@ -68,6 +68,16 @@ function closeMobileMenu() {
    document.body.classList.remove('mobile-menu-is-open')
 }
 
+// метка активной страницы в меню мобильного
+if (!MIN1024.matches) {
+   const MOBILE_MENU_LINKS = document.querySelectorAll('.mobile-menu__link');
+   if (MOBILE_MENU_LINKS.length > 0) {
+      const path = window.location.href;
+      MOBILE_MENU_LINKS.forEach(e => {
+         e.classList.toggle('link-active', path == e.href)
+      })
+   }
+}
 
 const CARD_SLIDERS = document.querySelectorAll('.card__slider');
 if (isPC && CARD_SLIDERS.length > 0) {
