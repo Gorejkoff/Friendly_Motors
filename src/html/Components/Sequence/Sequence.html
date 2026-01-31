@@ -1,0 +1,14 @@
+<section class="sequence">
+   <div class="sequence__container-wide">
+      <div class="sequence__body mask-rt">
+         <div class="sequence__header">
+            <h2 class="title-lg">@@title</h2>
+         </div>
+         <div class="sequence__content">
+            <ol>
+               @@loop('./Sequence-Item.html', 'json/lists/@@json')
+            </ol>
+         </div>
+      </div>
+   </div>
+</section>

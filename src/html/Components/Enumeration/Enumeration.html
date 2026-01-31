@@ -1,0 +1,10 @@
+<div class="enumeration margin-section">
+   <div class="enumeration__container">
+      @@if(context.title){<div class="header-section">
+         <h2 class="title-xl">@@title</h2>
+      </div>}
+      <div class="enumeration__body">
+         @@loop('./Enumeration-Card.html', 'json/lists/@@json')
+      </div>
+   </div>
+</div>

@@ -1,0 +1,123 @@
+@use '../../../scss/utils' as *;
+
+.initial {
+   margin-top: calc(var(--height-header, 146px) * -1);
+   padding-top: calc(10px + var(--height-header, 146px) + var(--padding-global));
+   position: relative;
+   display: flex;
+   min-height: max(560px, min(1072px, 41.87vw));
+   align-items: stretch;
+   background-color: rgba(28, 28, 28, 0.7);
+   color: #ffffff;
+   overflow: hidden;
+
+   @media (min-width:768px) {
+      padding-top: calc(20px + var(--height-header, 146px) + var(--padding-global));
+   }
+
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1);
+
+   }
+
+   &__container {}
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+
+      @media (min-width:768px) {
+         justify-content: space-between;
+      }
+   }
+
+   &__back {
+      flex: 1 1 auto;
+      padding-bottom: 40px;
+
+      @media (min-width:768px) {
+         display: none;
+      }
+   }
+
+   &__back-link {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #DB0E0E;
+
+      svg,
+      img {
+         height: 41%;
+         width: auto;
+      }
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+
+      h1 {
+         font-weight: 600;
+         line-height: 100%;
+         letter-spacing: -0.06em;
+         text-transform: uppercase;
+         font-size: var(--fs-xxl);
+
+         span {
+            color: #DB0E0E;
+         }
+      }
+   }
+
+   &__footer {
+      padding: var(--padding-global) 0;
+      position: relative;
+      margin-left: auto;
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      @media (min-width:768px) {
+         padding: var(--padding-global);
+         width: 50%;
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 50vw;
+            height: 100%;
+            border-top: 1px solid var(--color-border-1);
+            border-left: 1px solid var(--color-border-1);
+            backdrop-filter: blur(15px);
+         }
+
+      }
+
+      @include size_adaptive (font-size, 20, 26, 1366, 1920);
+      @include size_adaptive (font-size, 26, 36, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 36px;
+      }
+
+
+   }
+}

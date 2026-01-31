@@ -14,14 +14,16 @@
    --color-border-4: rgba(28, 28, 28, 0.2);
 
    // size
+   --overall-offset: 25%;
    --vh: 100vh;
    --link-fs: 16px;
 
    --clip: 24px;
 
    --fs-md: 22px;
-   --fs-xl: 30px;
    --fs-lg: 30px;
+   --fs-xl: 30px;
+   --fs-xxl: 32px;
 
    // indent
    --margin-section: 40px;
@@ -42,11 +44,14 @@
    @include size_adaptive (--fs-md, 22, 30, 1366, 1920);
    @include size_adaptive (--fs-md, 30, 40, 1920, 2560);
 
+   @include size_adaptive (--fs-lg, 32, 45, 1366, 1920);
+   @include size_adaptive (--fs-lg, 45, 60, 1920, 2560);
+
    @include size_adaptive (--fs-xl, 42, 60, 1366, 1920);
    @include size_adaptive (--fs-xl, 60, 80, 1920, 2560);
 
-   @include size_adaptive (--fs-lg, 32, 45, 1366, 1920);
-   @include size_adaptive (--fs-lg, 45, 60, 1920, 2560);
+   @include size_adaptive (--fs-xxl, 52, 75, 1366, 1920);
+   @include size_adaptive (--fs-xxl, 75, 100, 1920, 2560);
 
    @include size_adaptive (--clip, 24, 34, 1366, 1920);
    @include size_adaptive (--clip, 34, 45, 1920, 2560);
@@ -61,8 +66,9 @@
       --margin-section: 100px;
       --link-fs: 26px;
       --fs-md: 40px;
-      --fs-xl: 80px;
       --fs-lg: 60px;
+      --fs-xl: 80px;
+      --fs-xxl: 100px;
 
       --clip: 45px;
    }

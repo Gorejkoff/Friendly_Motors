@@ -1,0 +1,24 @@
+<div class="initial">
+   <img class="initial__background" src="@img/@@bg" alt="фон" aria-hidden="true">
+   <div class="initial__container">
+      <div class="initial__body">
+         <div class="initial__back">
+            <a href="@@href" class="initial__back-link" aria-label="назад">
+               <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.41406 12.707L1.41406 6.70703L7.41406 0.707031" stroke="white" stroke-width="2" />
+               </svg>
+            </a>
+         </div>
+         <div class="initial__header">
+            <h1>@@title</h1>
+            @@include('../../UI/Buttons/Link-Back/Link-Back.html',{
+            href: '@@href',
+            text: '@@linktext'
+            })
+         </div>
+         <div class="initial__footer">
+            <p>@@text</p>
+         </div>
+      </div>
+   </div>
+</div>

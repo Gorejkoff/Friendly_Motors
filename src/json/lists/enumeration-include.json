@@ -1,0 +1,44 @@
+[
+   {
+      "text": "Поиск<br> автомобиля",
+      "icon": "svg/icon-1.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Участие<br> в торгах",
+      "icon": "svg/icon-2.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Доставка<br> автомобиля",
+      "icon": "svg/icon-3.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Дополнительная<br> диагностика на СТО",
+      "icon": "svg/icon-4.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Сопровождение<br> сделки",
+      "icon": "svg/icon-5.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "",
+      "icon": "",
+      "before": "",
+      "item": "",
+      "sign": ""
+   }
+]

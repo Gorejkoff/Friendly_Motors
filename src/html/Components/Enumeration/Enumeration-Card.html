@@ -1,0 +1,11 @@
+<div class="enumeration__card">
+   @@if(context.text){<div>@@text</div>}
+   <div class="enumeration__value">
+      @@if(context.icon){<div class="enumeration__icon">
+         <img src="@img/@@icon" alt="иконка">
+      </div>}
+      @@if(context.before){<div>@@before</div>}
+      @@if(context.item){<div class="enumeration__value-item">@@item</div>}
+      @@if(context.sign){<div class="enumeration__value-sign">@@sign</div>}
+   </div>
+</div>

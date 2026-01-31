@@ -7,7 +7,7 @@
 @use '../../html/Components/Footer/footer';
 @use '../../html/Components/Intro/intro';
 @use '../../html/Components/Banner-About/banner-about';
-@use '../../html/Components/Achievements/achievements';
+@use '../../html/Components/Enumeration/enumeration';
 @use '../../html/Components/Services/services';
 @use '../../html/Components/Slider/slider';
 @use '../../html/Components/Steps/steps';
@@ -16,8 +16,11 @@
 @use '../../html/Components/Mobile-Menu/mobile-menu';
 @use '../../html/Components/Headline/headline';
 @use '../../html/Components/Banner-Offer/banner-offer';
+@use '../../html/Components/Initial/initial';
+@use '../../html/Components/Sequence/sequence';
 
 @use '../../html/UI/Buttons/Button/button';
 @use '../../html/UI/Card/card';
 @use '../../html/UI/Buttons/Button-Arrow/button-arrow';
 @use '../../html/UI/Tab/tab';
+@use '../../html/UI/Buttons/Link-Back/link-back';

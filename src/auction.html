@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-Auction"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/Components/Header/header.html',{
+      light: false
+      })
+
+      <div class="main">
+
+         @@include('html/Components/Initial/Initial.html',{
+         bg:'webp/image-18.webp',
+         title:'<span>Покупка</span> авто на аукционе',
+         text:'Мы располагаем собственной станцией технического обслуживания, где проходят проверку все автомобили, приобретаемые нашей компанией',
+         href: 'services.html',
+         linktext:'услуги'
+         })
+         @@include('html/Components/Enumeration/Enumeration.html',{
+         title:'Что включено',
+         json:'enumeration-include.json'
+         })
+
+         @@include('html/Components/Sequence/Sequence.html',{
+         title:'Как это<br> работает',
+         json:'sequence-1.json'
+         })
+
+         @@include('html/Components/Questions/Questions.html',{})
+         @@include('html/Components/Form/Form.html',{})
+
+      </div>
+
+      @@include('html/Components/Footer/footer.html',{})
+
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+@use "../../../../scss/utils" as *;
+
+.link-back {
+   // display: flex;
+   align-items: center;
+   gap: 16px;
+   font-size: 14px;
+   line-height: 120%;
+   letter-spacing: -0.05em;
+   text-transform: uppercase;
+   text-align: right;
+   display: none;
+
+   @media (min-width:768px) {
+      display: flex;
+   }
+
+   @include size_adaptive (font-size, 14, 18, 1366, 1920);
+   @include size_adaptive (font-size, 18, 24, 1920, 2560);
+
+   @media (min-width:2560px) {
+      font-size: 24px;
+   }
+}

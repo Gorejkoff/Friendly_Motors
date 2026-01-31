@@ -6,12 +6,10 @@
             <p class="headline__text">@@text</p>
          </div>
          <div>
-            <a class="headline__link" href="/">
-               <svg width="45" height="7" viewBox="0 0 45 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M44.0429 3.46793H1.06055M1.06055 3.46793L3.99723 0.53125M1.06055 3.46793L3.99723 6.40461" stroke="#DB0E0E" stroke-width="1.5" />
-               </svg>
-               <span>главная</span>
-            </a>
+            @@include('../../UI/Buttons/Link-Back/Link-Back.html',{
+            href: '/',
+            text: 'главная'
+            })
          </div>
       </div>
    </div>
