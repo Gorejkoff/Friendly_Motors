@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-Diagn"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/Components/Header/header.html',{
+      light: false
+      })
+
+      <div class="main">
+
+         @@include('html/Components/Initial/Initial.html',{
+         bg:'webp/image-18.webp',
+         title:'<span>Выездная</span> диагностика<br> автомобиля',
+         text:'Процесс выездной диагностики автомобиля организован максимально прозрачно и удобно для клиента',
+         href: 'services.html',
+         linktext:'услуги'
+         })
+         @@include('html/Components/Enumeration/Enumeration.html',{
+         title:'Что включено',
+         json:'enumeration-diagn.json'
+         })
+
+         <section class="about-service margin-section">
+            <div class="about-service__container">
+               <div class="header-section">
+                  <h2 class="title-lg">Об услуге</h2>
+               </div>
+               <p class="about-service__paragraph">
+                  По заранее согласованному сценарию мы заказываем диагностику и договариваемся с автосалоном или площадкой о времени и месте осмотра. <br>
+                  В назначенный день наш специалист приезжает на место и проводит полную проверку автомобиля.
+               </p>
+               <p class="about-service__paragraph">Клиент получает полный медиапакет по процессу: фото- и видеоматериалы с осмотра.</p>
+               <div class="about-service__list">
+                  <div class="about-service__list-title">В рамках диагностики проверяются:</div>
+                  <ul>
+                     <li>Кузов и салон на предмет царапин, повреждений и следов ремонта.</li>
+                     <li>Реальное состояние кузова с точки зрения участия в ДТП, окрасов и иных воздействий.</li>
+                     <li>Электронные системы автомобиля посредством компьютерной диагностики.</li>
+                     <li>Работа автомобиля в ходе тест-драйва.</li>
+                     <li>Реалистичность заявленного пробега.</li>
+                     <li>Документы автомобиля и его юридическая чистота.</li>
+                  </ul>
+               </div>
+               <p class="about-service__addition">Дополнительно мы запрашиваем данные в дилерской базе и предоставляем клиенту выгрузку по истории обслуживания автомобиля.</p>
+               <div class="about-service__documents">
+                  <div class="about-service__documents-icon">
+                     <img src="@img/svg/pdf.svg" alt="pdf">
+                  </div>
+                  <div class="about-service__documents-text">По результатам осмотра клиент получает готовый <strong>PDF-документ</strong> с подробными разделами по каждому этапу диагностики.</div>
+               </div>
+            </div>
+         </section>
+
+         <section class="cost-service margin-section">
+            <div class="cost-service__container">
+               <div class="cost-service__body">
+                  <div class="cost-service__header">
+                     <h2 class="title-lg">Стоимость</h2>
+                  </div>
+                  <div class="cost-service__contant">
+                     <div class="cost-service__banners">
+                        <div class="cost-service__banner">
+                           <div class="cost-service__banner-title">фиксированная цена</div>
+                           <span class="cost-service__value">250 €</span>
+                           <span class="cost-service__text">за диагностику автомобиля</span>
+                        </div>
+                        <div class="cost-service__banner">
+                           <span class="cost-service__value">+1 €</span>
+                           <span class="cost-service__text">за каждый километр пути</span>
+                        </div>
+                     </div>
+                     <div class="cost-service__info">
+                        <p><sup>*</sup>но не менее <b>500 €.</b>Логистические расходы оплачиваются <strong>отдельно</strong></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         @@include('html/Components/Sequence/Sequence.html',{
+         title:'Как это<br> работает',
+         json:'sequence-1.json'
+         })
+
+         @@include('html/Components/Questions/Questions.html',{})
+         @@include('html/Components/Form/Form.html',{})
+
+      </div>
+
+      @@include('html/Components/Footer/footer.html',{})
+
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

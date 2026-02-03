@@ -1,0 +1,44 @@
+[
+   {
+      "text": "Проверка технического<br> состояния автомобиля",
+      "icon": "svg/icon-4.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Проверка кузова и<br> лакокрасочного покрытия",
+      "icon": "svg/icon-10.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Проверка юридической<br> чистоты авто",
+      "icon": "svg/icon-8.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Диагностика с клиентом<br> или без его присутствия",
+      "icon": "svg/icon-12.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Фото- и<br> видеоотчёт",
+      "icon": "svg/icon-11.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "",
+      "icon": "",
+      "before": "",
+      "item": "",
+      "sign": ""
+   }
+]

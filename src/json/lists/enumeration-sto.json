@@ -1,0 +1,44 @@
+[
+   {
+      "text": "Полная техническая<br> диагностика",
+      "icon": "svg/icon-4.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Установка дополнительного<br> оборудования",
+      "icon": "svg/icon-13.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Восстановление после<br> ДТП",
+      "icon": "svg/icon-14.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Электронное<br> программирование",
+      "icon": "svg/icon-15.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Прочие работы по<br> обслуживанию и ремонту",
+      "icon": "svg/icon-16.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "",
+      "icon": "",
+      "before": "",
+      "item": "",
+      "sign": ""
+   }
+]

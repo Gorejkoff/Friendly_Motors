@@ -1,0 +1,232 @@
+@use '../../../scss/utils' as *;
+
+.about-service {
+   &__container {}
+
+
+   &__paragraph {
+      font-size: 15px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+
+      @media (min-width:1024px) {
+         font-size: 18px;
+      }
+
+      @include size_adaptive (font-size, 18, 24, 1366, 1920);
+      @include size_adaptive (font-size, 24, 32, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 32px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 15px;
+
+         @media (min-width:1366px) {
+            margin-bottom: 20px;
+         }
+
+         @media (min-width:1920px) {
+            margin-bottom: 30px;
+         }
+      }
+   }
+
+   &__list {
+      &:not(:last-child) {
+         margin-bottom: 20px;
+
+         @media (min-width:1366px) {
+            margin-bottom: 24px;
+         }
+
+         @media (min-width:1920px) {
+            margin-bottom: 40px;
+         }
+      }
+
+      li {
+         font-size: 13px;
+         line-height: 120%;
+         letter-spacing: -0.05em;
+         color: #696969;
+
+         @media (min-width:1024px) {
+            font-size: 15px;
+         }
+
+         @include size_adaptive (font-size, 15, 20, 1366, 1920);
+         @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+         @media (min-width:2560px) {
+            font-size: 26px;
+         }
+
+         &:not(:last-child) {
+            margin-bottom: 8px;
+
+            @media (min-width:1024px) {
+               margin-bottom: 10px;
+            }
+         }
+      }
+
+      ul {
+         li {
+            margin-left: 1.5em;
+            list-style: disc;
+         }
+      }
+
+      ol {
+         li {
+            margin-left: 1em;
+            padding-left: 0.4em;
+            list-style: decimal;
+         }
+      }
+   }
+
+   &__list-title {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @media (min-width:1024px) {
+         font-size: 18px;
+      }
+
+      @include size_adaptive (font-size, 18, 24, 1366, 1920);
+      @include size_adaptive (font-size, 24, 32, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 32px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 15px;
+
+         @media (min-width:1366px) {
+            margin-bottom: 20px;
+         }
+
+         @media (min-width:1920px) {
+            margin-bottom: 30px;
+         }
+      }
+   }
+
+   &__addition {
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+
+      @media (min-width:1024px) {
+         font-size: 15px;
+      }
+
+      @include size_adaptive (font-size, 16, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 26px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 20px;
+
+         @media (min-width:1366px) {
+            margin-bottom: 24px;
+         }
+
+         @media (min-width:1920px) {
+            margin-bottom: 40px;
+         }
+
+         margin-bottom: 40px;
+      }
+   }
+
+   &__documents {
+      --size: 81px;
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      border: 3px solid #DB0E0E;
+
+      @media (min-width:768px) {
+         width: auto;
+      }
+
+      @media (min-width:1024px) {
+         --size: 40px;
+      }
+
+      @media (min-width:1920px) {
+         --size: 60px;
+      }
+
+      @media (min-width:2560px) {
+         --size: 73px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 20px;
+
+         @media (min-width:1366px) {
+            margin-bottom: 24px;
+         }
+
+         @media (min-width:1920px) {
+            margin-bottom: 40px;
+         }
+
+         margin-bottom: 40px;
+      }
+   }
+
+   &__documents-icon {
+      background-color: #DB0E0E;
+      min-height: var(--size);
+      min-width: var(--size);
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img,
+      svg {
+         width: 57%;
+         height: auto;
+      }
+   }
+
+   &__documents-text {
+      padding: 12px;
+      font-size: 13px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+
+      @media (min-width:1024px) {
+         padding: 12px 20px;
+         font-size: 15px;
+      }
+
+      @include size_adaptive (font-size, 15, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         padding: 20px 30px;
+         font-size: 26px;
+      }
+
+      strong {
+         font-weight: 600;
+         text-transform: uppercase;
+         text-decoration: underline;
+      }
+   }
+}

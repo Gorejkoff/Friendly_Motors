@@ -74,8 +74,10 @@ body {
    justify-content: space-between;
    @include size_adaptive (font-size, 28, 36, 1366, 1920);
    @include size_adaptive (font-size, 36, 50, 1920, 2560);
+   @include size_adaptive (margin-bottom, 20, 50, 768, 2560);
 
    @media (min-width:2560px) {
+      margin-bottom: 50px;
       font-size: 50px;
    }
 }
