@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-Search"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/Components/Header/header.html',{
+      light: false
+      })
+
+      <div class="main">
+
+         @@include('html/Components/Initial/Initial.html',{
+         bg:'webp/image-18.webp',
+         title:'<span>Поиск</span> автомобиля<br> под ключ',
+         text:'Мы самостоятельно отслеживаем предложения на всех ведущих онлайн-площадках Европы, включая аукционы',
+         href: 'services.html',
+         linktext:'услуги'
+         })
+         @@include('html/Components/Enumeration/Enumeration.html',{
+         title:'Что включено',
+         json:'enumeration-search.json'
+         })
+
+         <section class="about-service margin-section">
+            <div class="about-service__container">
+               <div class="header-section">
+                  <h2 class="title-lg">Об услуге</h2>
+               </div>
+               <p class="about-service__paragraph">Работа строится по вашему техническому заданию: мы регулярно анализируем рынок и отбираем наиболее выгодные варианты для согласования с клиентом. При желании заказчик может также прислать понравившиеся объявления для дальнейшей проработки.</p>
+               <p class="about-service__paragraph">Помимо известных онлайн-площадок, мы используем собственные проверенные источники, где доступны уникальные предложения на автомобили с пробегом.</p>
+            </div>
+         </section>
+
+         <section class="cost-service margin-section">
+            <div class="cost-service__container">
+               <div class="cost-service__body">
+                  <div class="cost-service__header">
+                     <h2 class="title-lg">Стоимость</h2>
+                  </div>
+                  <div class="cost-service__contant">
+                     <div class="cost-service__banners">
+                        <div class="cost-service__banner">
+                           <div class="cost-service__banner-title">Комиссия Friendly Motors</div>
+                           <span class="cost-service__value">5%*</span>
+                           <span class="cost-service__text">от цены автомобиля</span>
+                        </div>
+                     </div>
+                     <div class="cost-service__info">
+                        <p><sup>*</sup>но не менее <b>1000 €.</b></p>
+                        <p>Диагностика оплачивается <strong>отдельно:</strong></p>
+                        <ul>
+                           <li><b>250 €</b> за диагностику.</li>
+                           <li><b>1 €/км</b> за выезд.</li>
+                        </ul>
+                        <p>Логистические расходы оплачиваются <strong>отдельно.</strong></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         @@include('html/Components/Sequence/Sequence.html',{
+         title:'Как это<br> работает',
+         json:'sequence-1.json'
+         })
+
+         @@include('html/Components/Questions/Questions.html',{})
+         @@include('html/Components/Form/Form.html',{})
+
+      </div>
+
+      @@include('html/Components/Footer/footer.html',{})
+
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+[
+   {
+      "text": "Анализ<br> рынка",
+      "icon": "svg/icon-6.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Телефонные<br> переговоры",
+      "icon": "svg/icon-7.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Юридическая<br> проверка",
+      "icon": "svg/icon-8.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Выездная<br> диагностика<span>*</span>",
+      "icon": "svg/icon-9.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Дополнительная<br> диагностика на СТО",
+      "icon": "svg/icon-4.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   },
+   {
+      "text": "Сопровождение<br> сделки",
+      "icon": "svg/icon-3.svg",
+      "before": "",
+      "item": "",
+      "sign": ""
+   }
+]

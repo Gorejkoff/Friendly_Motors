@@ -46,6 +46,12 @@
             padding-left: 40px;
          }
       }
+
+      &>div {
+         span {
+            color: #DB0E0E;
+         }
+      }
    }
 
    &__icon {
