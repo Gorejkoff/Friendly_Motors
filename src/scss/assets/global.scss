@@ -185,14 +185,38 @@ body {
 .red-underline {
    text-decoration: underline;
    text-decoration-color: #DB0E0E;
+   transition: text-decoration-color 0.3s;
 }
 
 .red {
    color: #DB0E0E;
+   transition: color 0.3s;
 }
 
 .underline {
    text-decoration: underline;
+   transition: text-decoration-color 0.3s;
+}
+
+.hover-red {
+   &:hover {
+      color: #DB0E0E;
+      transition: color 0.3s;
+   }
+}
+
+a,
+button {
+   &.hover-white-inderline {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 0.3s, text-decoration-color 0.3s;
+
+      &:hover {
+         color: #ffffff;
+         text-decoration-color: #ffffff;
+      }
+   }
 }
 
 .margin-section {
@@ -223,6 +247,18 @@ body {
 
    &.swiper-pagination-bullet-active {
       background-color: #DB0E0E;
+   }
+}
+
+.js-text-animate {
+   .word {
+      display: inline-block;
+      overflow: hidden;
+   }
+
+   .letter {
+      display: inline-block;
+      transform: translate(0, 120%) rotate(45deg);
    }
 }
 

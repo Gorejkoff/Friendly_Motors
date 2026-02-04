@@ -7,31 +7,38 @@
 
 
 <body>
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
 
-   <div class="wrapper">
+            @@include('html/Components/Header/header.html',{})
 
-      @@include('html/Components/Header/header.html',{})
+            <div class="main">
 
-      <div class="main">
+               @@include('html/Components/Intro/Intro.html',{})
+               @@include('html/Components/Banner-About/Banner-About.html',{})
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               json:'enumeration-achievements.json'
+               })
+               @@include('html/Components/Services/Services.html',{})
+               @@include('html/Components/Slider/Slider.html',{
+               title:'Авто в наличии',
+               text:'Лучшие предложения – готовы к покупке уже сегодня',
+               })
+               @@include('html/Components/Slider/Slider.html',{
+               title:'Наши работы',
+               text:'Гордимся нашей работой и с удовольствием делимся результатами',
+               })
+               @@include('html/Components/Steps/Steps.html',{})
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
 
-         @@include('html/Components/Intro/Intro.html',{})
-         @@include('html/Components/Banner-About/Banner-About.html',{})
-         @@include('html/Components/Enumeration/Enumeration.html',{
-         json:'enumeration-achievements.json'
-         })
-         @@include('html/Components/Services/Services.html',{})
-         @@include('html/Components/Slider/Slider.html',{
-         title:'Авто в наличии',
-         text:'Лучшие предложения – готовы к покупке уже сегодня',
-         })
-         @@include('html/Components/Steps/Steps.html',{})
-         @@include('html/Components/Questions/Questions.html',{})
-         @@include('html/Components/Form/Form.html',{})
+            </div>
 
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
       </div>
-
-      @@include('html/Components/Footer/footer.html',{})
-
    </div>
 
    @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
@@ -39,7 +46,6 @@
    @@include('html/scripts.html',{
    swiper: true,
    })
-
 
 </body>
 

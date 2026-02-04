@@ -144,6 +144,20 @@
       @media (min-width:2560px) {
          font-size: 26px;
       }
+
+      // &:hover {
+      //    .red {
+      //       color: #ffffff;
+      //    }
+
+      //    .red-underline {
+      //       text-decoration-color: #DB0E0E;
+      //    }
+
+      //    .red-underline {
+      //       text-decoration-color: #ffffff;
+      //    }
+      // }
    }
 
    &__time {
@@ -285,8 +299,15 @@
                position: absolute;
                top: 0;
                right: calc(var(--offset) * -1);
+               color: #a9a9a9;
             }
          }
+
+         // &:hover {
+         //    &::after {
+         //       color: #a9a9a9;
+         //    }
+         // }
       }
    }
 }

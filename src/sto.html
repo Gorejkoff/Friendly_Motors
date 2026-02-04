@@ -7,96 +7,99 @@
 
 
 <body>
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
 
-   <div class="wrapper">
+            @@include('html/Components/Header/header.html',{
+            light: false
+            })
 
-      @@include('html/Components/Header/header.html',{
-      light: false
-      })
+            <div class="main">
 
-      <div class="main">
+               @@include('html/Components/Initial/Initial.html',{
+               bg:'webp/image-18.webp',
+               title:'<span>Сопровождение</span> на СТО<br> услуги',
+               text:'Мы располагаем собственной станцией технического обслуживания, где проходят проверку все автомобили, приобретаемые нашей компанией',
+               href: 'services.html',
+               linktext:'услуги'
+               })
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               title:'Что включено',
+               json:'enumeration-sto.json'
+               })
 
-         @@include('html/Components/Initial/Initial.html',{
-         bg:'webp/image-18.webp',
-         title:'<span>Сопровождение</span> на СТО<br> услуги',
-         text:'Мы располагаем собственной станцией технического обслуживания, где проходят проверку все автомобили, приобретаемые нашей компанией',
-         href: 'services.html',
-         linktext:'услуги'
-         })
-         @@include('html/Components/Enumeration/Enumeration.html',{
-         title:'Что включено',
-         json:'enumeration-sto.json'
-         })
+               <section class="about-service margin-section">
+                  <div class="about-service__container">
+                     <div class="header-section">
+                        <h2 class="title-lg">Об услуге</h2>
+                     </div>
+                     <p class="about-service__paragraph"> Клиенты также могут воспользоваться этой услугой для обслуживания своих автомобилей. </p>
 
-         <section class="about-service margin-section">
-            <div class="about-service__container">
-               <div class="header-section">
-                  <h2 class="title-lg">Об услуге</h2>
-               </div>
-               <p class="about-service__paragraph"> Клиенты также могут воспользоваться этой услугой для обслуживания своих автомобилей. </p>
+                     <div class="about-service__list">
+                        <div class="about-service__list-title">Процесс работы строится следующим образом:</div>
+                        <ol>
+                           <li>Согласование времени визита на СТО.</li>
+                           <li>Доставка автомобиля на станцию нашими специалистами или клиентом.</li>
+                           <li>Проведение комплексной диагностики с использованием профессионального оборудования.</li>
+                           <li>Составление заключения о техническом состоянии автомобиля.</li>
+                        </ol>
+                     </div>
 
-               <div class="about-service__list">
-                  <div class="about-service__list-title">Процесс работы строится следующим образом:</div>
-                  <ol>
-                     <li>Согласование времени визита на СТО.</li>
-                     <li>Доставка автомобиля на станцию нашими специалистами или клиентом.</li>
-                     <li>Проведение комплексной диагностики с использованием профессионального оборудования.</li>
-                     <li>Составление заключения о техническом состоянии автомобиля.</li>
-                  </ol>
-               </div>
+                     <div class="about-service__list">
+                        <div class="about-service__list-title">На базе нашего СТО также доступны дополнительные услуги:</div>
+                        <ul>
+                           <li>Установка дополнительного оборудования.</li>
+                           <li>Восстановление автомобиля после ДТП./li>
+                           <li>Проведение работ по сход-развалу.</li>
+                           <li>Любые иные работы, связанные с техническим обслуживанием и ремонтом автомобиля.</li>
+                        </ul>
+                     </div>
+                     <div class="about-service__documents">
+                        <div class="about-service__documents-icon">
+                           <img src="@img/svg/folder.svg" alt="folder">
+                        </div>
+                        <div class="about-service__documents-text">По результатам проверки клиент получает <strong>подробный отчёт</strong> с перечнем выполненных работ и выявленных неисправностей.</div>
+                     </div>
+                     <p class="about-service__addition">Стоимость услуг рассчитывается индивидуально и согласовывается с клиентом по договорённости.</p>
 
-               <div class="about-service__list">
-                  <div class="about-service__list-title">На базе нашего СТО также доступны дополнительные услуги:</div>
-                  <ul>
-                     <li>Установка дополнительного оборудования.</li>
-                     <li>Восстановление автомобиля после ДТП./li>
-                     <li>Проведение работ по сход-развалу.</li>
-                     <li>Любые иные работы, связанные с техническим обслуживанием и ремонтом автомобиля.</li>
-                  </ul>
-               </div>
-               <div class="about-service__documents">
-                  <div class="about-service__documents-icon">
-                     <img src="@img/svg/folder.svg" alt="folder">
                   </div>
-                  <div class="about-service__documents-text">По результатам проверки клиент получает <strong>подробный отчёт</strong> с перечнем выполненных работ и выявленных неисправностей.</div>
-               </div>
-               <p class="about-service__addition">Стоимость услуг рассчитывается индивидуально и согласовывается с клиентом по договорённости.</p>
+               </section>
 
-            </div>
-         </section>
-
-         <section class="cost-service margin-section">
-            <div class="cost-service__container">
-               <div class="cost-service__body">
-                  <div class="cost-service__header">
-                     <h2 class="title-lg">Стоимость</h2>
-                  </div>
-                  <div class="cost-service__contant">
-                     <div class="cost-service__banners">
-                        <div class="cost-service__banner">
-                           <span>Стоимость услуг согласовывается индивидуально</span>
+               <section class="cost-service margin-section">
+                  <div class="cost-service__container">
+                     <div class="cost-service__body">
+                        <div class="cost-service__header">
+                           <h2 class="title-lg">Стоимость</h2>
+                        </div>
+                        <div class="cost-service__contant">
+                           <div class="cost-service__banners">
+                              <div class="cost-service__banner">
+                                 <span>Стоимость услуг согласовывается индивидуально</span>
+                              </div>
+                           </div>
+                           <div class="cost-service__info">
+                              <p>Определяется по объёму работ и фиксируется в договорённости с клиентом.</p>
+                           </div>
                         </div>
                      </div>
-                     <div class="cost-service__info">
-                        <p>Определяется по объёму работ и фиксируется в договорённости с клиентом.</p>
-                     </div>
                   </div>
-               </div>
+               </section>
+
+               @@include('html/Components/Sequence/Sequence.html',{
+               title:'Как это<br> работает',
+               json:'sequence-1.json'
+               })
+
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
+
             </div>
-         </section>
 
-         @@include('html/Components/Sequence/Sequence.html',{
-         title:'Как это<br> работает',
-         json:'sequence-1.json'
-         })
+            @@include('html/Components/Footer/footer.html',{})
 
-         @@include('html/Components/Questions/Questions.html',{})
-         @@include('html/Components/Form/Form.html',{})
-
+         </div>
       </div>
-
-      @@include('html/Components/Footer/footer.html',{})
-
    </div>
 
    @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})

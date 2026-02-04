@@ -64,7 +64,7 @@ if (introSwiperMain &&
       allowTouchMove: true,
       loop: true,
       spaceBetween: 0,
-      speed: 300,
+      speed: 700,
       slidesPerView: 1,
       autoplay: {
          delay: 4000,
@@ -93,7 +93,6 @@ if (introSwiperMain &&
    }
 
    swiperMain.on('slideChange', () => {
-      console.log(swiperMain.realIndex);
       navButtons.forEach(e => {
          e.classList.toggle('active', e.dataset.index == swiperMain.realIndex)
       })

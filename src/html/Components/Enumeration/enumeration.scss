@@ -71,15 +71,18 @@
 
    &__value {
       display: flex;
+      align-items: flex-end;
    }
 
    &__value-item {
+      margin-left: 4px;
       font-size: 1.75em;
       color: #DB0E0E;
-
+      line-height: 80%;
    }
 
    &__value-sign {
       font-size: 1.75em;
+      line-height: 80%;
    }
 }

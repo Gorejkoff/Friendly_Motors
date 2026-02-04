@@ -5,7 +5,7 @@
          <img src="@img/@@icon" alt="иконка">
       </div>}
       @@if(context.before){<div>@@before</div>}
-      @@if(context.item){<div class="enumeration__value-item">@@item</div>}
+      @@if(context.item){<div class="enumeration__value-item js-counter-animate" data-value="@@item">@@item</div>}
       @@if(context.sign){<div class="enumeration__value-sign">@@sign</div>}
    </div>
 </div>

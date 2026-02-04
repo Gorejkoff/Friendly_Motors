@@ -3,36 +3,36 @@
       "title": "<span>Покупка</span> авто<br> на аукционе",
       "text": "Приобретаем для вас автомобиль на закрытых европейских аукционах",
       "image": "webp/image-18.webp",
-      "link": "#0"
+      "link": "auction.html"
    },
    {
       "title": "<span>Поиск</span><br> автомобиля под ключ",
       "text": "Находим автомобиль по вашим критериям",
       "image": "webp/image-19.webp",
-      "link": "#0"
+      "link": "search.html"
    },
    {
       "title": "<span>Выездная</span><br> диагностика автомобиля",
       "text": "Выездная диагностика с клиентом или в его отсутствии",
       "image": "webp/image-20.webp",
-      "link": "#0"
+      "link": "diagn.html"
    },
    {
       "title": "<span>Срочный</span><br> выкуп авто",
       "text": "Сопровождаем в техцентр для дополнительной диагностики",
       "image": "webp/image-23.webp",
-      "link": "#0"
+      "link": "ransom.html"
    },
    {
       "title": "<span>Комиссионная</span><br> продажа",
       "text": "Оперативно помогаем продать ваш автомобиль ",
       "image": "webp/image-22.webp",
-      "link": "#0"
+      "link": "selling.html"
    },
    {
       "title": "<span>Сопровождение</span><br> на СТО",
       "text": "Быстро и выгодно выкупим ваш автомобиль",
       "image": "webp/image-21.webp",
-      "link": "#0"
+      "link": "ransom.html"
    }
 ]

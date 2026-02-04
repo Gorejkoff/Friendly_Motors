@@ -44,6 +44,13 @@
          padding-top: var(--padding-global);
          padding-bottom: var(--padding-global);
          padding-right: calc(var(--padding-global) * 0.5);
+         opacity: 0;
+         transition: opacity 0.3s;
+      }
+
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active {
+         opacity: 1;
       }
    }
 
@@ -55,13 +62,13 @@
       }
 
       .swiper-slide {
-         opacity: 0 !important;
-         transition-property: opacity !important;
+         opacity: 0;
+         transition: opacity 0.3s;
       }
 
       .swiper-slide-active,
       .swiper-slide-duplicate-active {
-         opacity: 1 !important;
+         opacity: 1;
       }
    }
 
