@@ -143,6 +143,7 @@ body {
       }
    }
 
+   &.active,
    ._pc &:hover {
       color: #DB0E0E;
    }
@@ -170,6 +171,8 @@ body {
 }
 
 .link-hover-underline {
+
+   &.active,
    ._pc &:hover {
       span {
          &::before {
@@ -205,9 +208,9 @@ body {
 }
 
 .swiper-slide {
+   position: relative;
    flex-shrink: 0;
    width: 100%;
-   position: relative;
    transition-property: transform;
    touch-action: pan-y;
 }

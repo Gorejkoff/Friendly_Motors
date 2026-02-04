@@ -29,6 +29,79 @@ if (document.querySelector('.slider__body')) {
 
 
 
+const introSwiperMain = document.querySelector('.intro__swiper-main');
+const introSwiperText = document.querySelector('.intro__swiper-text');
+const introSwiperSubtext = document.querySelector('.intro__swiper-subtext');
+const navButtons = document.querySelectorAll('.intro__nav button');
+
+if (introSwiperMain &&
+   introSwiperText &&
+   introSwiperSubtext &&
+   navButtons) {
+
+   const swiperText = new Swiper(introSwiperText, {
+      allowTouchMove: false,
+      loop: true,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      effect: "fade",
+      fadeEffect: {
+         crossFade: true
+      },
+   });
+   const swiperSubext = new Swiper(introSwiperSubtext, {
+      allowTouchMove: false,
+      loop: true,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      effect: "fade",
+      fadeEffect: {
+         crossFade: true
+      },
+   });
+
+   const swiperMain = new Swiper(introSwiperMain, {
+      allowTouchMove: true,
+      loop: true,
+      spaceBetween: 0,
+      speed: 300,
+      slidesPerView: 1,
+      autoplay: {
+         delay: 4000,
+      },
+      controller: {
+         control: [swiperText, swiperSubext]
+      },
+      on: {
+         init: function () {
+            initCustomPagination();
+         },
+         slideChange: function () {
+            // updateActiveNav();
+         }
+      }
+   });
+
+   function initCustomPagination() {
+      navButtons.forEach(button => {
+         button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const slideIndex = parseInt(this.getAttribute('data-index'));
+            swiperMain.slideTo(slideIndex);
+         });
+      });
+   }
+
+   swiperMain.on('slideChange', () => {
+      console.log(swiperMain.realIndex);
+      navButtons.forEach(e => {
+         e.classList.toggle('active', e.dataset.index == swiperMain.realIndex)
+      })
+   })
+}
+
+
+
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
 //    const swiper = new Swiper('.swiper', {

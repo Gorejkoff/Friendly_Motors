@@ -310,6 +310,7 @@ body.mobile-menu-is-open {
   color: #ffffff;
 }
 
+.link.active,
 ._pc .link:hover {
   color: #DB0E0E;
 }
@@ -340,6 +341,7 @@ body.mobile-menu-is-open {
   transition: opacity 0.3s;
 }
 
+.link-hover-underline.active span::before,
 ._pc .link-hover-underline:hover span::before {
   opacity: 1;
 }
@@ -375,10 +377,10 @@ body.mobile-menu-is-open {
 }
 
 .swiper-slide {
+  position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 100%;
-  position: relative;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -911,6 +913,7 @@ body.mobile-menu-is-open {
 }
 
 .intro {
+  pointer-events: none;
   position: relative;
   margin-top: calc(var(--height-header, 163px) * -1);
   height: var(--vh);
@@ -927,13 +930,35 @@ body.mobile-menu-is-open {
   overflow: hidden;
 }
 
-.intro__left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+.intro__body {
+  position: relative;
+  z-index: 2;
+}
+
+.intro__swiper-text {
+  width: 100%;
+  overflow: hidden;
+}
+
+.intro__swiper-text .swiper-slide {
   padding-top: var(--padding-global);
   padding-bottom: var(--padding-global);
   padding-right: calc(var(--padding-global) * 0.5);
+}
+
+.intro__swiper-subtext {
+  width: 100%;
+}
+
+.intro__swiper-subtext .swiper-slide {
+  opacity: 0 !important;
+  -webkit-transition-property: opacity !important;
+  transition-property: opacity !important;
+}
+
+.intro__swiper-subtext .swiper-slide-active,
+.intro__swiper-subtext .swiper-slide-duplicate-active {
+  opacity: 1 !important;
 }
 
 .intro__title {
@@ -950,6 +975,7 @@ body.mobile-menu-is-open {
 }
 
 .intro__nav {
+  pointer-events: all;
   position: relative;
   --color-hover: #ffffff;
   display: -webkit-box;
@@ -983,7 +1009,12 @@ body.mobile-menu-is-open {
   gap: 40px;
 }
 
+.intro__content .button {
+  pointer-events: all;
+}
+
 .intro__text {
+  margin-left: auto;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
@@ -991,11 +1022,29 @@ body.mobile-menu-is-open {
   color: #ffffff;
 }
 
-.intro__bg {
+.intro__swiper-main {
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.intro__swiper-main .swiper-wrapper {
+  height: 100%;
+}
+
+.intro__swiper-main .swiper-slide {
+  position: relative;
+}
+
+.intro__swiper-main .swiper-slide img {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: -1;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -2981,8 +3030,13 @@ button.button-arrow:hover {
     display: flex;
   }
 
-  .intro__left {
+  .intro__swiper-text {
+    width: 50%;
     border-right: 1px solid var(--color-border);
+  }
+
+  .intro__swiper-subtext {
+    width: min(var(--container-width) / 2, (100vw - var(--padding-global) * 2) / 2 - var(--padding-global) * 0.5);
   }
 
   .intro__content {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
 <!-- <link rel="preload" as="font" type="font/woff2" href="./fonts/Raleway-Regular.woff2" crossorigin=""> -->
-<link rel="stylesheet" href="css/style.css?t=1770158103092">
+<link rel="stylesheet" href="css/style.css?t=1770233061328">
 </head>
 
 
@@ -71,18 +71,46 @@
    <div class="intro__body blur">
       <div class="intro__container">
          <div class="intro__grid">
-            <div class="intro__left">
-               <h1 class="intro__title"><span>Покупка</span> автомобилей на крупнейших аукционах Европы</h1>
+            <div class="intro__swiper-text swiper">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <p class="intro__title"><span>Покупка</span> автомобилей на крупнейших аукционах Европы</p>
+                  </div>
+                  <div class="swiper-slide">
+                     <p class="intro__title">Трейд-ин и комиссионная <span>продажа</span></p>
+                  </div>
+                  <div class="swiper-slide">
+                     <p class="intro__title"><span>Выездная</span> диагнойстика автомобиля</p>
+                  </div>
+                  <div class="swiper-slide">
+                     <p class="intro__title">Автомобили <span>в наличии</span> в нашем салоне</p>
+                  </div>
+               </div>
             </div>
             <div class="intro__right">
-               <nav class="intro__nav blur">
-                  <a href="auction.html" class="link link-hover-underline"><span>Покупка на аукционе</span></a>
-                  <a href="diagn.html" class="link link-hover-underline"><span>Трейд-ин</span></a>
-                  <a href="diagn.html" class="link link-hover-underline"><span>выездная диагностика</span></a>
-                  <a href="selling.html" class="link link-hover-underline"><span>Авто в наличии</span></a>
-               </nav>
+               <div class="intro__nav blur">
+                  <button class="link link-hover-underline" type="button" data-index="0"><span>Покупка на аукционе</span></button>
+                  <button class="link link-hover-underline" type="button" data-index="1"><span>Трейд-ин</span></button>
+                  <button class="link link-hover-underline" type="button" data-index="2"><span>выездная диагностика</span></button>
+                  <button class="link link-hover-underline" type="button" data-index="3"><span>Авто в наличии</span></button>
+               </div>
                <div class="intro__content">
-                  <p class="intro__text">Найдем, проверим и привезем в кратчайшие сроки любой автомобиль</p>
+                  <div class="intro__swiper-subtext swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <p class="intro__text">Найдем, проверим и привезем в кратчайшие сроки любой автомобиль</p>
+                        </div>
+                        <div class="swiper-slide">
+                           <p class="intro__text">Вы можете воспользоваться услугой трейд-ин, а также продать ваш автомобиль через нас</p>
+                        </div>
+                        <div class="swiper-slide">
+                           <p class="intro__text">Мы детально и профессионально проверим автомобиль для вас перед его покупкой</p>
+                        </div>
+                        <div class="swiper-slide">
+                           <p class="intro__text">В нашем автосалоне представлен широкий выбор автомобилей с пробегом и без из Германии</p>
+                        </div>
+                     </div>
+                  </div>
                   <a href="search.html" class="button">
    <span class="button__text">подробнее</span>
    <span class="button__icon">
@@ -98,7 +126,22 @@
          </div>
       </div>
    </div>
-   <img class="intro__bg" src="./img/webp/image-2.webp" alt="Команда профессионалов Friendly Motors">
+   <div class="intro__swiper-main swiper">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            <img src="./img/webp/image-1.webp" alt="Команда профессионалов Friendly Motors">
+         </div>
+         <div class="swiper-slide">
+            <img src="./img/webp/image-2.webp" alt="Команда профессионалов Friendly Motors">
+         </div>
+         <div class="swiper-slide">
+            <img src="./img/webp/image-26.webp" alt="Команда профессионалов Friendly Motors">
+         </div>
+         <div class="swiper-slide">
+            <img src="./img/webp/image-27.webp" alt="Команда профессионалов Friendly Motors">
+         </div>
+      </div>
+   </div>
 </div>
          <section class="banner-about margin-section">
    <div class="banner-about__container">
@@ -857,9 +900,9 @@
 </div>
 
    
-<script defer src='./js/swiper.js?t=1770158103092'></script>
+<script defer src='./js/swiper.js?t=1770233061328'></script>
 
-<script defer src='./js/app.js?t=1770158103092'></script>
+<script defer src='./js/app.js?t=1770233061328'></script>
 
 
 </body>
