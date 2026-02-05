@@ -998,6 +998,22 @@ button.hover-white-inderline:hover {
 }
 
 .intro__swiper-subtext .swiper-slide {
+  pointer-events: none;
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 40px;
+}
+
+.intro__swiper-subtext .swiper-slide .intro__text {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -1005,6 +1021,12 @@ button.hover-white-inderline:hover {
 
 .intro__swiper-subtext .swiper-slide-active,
 .intro__swiper-subtext .swiper-slide-duplicate-active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.intro__swiper-subtext .swiper-slide-active .intro__text,
+.intro__swiper-subtext .swiper-slide-duplicate-active .intro__text {
   opacity: 1;
 }
 
@@ -1046,14 +1068,6 @@ button.hover-white-inderline:hover {
 .intro__content {
   padding-bottom: calc(var(--padding-global) * 0.875);
   padding-left: calc(var(--padding-global) * 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 40px;
 }
 
 .intro__content .button {
@@ -3706,6 +3720,14 @@ button.button-arrow:hover {
 
   .slider__button.prev {
     display: none;
+  }
+
+  .slider__link {
+    margin-top: 20px;
+  }
+
+  .slider__link .button {
+    width: 100%;
   }
 
   .staps__card {

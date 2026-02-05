@@ -41,5 +41,14 @@
       }
    }
 
+   &__link {
+      @media (max-width:767.98px) {
+         margin-top: 20px;
+
+         .button {
+            width: 100%;
+         }
+      }
+   }
 
 }

@@ -62,13 +62,28 @@
       }
 
       .swiper-slide {
-         opacity: 0;
-         transition: opacity 0.3s;
+         pointer-events: none;
+         visibility: hidden;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         gap: 40px;
+
+         .intro__text {
+            opacity: 0;
+            transition: opacity 0.3s;
+         }
       }
 
       .swiper-slide-active,
       .swiper-slide-duplicate-active {
-         opacity: 1;
+         pointer-events: all;
+         visibility: visible;
+
+         .intro__text {
+            opacity: 1;
+         }
+
       }
    }
 
@@ -138,9 +153,6 @@
    &__content {
       padding-bottom: calc(var(--padding-global) * 0.875);
       padding-left: calc(var(--padding-global) * 0.5);
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
 
       @media (min-width:1024px) {
          padding-top: calc(var(--padding-global) * 0.875);

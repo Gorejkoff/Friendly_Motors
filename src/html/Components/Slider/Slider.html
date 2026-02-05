@@ -5,10 +5,7 @@
             <h2 class="title-lg">@@title</h2>
             <p class="text-lg">@@text</p>
          </div>
-         @@include('../../UI/Buttons/Button/Button.html',{
-         text: 'смотреть все',
-         link:'#0'
-         })
+
       </div>
       <div class="slider__shell">
          <div class="slider__body swiper">
@@ -64,6 +61,12 @@
          button:true,
          class:'slider__button next',
          right: true
+         })
+      </div>
+      <div class="slider__link" data-da=".header-section,1,768">
+         @@include('../../UI/Buttons/Button/Button.html',{
+         text: 'смотреть все',
+         link:'#0'
          })
       </div>
    </div>
