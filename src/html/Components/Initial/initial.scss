@@ -67,6 +67,7 @@
 
    &__header {
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
 
       h1 {
@@ -117,7 +118,5 @@
       @media (min-width:2560px) {
          font-size: 36px;
       }
-
-
    }
 }

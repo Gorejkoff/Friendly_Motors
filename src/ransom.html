@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-Ransom"})
+</head>
+
+
+<body>
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
+
+            @@include('html/Components/Header/header.html',{
+            light: false
+            })
+
+            <div class="main">
+
+               @@include('html/Components/Initial/Initial.html',{
+               bg:'webp/image-18.webp',
+               title:'<span>Срочный</span><br> выкуп авто',
+               text:'Выкупим ваш автомобиль в максимально короткие сроки. Заполните форму заявки и дождитесь обратной связи нашего сотрудника',
+               href: 'services.html',
+               linktext:'услуги'
+               })
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               title:'Что включено',
+               json:'enumeration-ransom.json'
+               })
+
+               <section class="about-service margin-section">
+                  <div class="about-service__container">
+                     <div class="header-section">
+                        <h2 class="title-lg">Об услуге</h2>
+                     </div>
+                     <p class="about-service__paragraph">В нашу компанию обращаются не только с просьбой проверить или подобрать автомобиль с пробегом, но и оказать помощь в его реализации.</p>
+
+                     <div class="about-service__list">
+                        <ul>
+                           <li>Мы выкупаем автомобили напрямую, обеспечивая быструю и безопасную сделку.</li>
+                           <li>Сначала проводится экспресс-оценка автомобиля по рынку и согласование цены с клиентом.</li>
+                           <li>Далее выполняется проверка юридической чистоты и технического состояния.</li>
+                           <li>Подготавливается полный пакет документов.</li>
+                           <li>Сделка оформляется максимально оперативно, и клиент получает расчёт сразу после подписания договора.</li>
+                        </ul>
+                     </div>
+
+                  </div>
+               </section>
+
+
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               title:'обязательные условия выкупа',
+               json:'enumeration-comission-black.json',
+               black: true
+               })
+
+               @@include('html/Components/Sequence/Sequence.html',{
+               title:'Как это<br> работает',
+               json:'sequence-1.json'
+               })
+
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
+
+            </div>
+
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
+      </div>
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

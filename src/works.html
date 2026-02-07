@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Works"})
+</head>
+
+
+<body>
+
+
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
+
+            @@include('html/Components/Header/header.html',{
+            light: true
+            })
+
+            <div class="main">
+
+               @@include('html/Components/Headline/Headline.html',{
+               title:'наши работы',
+               text:'Мы искренне любим свое дело и гордимся каждым автомобилем, который проходит через руки нашей команды'
+               })
+
+               @@include('html/Components/Works/Works.html',{})
+
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
+
+            </div>
+
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
+      </div>
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: false,
+   })
+
+
+</body>
+
+</html>

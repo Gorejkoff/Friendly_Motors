@@ -1,0 +1,28 @@
+@use '../../../scss/utils' as *;
+
+.grid-cards {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 15px;
+
+   @media (min-width:768px) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8px;
+      row-gap: 24px;
+   }
+
+   @media (min-width:1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   @include size_adaptive (column-gap, 8, 12, 1366, 1920);
+   @include size_adaptive (column-gap, 12, 20, 1920, 2560);
+
+   @include size_adaptive (row-gap, 24, 40, 1366, 1920);
+   @include size_adaptive (row-gap, 40, 50, 1920, 2560);
+
+   @media (min-width:2560px) {
+      column-gap: 20px;
+      row-gap: 50px;
+   }
+}

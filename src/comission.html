@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-Comission"})
+</head>
+
+
+<body>
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
+
+            @@include('html/Components/Header/header.html',{
+            light: false
+            })
+
+            <div class="main">
+
+               @@include('html/Components/Initial/Initial.html',{
+               bg:'webp/image-18.webp',
+               title:'<span>Комиссионная</span><br> продажа',
+               text:'Нет времени или желания самостоятельно продавать автомобиль? Вы можете поставить вашу машину к нам на комиссию и мы все сделаем за вас',
+               href: 'services.html',
+               linktext:'услуги'
+               })
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               title:'Что включено',
+               json:'enumeration-comission.json'
+               })
+
+               <section class="about-service margin-section">
+                  <div class="about-service__container">
+                     <div class="header-section">
+                        <h2 class="title-lg">Об услуге</h2>
+                     </div>
+                     <p class="about-service__paragraph">В нашу компанию обращаются не только с просьбой проверить или подобрать автомобиль с пробегом, но и оказать помощь в его реализации.</p>
+
+                     <div class="about-service__list">
+                        <ul>
+                           <li>Мы принимаем ваш автомобиль на комиссию и берём на себя все задачи, связанные с продажей.</li>
+                           <li>При необходимости проводим техническое обслуживание или мелкий ремонт, чтобы максимально повысить привлекательность авто.</li>
+                           <li>Готовим машину к продаже, делаем профессиональные фото и видео.</li>
+                           <li>Размещаем объявления на открытых и закрытых площадках, в том числе аукционах.</li>
+                           <li>Общаемся с потенциальными покупателями, проводим показы и тест-драйвы.</li>
+                           <li>Обеспечиваем юридическую чистоту и полное сопровождение сделки.</li>
+                        </ul>
+                     </div>
+
+                  </div>
+               </section>
+
+               <section class="cost-service margin-section">
+                  <div class="cost-service__container">
+                     <div class="cost-service__body">
+                        <div class="cost-service__header">
+                           <h2 class="title-lg">Стоимость</h2>
+                        </div>
+                        <div class="cost-service__contant">
+                           <div class="cost-service__banners">
+                              <div class="cost-service__banner">
+                                 <div class="cost-service__banner-title">фиксированная цена</div>
+                                 <span class="cost-service__value">4% </span>
+                                 <span>от стоимости продажи автомобиля, но не менее €1000</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+
+               @@include('html/Components/Enumeration/Enumeration.html',{
+               title:'Обязательные условия комиссии',
+               json:'enumeration-comission-black.json',
+               black: true
+               })
+
+               @@include('html/Components/Sequence/Sequence.html',{
+               title:'Как это<br> работает',
+               json:'sequence-1.json',
+               maskrb: true
+               })
+
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
+
+            </div>
+
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
+      </div>
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

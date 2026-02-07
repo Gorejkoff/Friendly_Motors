@@ -1,6 +1,9 @@
 @use '../../../scss/utils' as *;
 
 .enumeration {
+   &.enumeration--black {
+      margin-bottom: var(--padding-global-25);
+   }
 
    &__container {}
 
@@ -27,6 +30,11 @@
       border-bottom: 1px solid var(--color-border-2);
       text-transform: uppercase;
 
+      .enumeration--black & {
+         color: #ffffff;
+         border-color: var(--color-border-1);
+      }
+
       @include size_adaptive (font-size, 22, 29, 1366, 1920);
       @include size_adaptive (font-size, 29, 40, 1920, 2560);
 
@@ -38,6 +46,10 @@
          @media (min-width:1024px) {
             padding-right: 40px;
             border-right: 1px solid var(--color-border-2);
+
+            .enumeration--black & {
+               border-color: var(--color-border-1);
+            }
          }
       }
 
@@ -50,6 +62,18 @@
       &>div {
          span {
             color: #DB0E0E;
+         }
+
+         .enumeration__subtext {
+            font-size: 0.6em;
+            line-height: 120%;
+            letter-spacing: -0.05em;
+            color: #696969;
+
+            @media (max-width:767.98px) {
+               margin-top: 4px;
+               display: block;
+            }
          }
       }
    }
@@ -69,6 +93,12 @@
       }
    }
 
+   &__title {
+      .enumeration--black & {
+         color: #ffffff;
+      }
+   }
+
    &__value {
       display: flex;
       align-items: flex-end;
@@ -84,5 +114,10 @@
    &__value-sign {
       font-size: 1.75em;
       line-height: 80%;
+   }
+
+   &__bg {
+      padding: var(--padding-global);
+      background-color: #1C1C1C;
    }
 }

@@ -10,6 +10,20 @@
    text-transform: uppercase;
    text-align: right;
    display: none;
+   transition: color 0.3s;
+
+   &:hover {
+      color: #DB0E0E;
+
+      svg {
+         transform: scale(1.3);
+      }
+   }
+
+   svg,
+   img {
+      transition: transform 0.3s;
+   }
 
    @media (min-width:768px) {
       display: flex;

@@ -1,5 +1,5 @@
 <div class="enumeration__card">
-   @@if(context.text){<div>@@text</div>}
+   @@if(context.text){<div>@@text @@if(context.subtext){<span class="enumeration__subtext">@@subtext</span>}</div>}
    <div class="enumeration__value">
       @@if(context.icon){<div class="enumeration__icon">
          <img src="@img/@@icon" alt="иконка">
@@ -8,4 +8,5 @@
       @@if(context.item){<div class="enumeration__value-item js-counter-animate" data-value="@@item">@@item</div>}
       @@if(context.sign){<div class="enumeration__value-sign">@@sign</div>}
    </div>
+
 </div>

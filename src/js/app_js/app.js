@@ -37,8 +37,6 @@ function throttle(callee, timeout) {
    }
 }
 
-
-
 /* запись переменных высоты элементов */
 function addHeightVariable() {
    if (typeof HEADER !== "undefined") {
@@ -59,6 +57,7 @@ window.addEventListener('resize', () => {
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.open-mobile-menu')) { openMobileMenu() }
    if (event.target.closest('.close-mobile-menu')) { closeMobileMenu() }
+   if (event.target.closest('.switching-tabs')) { setUnderlineSwitchibgTabs(event.target.closest('.switching-tabs')) }
 })
 
 function openMobileMenu() {
@@ -78,3 +77,12 @@ if (!MIN1024.matches) {
       })
    }
 }
+
+function setUnderlineSwitchibgTabs(target) {
+   const activeButton = target.querySelector('.active');
+   const offset = activeButton.offsetLeft;
+   const width = activeButton.offsetWidth;
+   target.style.setProperty('--offset-left', offset + 'px')
+   target.style.setProperty('--width-line', width + 'px')
+}
+setUnderlineSwitchibgTabs(document.querySelector('.switching-tabs'))

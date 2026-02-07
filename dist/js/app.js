@@ -37,8 +37,6 @@ function throttle(callee, timeout) {
    }
 }
 
-
-
 /* запись переменных высоты элементов */
 function addHeightVariable() {
    if (typeof HEADER !== "undefined") {
@@ -59,6 +57,7 @@ window.addEventListener('resize', () => {
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.open-mobile-menu')) { openMobileMenu() }
    if (event.target.closest('.close-mobile-menu')) { closeMobileMenu() }
+   if (event.target.closest('.switching-tabs')) { setUnderlineSwitchibgTabs(event.target.closest('.switching-tabs')) }
 })
 
 function openMobileMenu() {
@@ -79,6 +78,14 @@ if (!MIN1024.matches) {
    }
 }
 
+function setUnderlineSwitchibgTabs(target) {
+   const activeButton = target.querySelector('.active');
+   const offset = activeButton.offsetLeft;
+   const width = activeButton.offsetWidth;
+   target.style.setProperty('--offset-left', offset + 'px')
+   target.style.setProperty('--width-line', width + 'px')
+}
+setUnderlineSwitchibgTabs(document.querySelector('.switching-tabs'))
 // перемещение блоков при адаптиве
 // data-da=".class,3,768,min" 
 // класс родителя куда перемещать
@@ -742,5 +749,44 @@ class Tabs {
 const tabs = new Tabs().init();
 
 
+
+
+
+// data-button_ts="№" - у кнопки
+// data-tab_ts="№" - у сонтента
+
+class TabsSwitching {
+   constructor(button_name, tab_name, execute) {
+      this.name_button = button_name;
+      this.list_buttons = document.querySelectorAll(button_name);
+      this.list_tabs = document.querySelectorAll(tab_name);
+      this.execute = execute;
+   }
+   init = () => {
+      document.body.addEventListener('click', (event) => {
+         if (event.target.closest(this.name_button)) {
+            actionTabsSwitching(event, event.target.closest(this.name_button), this.list_buttons, this.list_tabs, this.execute)
+         }
+      })
+   }
+}
+
+function actionTabsSwitching(event, target_button, list_buttons, list_tabs, execute) {
+   let number = target_button.dataset.button_ts;
+   if (!number) return;
+   list_buttons.forEach((e) => { e.classList.toggle('active', e.dataset.button_ts == number) });
+   if (list_tabs.length > 0) { list_tabs.forEach((e) => { e.classList.toggle('active', e.dataset.tab_ts == number) }) }
+   if (execute) { this.execute(event) };
+}
+
+function addTabsSwitching(button_name, tab_name, fn_name) {
+   if (document.querySelector(button_name) && document.querySelector(tab_name)) {
+      let tab = new TabsSwitching(button_name, tab_name, fn_name);
+      tab.init();
+   }
+}
+
+addTabsSwitching('.switching-tabs__button', '.switching-tabs__content')
+// addTabsSwitching('.button_name', '.tab_name', 'fn_name')
 
 

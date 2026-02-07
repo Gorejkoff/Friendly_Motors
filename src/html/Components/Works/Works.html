@@ -1,0 +1,33 @@
+<div class="works__container">
+   <div class="switching-tabs">
+      <div class="switching-tabs__body">
+         <button type="button" class="switching-tabs__button active" data-button_ts="1">Все</button>
+         <button type="button" class="switching-tabs__button" data-button_ts="2">Подбор под ключ</button>
+         <button type="button" class="switching-tabs__button" data-button_ts="3">Выездная диагностика</button>
+         <button type="button" class="switching-tabs__button" data-button_ts="4">Покупка на аукционе</button>
+      </div>
+   </div>
+
+   <div class="switching-tabs__content active" data-tab_ts="1">
+      @@include('../Grid-Cards/Grid-Cards.html',{})
+   </div>
+   <div class="switching-tabs__content" data-tab_ts="2">
+      @@include('../Grid-Cards/Grid-Cards-2.html',{})
+   </div>
+   <div class="switching-tabs__content" data-tab_ts="3">
+      @@include('../Grid-Cards/Grid-Cards.html',{})
+   </div>
+   <div class="switching-tabs__content" data-tab_ts="4">
+      @@include('../Grid-Cards/Grid-Cards-2.html',{})
+   </div>
+
+   <div class="show-more">
+      <div class="show-more__body">
+         @@include('../../UI/Buttons/Button/Button.html',{
+         text:'показать еще',
+
+         })
+      </div>
+   </div>
+
+</div>

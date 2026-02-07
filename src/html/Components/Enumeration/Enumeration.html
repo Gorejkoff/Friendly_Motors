@@ -1,10 +1,15 @@
-<div class="enumeration margin-section">
-   <div class="enumeration__container">
-      @@if(context.title){<div class="header-section">
-         <h2 class="title-xl">@@title</h2>
-      </div>}
-      <div class="enumeration__body">
-         @@loop('./Enumeration-Card.html', 'json/lists/@@json')
-      </div>
-   </div>
+<div class="enumeration margin-section @@if(context.black){enumeration--black}">
+   @@if(context.black){<div class="enumeration__container-wide">
+      <div class="enumeration__bg mask-rt">}
+         @@if(!context.black){<div class="enumeration__container">}
+            @@if(context.title){<div class="header-section">
+               <h2 class="enumeration__title title-xl">@@title</h2>
+            </div>}
+            <div class="enumeration__body">
+               @@loop('./Enumeration-Card.html', 'json/lists/@@json')
+            </div>
+            @@ if(!context.black){
+         </div>}
+         @@if(context.black){</div>
+   </div>}
 </div>

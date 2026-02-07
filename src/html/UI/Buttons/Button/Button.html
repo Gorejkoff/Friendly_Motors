@@ -1,10 +1,12 @@
-<a href="@@link" class="button">
-   <span class="button__text">@@text</span>
-   <span class="button__icon">
-      <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <line x1="-1" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="3" />
-         <line x1="17.0607" y1="9.06066" x2="8.06066" y2="18.0607" stroke="currentColor" stroke-width="3" />
-         <line x1="16.9393" y1="11.0607" x2="7.93934" y2="2.06066" stroke="currentColor" stroke-width="3" />
-      </svg>
-   </span>
-</a>
+@@if(!context.link){<button type="button" class="button">}
+   @@if(context.link){<a href="@@link" class="button">}
+      <span class="button__text">@@text</span>
+      <span class="button__icon">
+         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="-1" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="3" />
+            <line x1="17.0607" y1="9.06066" x2="8.06066" y2="18.0607" stroke="currentColor" stroke-width="3" />
+            <line x1="16.9393" y1="11.0607" x2="7.93934" y2="2.06066" stroke="currentColor" stroke-width="3" />
+         </svg>
+      </span>
+      @@if(context.link){</a>}
+   @@if(!context.link){</button>}
