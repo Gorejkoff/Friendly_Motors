@@ -1,0 +1,40 @@
+@use '../../../scss/utils' as *;
+
+.contacts-map {
+
+   &__container {}
+
+   &__body {
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% calc(100% - var(--clip, 45px)), calc(100% - var(--clip, 45px)) 100%);
+      height: 400px;
+
+      @include size_adaptive (height, 400, 750, 1366, 2560);
+
+      @media (min-width:2560px) {
+         height: 750px;
+      }
+
+      .ymaps3x0--main-engine-container {
+         filter: grayscale(1);
+      }
+
+      [class*="container"] {
+         padding: 0;
+      }
+   }
+}
+
+.mask-lt {}
+
+.map-mark {
+   position: relative;
+
+   svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 0);
+   }
+}

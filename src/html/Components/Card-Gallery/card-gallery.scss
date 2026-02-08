@@ -1,0 +1,130 @@
+.card-gallery {
+   position: relative;
+   margin-top: calc(var(--height-header, 146px) * -1);
+   padding-top: calc(10px + var(--height-header, 146px) + var(--padding-global));
+   height: var(--vh);
+   overflow: hidden;
+
+   @media (min-width:768px) {
+      padding-top: calc(20px + var(--height-header, 146px) + var(--padding-global));
+   }
+
+   &__swiper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      .swiper-wrapper,
+      .swiper-slide {
+         height: 100%;
+      }
+   }
+
+   &__button {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+
+      &.prev {
+         left: var(--padding-global);
+      }
+
+      &.next {
+         right: var(--padding-global);
+      }
+   }
+
+   &__image {
+      position: absolute;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__thamb {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+
+      .swiper-slide {
+         position: relative;
+      }
+
+      .swiper-wrapper {
+         align-items: flex-end;
+      }
+   }
+
+   &__thamb-slide {
+      padding-bottom: 12px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      background-clip: border-box;
+      transition: padding-bottom 0.3s;
+
+
+
+      &::before {
+         content: '';
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border: 3px solid #DB0E0E;
+         opacity: 0;
+         transition: opacity 0.3s;
+
+         @media (min-width:1366px) {
+            border-width: 4px;
+         }
+
+         @media (min-width:1920px) {
+            border-width: 5px;
+         }
+
+         @media (min-width:2560px) {
+            border-width: 6px;
+         }
+      }
+
+      .swiper-slide-thumb-active &,
+      &:hover {
+         padding-bottom: 55%;
+
+         &::before {
+            opacity: 1;
+         }
+      }
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}

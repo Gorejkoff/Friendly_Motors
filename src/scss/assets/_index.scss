@@ -22,9 +22,16 @@
 @use '../../html/Components/Cost-Service/cost-service';
 @use '../../html/Components/Grid-Cards/grid-cards';
 @use '../../html/Components/Works/works';
+@use '../../html/Components/Slider-Ordinary/slider-ordinary';
+@use '../../html/Components/Info-Grid/info-grid';
+@use '../../html/Components/Founder/founder';
+@use '../../html/Components/Contacts/contacts';
+@use '../../html/Components/Contacts-Map/contacts-map';
+@use '../../html/Components/Card-Gallery/card-gallery';
 
 @use '../../html/UI/Buttons/Button/button';
 @use '../../html/UI/Card/card';
 @use '../../html/UI/Buttons/Button-Arrow/button-arrow';
 @use '../../html/UI/Tab/tab';
 @use '../../html/UI/Buttons/Link-Back/link-back';
+@use '../../html/UI/Filter/filter';

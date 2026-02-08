@@ -1,0 +1,114 @@
+@use '../../../scss/utils' as *;
+
+.founder {
+
+   &__cpntainer {}
+
+   &__title {}
+
+   &__body {
+      @media (min-width:768px) {
+         display: flex;
+         align-items: flex-end;
+      }
+   }
+
+   &__content {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      flex: 0 0 50%;
+      display: flex;
+      gap: var(--padding-global);
+
+      @media (min-width:768px) {
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      svg,
+      img {
+         width: 32px;
+         height: auto;
+
+         @media (min-width:1024px) {
+            width: 40px;
+         }
+
+         @include size_adaptive (--clip, 56, 76, 1366, 1920);
+         @include size_adaptive (--clip, 76, 100, 1920, 2560);
+
+         @media (min-width:2560px) {
+            width: 100px;
+         }
+      }
+   }
+
+   &__text {
+      font-style: italic;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.05em;
+
+      @media (max-width:767.98px) {
+         padding-top: 32px;
+      }
+
+      @include size_adaptive (font-size, 17, 24, 1366, 1920);
+      @include size_adaptive (font-size, 24, 32, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 32px;
+      }
+
+      p {
+         &:not(:last-child) {
+            margin-bottom: 1em;
+         }
+      }
+   }
+
+   &__image {
+      flex: 0 0 50%;
+
+      @media (min-width:768px) {
+         text-align: right;
+      }
+
+      img {
+         width: 100%;
+
+         @media (min-width:768px) {
+            width: 90%;
+         }
+      }
+   }
+
+   &__image-figcaption {
+      margin-top: 1em;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: -0.05em;
+
+      @media (min-width:768px) {
+         text-align: right;
+      }
+
+      @include size_adaptive (font-size, 24, 32, 1366, 1920);
+      @include size_adaptive (font-size, 32, 44, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 44px;
+      }
+
+      span {
+         display: block;
+         color: #696969;
+         font-size: 13px;
+
+         @media (min-width:768px) {
+            font-size: 0.63em;
+         }
+      }
+   }
+}

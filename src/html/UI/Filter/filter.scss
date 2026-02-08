@@ -1,252 +1,106 @@
+@use '../../../scss/utils' as *;
+
 .filter {
-   .filter-open & {
-      right: 0;
+   margin-bottom: 50px;
+   display: flex;
+   align-items: stretch;
+   gap: 20px;
+
+   &__title {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: var(--fs-md);
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #1C1C1C;
    }
 
-   &__form {}
+   &__dropdown {
+      flex: 1 1 1%;
+      position: relative;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      color: #000;
 
-   &__header {}
+      @include size_adaptive (--clip, 14, 18, 1366, 1920);
+      @include size_adaptive (--clip, 18, 24, 1920, 2560);
 
-   &__title {}
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
 
-   &__clear {
-      .clear-hidden & {
-         display: none;
+      button {
+         height: 100%;
       }
    }
 
-   &__open {
-      @media (min-width:1366px) {
-         display: none;
-      }
-   }
-
-   &__close {
-      @media (min-width:1366px) {
-         display: none;
-      }
-   }
-
-   &__body {}
-
-   &__block {}
-
-   &__category {
-      padding-top: 20px;
-      padding-bottom: 20px;
+   &__dropdown-button {
+      width: 100%;
+      min-height: 34px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      gap: 20px;
+      padding: 12px 20px;
+      background-color: #F4F4F4;
+      color: #0000004d;
 
-      span {
-         position: relative;
+      @media (min-width:1024px) {
+         min-height: 40px;
       }
 
-      &.mark span::after {
-         content: '';
-         position: absolute;
-         top: 50%;
-         right: -16px;
-         z-index: 2;
-         transform: translateY(-50%);
-         width: 6px;
-         height: 6px;
-         background-color: var(--color-green);
-         border-radius: 50%;
+      @include size_adaptive (min-height, 40, 48, 1366, 1920);
+      @include size_adaptive (min-height, 48, 65, 1920, 2560);
+
+      @media (min-width:2560px) {
+         min-height: 65px;
       }
 
-      & img {
-         transition: transform 0.2s;
+      img,
+      svg {
+         transition: transform 0.3s;
       }
 
-      .open-category & img {
-         transform: rotate3d(1, 0, 0, 180deg);
-      }
+      .js-tabs-open & {
+         color: #000000;
 
-   }
-
-   &__list {
-      li {
-         &:not(:last-child) {
-            margin-bottom: 10px;
+         svg,
+         img {
+            transform: rotate3d(1, 0, 0, 180deg);
          }
       }
    }
 
-   &__list-hidden {
-      // max-height: 0px;
-      height: 0;
-      overflow-x: visible;
-      overflow-y: hidden;
-      transition: height var(--transition-time);
-
-      .open-category & {
-         // максимальная высота открытой категории фильтра
-         //  max-height: 180px;
-      }
-   }
-
-   &__check {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-
-      input {
-         display: none;
-
-         &:checked+.filter__check-item img {
-            display: block;
-         }
-
-         &:checked~.filter__check-text {
-            color: var(--color-green)
-         }
-      }
-   }
-
-   &__check-item {
-      position: relative;
-      z-index: 2;
-      width: 28px;
-      height: 28px;
-
-      img {
-         display: none;
-      }
-   }
-
-   &__check-text {}
-
-   // диапазон
-   &__range-inputs {
-      padding-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 22px;
-
-      span {
-         height: 1px;
-         flex: 1 1 auto;
-         background-color: var(--color, green);
-      }
-   }
-
-   &__min,
-   &__max {}
-
-   &__range {
-      padding-bottom: 30px;
-   }
-
-   &__track-range {
-      --color-thumb: var(--color-green, green);
-      --color-track: var(--color-lightgrey, lightgrey);
-      position: relative;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--color-track) 0% var(--minGradient),
-            var(--color-thumb) var(--minGradient) var(--maxGradient),
-            var(--color-track) var(--maxGradient) 100%);
-   }
-
-   &__spin-min,
-   &__spin-max {
+   &__dropdown-shell {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 4px;
-      cursor: pointer;
-
-      svg,
-      img {
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         width: 40px;
-         height: 40px;
-      }
-   }
-
-   &__spin-min {
+      top: 100%;
       left: 0;
+      z-index: 5;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s;
    }
 
-   &__spin-max {
-      left: calc(100% - 4px);
-   }
+   &__dropdown-list {
+      background-color: #F4F4F4;
 
-   // кнопки
-   &__check-buttons {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-   }
+      li {
+         cursor: pointer;
+         padding: 8px 20px;
 
-   &__check-button {
-      display: block;
-      flex: 1 1 auto;
-
-      input {
-         display: none;
-
-         &:checked+span {
-            background-color: var(--color-green);
-            border-color: var(--color-green);
+         ._pc &:hover {
+            color: #ffffff;
+            background-color: #DB0E0E;
          }
       }
-
-      span {
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         border: 1px solid var(--color-gray2);
-         border-radius: 20px;
-         padding: 10px 10px 12px 10px;
-         width: 100%;
-         height: 43px;
-         transition: background-color 0.2s, border-color 0.2s;
-      }
    }
 
-   // вертикальный индикатор
-
-   &__vertical-indicator {
-      position: relative;
-      display: flex;
-   }
-
-   &__vertical-indicator-range {
-      position: relative;
-      margin-left: 15px;
-      margin-right: -16px;
-      flex: 0 0 4px;
-      background-color: var(--color-lightgrey, lightgrey);
-
-      &::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: var(--indicator-height, 0px);
-         background-color: var(--color-green, green);
-      }
-   }
-
-   &__submit {
+   &__dropdown-reset {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 62px;
-      font-size: 18px;
-      color: var(--color-white);
-      background-color: var(--color-green);
    }
 }

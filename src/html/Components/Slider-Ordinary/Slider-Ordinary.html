@@ -1,0 +1,43 @@
+<section class="slider-ordinary margin-section">
+   <div class="slider-ordinary__container">
+      <h2 class="slider-ordinary__title">Добро пожаловать в <span>Friendly Motors</span> — мы рады познакомиться и помочь вам сделать шаг навстречу вашему идеальному автомобилю</h2>
+   </div>
+   <div class="slider-ordinary__container-swiper">
+      <div class="slider-ordinary__swiper swiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <div class="slider-ordinary__image">
+                  <img src="@img/webp/image-28.webp" alt="img">
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slider-ordinary__image">
+                  <img src="@img/webp/image-29.webp" alt="img">
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slider-ordinary__image">
+                  <img src="@img/webp/image-30.webp" alt="img">
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slider-ordinary__image">
+                  <img src="@img/webp/image-32.webp" alt="img">
+               </div>
+            </div>
+         </div>
+
+         @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+         button:true,
+         class:'slider-ordinary__button prev',
+         left: true,
+         })
+         @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+         button:true,
+         class:'slider-ordinary__button next',
+         right: true
+         })
+
+      </div>
+   </div>
+</section>

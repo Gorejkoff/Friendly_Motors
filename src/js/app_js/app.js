@@ -85,4 +85,6 @@ function setUnderlineSwitchibgTabs(target) {
    target.style.setProperty('--offset-left', offset + 'px')
    target.style.setProperty('--width-line', width + 'px')
 }
-setUnderlineSwitchibgTabs(document.querySelector('.switching-tabs'))
+if (document.querySelector('.switching-tabs')) {
+   setUnderlineSwitchibgTabs(document.querySelector('.switching-tabs'))
+}

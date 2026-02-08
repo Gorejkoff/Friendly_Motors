@@ -1,0 +1,79 @@
+@use '../../../scss/utils' as *;
+
+.info-grid {
+
+   &__container {}
+
+   &__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+
+      @media (min-width:768px) {
+         gap: 20px;
+         grid-template-columns: 1fr 1fr;
+      }
+   }
+
+   &__cell {
+      padding: max(var(--padding-global), 30px);
+      background-color: rgba(217, 217, 217, 0.3);
+
+      @media (max-width:767.98px) {
+         clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+      }
+   }
+
+   &__cell-block {
+      margin-bottom: var(--margin-section);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+   }
+
+   &__cell-title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @include size_adaptive (font-size, 24, 34, 1366, 1920);
+      @include size_adaptive (font-size, 34, 45, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 45px;
+      }
+
+      span {
+         color: #DB0E0E;
+      }
+   }
+
+   &__cell-icon {
+
+      svg,
+      img {
+         width: 60px;
+         @include size_adaptive (width, 80, 100, 1366, 1920);
+         @include size_adaptive (width, 100, 130, 1920, 2560);
+
+         @media (min-width:2560px) {
+            width: 130px;
+         }
+      }
+   }
+
+   &__cell-text {
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.05em;
+
+      @include size_adaptive (font-size, 16, 22, 1366, 1920);
+      @include size_adaptive (font-size, 22, 28, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 28px;
+      }
+   }
+}

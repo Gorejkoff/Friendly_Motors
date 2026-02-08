@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Services-STO"})
+</head>
+
+
+<body>
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
+
+            @@include('html/Components/Header/header.html',{
+            light: false
+            })
+
+            <div class="main">
+
+               @@include('html/Components/Initial/Initial.html',{
+               bg:'webp/image-24.webp',
+               title:'о нас',
+               text:'<span>Friendly Motors</span> — это не просто автосалон. Это команда, которая искренне любит автомобили и стремится, чтобы каждый клиент почувствовал ту же радость, что и мы, когда находим «тот самый» автомобиль.',
+               href: 'services.html',
+               linktext:'услуги'
+               })
+
+               @@include('html/Components/Slider-Ordinary/Slider-Ordinary.html',{})
+
+               @@include('html/Components/Info-Grid/Info-Grid.html',{})
+
+               @@include('html/Components/Founder/Founder.html',{})
+
+               @@include('html/Components/Questions/Questions.html',{})
+               @@include('html/Components/Form/Form.html',{})
+
+            </div>
+
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
+      </div>
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   @@include('html/scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

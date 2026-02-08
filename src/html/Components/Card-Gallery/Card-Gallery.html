@@ -1,0 +1,81 @@
+<div class="card-gallery">
+   <div class="card-gallery__container">
+      <div class="initial__back">
+         <a href="@@href" class="initial__back-link" aria-label="назад">
+            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M7.41406 12.707L1.41406 6.70703L7.41406 0.707031" stroke="white" stroke-width="2" />
+            </svg>
+         </a>
+      </div>
+      <div class="initial__header">
+         <h1>о нас</h1>
+         @@include('../../UI/Buttons/Link-Back/Link-Back.html',{
+         href: '/',
+         text: 'главная'
+         })
+      </div>
+   </div>
+   <div class="card-gallery__swiper swiper">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            <div class="card-gallery__image">
+               <img src="@img/webp/image-13-1.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__image">
+               <img src="@img/webp/image-13-2.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__image">
+               <img src="@img/webp/image-13-3.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__image">
+               <img src="@img/webp/image-13-4.webp" alt="img">
+            </div>
+         </div>
+      </div>
+
+      @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+      button:true,
+      class:'card-gallery__button prev',
+      left: true,
+      })
+      @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+      button:true,
+      class:'card-gallery__button next',
+      right: true
+      })
+   </div>
+
+
+   <div class="card-gallery__thamb swiper">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            <div class="card-gallery__thamb-slide">
+               <img src="@img/webp/image-13-1.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__thamb-slide">
+               <img src="@img/webp/image-13-2.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__thamb-slide">
+               <img src="@img/webp/image-13-3.webp" alt="img">
+            </div>
+         </div>
+         <div class="swiper-slide">
+            <div class="card-gallery__thamb-slide">
+               <img src="@img/webp/image-13-4.webp" alt="img">
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+</div>

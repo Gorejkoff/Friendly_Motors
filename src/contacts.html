@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/head.html',{"title":"Contacts"})
+</head>
+
+
+<body>
+
+
+   <div id="scroll">
+      <div id="content">
+         <div class="wrapper">
+
+            @@include('html/Components/Header/header.html',{
+            light: true
+            })
+
+            <div class="main">
+
+               @@include('html/Components/Headline/Headline.html',{
+               title:'контакты',
+               text:'Свяжитесь с нами удобным для вас способом'
+               })
+
+               @@include('html/Components/Contacts/Contacts.html',{})
+
+               @@include('html/Components/Contacts-Map/Contacts-Map.html',{})
+
+               @@include('html/Components/Form/Form.html',{})
+
+            </div>
+
+            @@include('html/Components/Footer/footer.html',{})
+
+         </div>
+      </div>
+   </div>
+
+   @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
+
+   <script defer src="https://api-maps.yandex.ru/v3/?apikey=6f1ea5a8-bc6c-4023-a413-08b9577cdfcf&lang=ru_RU"></script>
+   <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZXtuZSmzUApCx60x90fzeoMOAyG6cqKc&callback=initMap"></script> -->
+   @@include('html/scripts.html',{
+   swiper: false
+   })
+
+
+</body>
+
+</html>

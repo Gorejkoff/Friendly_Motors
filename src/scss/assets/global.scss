@@ -63,11 +63,23 @@ body {
 
 .mask-rt {
    @media (min-width:768px) {
-      clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+      clip-path: polygon(0% 0%, calc(100% - var(--clip, 45px)) 0%, 100% var(--clip, 45px), 100% 100%, 0% 100%);
    }
 }
 
 .mask-rb {
+   @media (min-width:768px) {
+      clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--clip, 45px)), calc(100% - var(--clip, 45px)) 100%, 0% 100%);
+   }
+}
+
+.mask-lt {
+   @media (min-width:768px) {
+      clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% 100%);
+   }
+}
+
+.mask-lb {
    @media (min-width:768px) {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, var(--clip, 45px) 100%, 0% calc(100% - var(--clip, 45px)), 0% 0%);
    }

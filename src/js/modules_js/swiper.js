@@ -100,6 +100,60 @@ if (introSwiperMain &&
 }
 
 
+if (document.querySelector('.slider-ordinary__swiper')) {
+   const swiperItem = document.querySelector('.slider-ordinary__swiper');
+   const swiper = new Swiper(swiperItem, {
+      allowTouchMove: true,
+      spaceBetween: 10,
+      speed: 300,
+      slidesPerView: 1.1,
+      grabCursor: true,
+
+
+      breakpoints: {
+         1024: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+         },
+         768: {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+         }
+      },
+      navigation: {
+         nextEl: swiperItem.querySelector('.next'),
+         prevEl: swiperItem.querySelector('.prev'),
+      },
+   });
+}
+
+if (document.querySelector('.card-gallery__swiper')) {
+   const swiper = new Swiper('.card-gallery__thamb', {
+      allowTouchMove: true,
+      loop: true,
+      spaceBetween: 0,
+      speed: 300,
+      slidesPerView: 8,
+   });
+   const swiper2 = new Swiper('.card-gallery__swiper', {
+      allowTouchMove: true,
+      loop: true,
+      spaceBetween: 0,
+      speed: 300,
+      slidesPerView: 1,
+      grabCursor: true,
+      navigation: {
+         nextEl: ".next",
+         prevEl: ".prev",
+      },
+      thumbs: {
+         swiper: swiper,
+      },
+   });
+}
+
+
+
 
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
@@ -191,39 +245,3 @@ if (document.querySelector('.staps')) {
       }
    }
 }
-
-/* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
-// if (document.querySelector('.swiper')) {
-//    let swiperState;
-//    let swiper;
-//    changeStateSlider();
-//    window.addEventListener('resize', () => {
-//       changeStateSlider();
-//    })
-//    function initswiper() {
-//       swiper = new Swiper('.swiper', {
-//          keyboard: {
-//             enabled: true,
-//             onlyInViewport: true,
-//          },
-//          allowTouchMove: true,
-//          loop: false,
-//          speed: 300,
-//          slidesPerView: 1.3,
-//          spaceBetween: 24,
-//       });
-//    }
-//    function changeStateSlider() {
-//       if (!MIN768.matches) {
-//          if (!swiperState) {
-//             swiperState = true;
-//             initswiper();
-//          }
-//       } else {
-//          if (swiperState) {
-//             swiperState = false;
-//             swiper.destroy(true, true);
-//          }
-//       }
-//    }
-// }

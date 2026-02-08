@@ -1,0 +1,115 @@
+.contacts {
+
+   &__container {}
+
+   &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-size: 16px;
+
+      @media (min-width:1366px) {
+         font-size: var(--fs-md);
+      }
+
+      &>* {
+         padding-top: 14px;
+         padding-bottom: 12px;
+         border-bottom: 1px solid rgba(28, 28, 28, 0.3);
+
+         @media (min-width:1366px) {
+            padding-top: 18px;
+            padding-bottom: 12px;
+         }
+
+         @media (min-width:1920px) {
+            padding-top: 24px;
+            padding-bottom: 20px;
+         }
+
+         @media (min-width:2560px) {
+            padding-top: 30px;
+            padding-bottom: 20px;
+         }
+
+         &:nth-child(odd) {
+            padding-right: 10px;
+            border-right: 1px solid rgba(28, 28, 28, 0.3);
+         }
+
+         &:nth-child(even) {
+            padding-left: 10px;
+            text-align: right;
+         }
+      }
+   }
+
+   &__name {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @media (max-width:767.98px) {
+         color: #696969;
+      }
+   }
+
+   &__address {
+      font-weight: 600;
+      font-size: 1.375em;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-align: right;
+   }
+
+   &__phone {
+      font-weight: 500;
+      font-size: 1.25em;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-align: right;
+   }
+
+   &__mail {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+   }
+
+   &__time {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-align: right;
+
+      span {
+         color: #696969;
+      }
+   }
+
+   &__social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      text-align: right;
+
+      a {
+         display: inline-flex;
+         align-items: center;
+         gap: 8px;
+
+         img,
+         svg {
+            width: 1em;
+            height: auto;
+         }
+      }
+   }
+}
