@@ -2419,63 +2419,6 @@ input:checked + .form__checkbox-icon img {
   margin-bottom: 40px;
 }
 
-.about-service__documents {
-  --size: 81px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  border: 3px solid #DB0E0E;
-}
-
-.about-service__documents:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-.about-service__documents:not(:last-child) {
-  margin-bottom: 40px;
-}
-
-.about-service__documents-icon {
-  background-color: #DB0E0E;
-  min-height: var(--size);
-  min-width: var(--size);
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.about-service__documents-icon img,
-.about-service__documents-icon svg {
-  width: 57%;
-  height: auto;
-}
-
-.about-service__documents-text {
-  padding: 12px;
-  font-size: 13px;
-  line-height: 130%;
-  letter-spacing: -0.05em;
-}
-
-.about-service__documents-text strong {
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
 .cost-service__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3048,6 +2991,108 @@ input:checked + .form__checkbox-icon img {
      object-fit: cover;
 }
 
+.car-detailed__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.car-detailed__header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--overall-offset);
+          flex: 0 0 var(--overall-offset);
+}
+
+.car-detailed__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.car-detailed__table {
+  width: 100%;
+}
+
+.car-detailed__table table {
+  table-layout: fixed;
+}
+
+.car-detailed__table tbody,
+.car-detailed__table tr {
+  width: 100%;
+}
+
+.car-detailed__table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.car-detailed__table td:first-child {
+  padding-right: 30px;
+  color: #696969;
+  border-right: 1px solid #D9D9D9;
+}
+
+.car-detailed__table td:last-child {
+  padding-left: 30px;
+  font-weight: 600;
+}
+
+.car-detailed__columns {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.car-detailed__columns li {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  list-style: disc;
+  font-size: 13px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  color: #5d5d5d;
+}
+
+.car-detailed__text {
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: -0.05em;
+  color: #323232;
+}
+
+.car-detailed .pdf__text {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 18px;
+}
+
+.car-detailed__report {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 10px;
+}
+
 .button {
   --height: 40px;
   padding: calc(var(--height) / 4) calc(var(--height) / 2);
@@ -3507,6 +3552,60 @@ button.button-arrow:hover {
           align-items: center;
 }
 
+.pdf {
+  --size: 81px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border: 3px solid #DB0E0E;
+}
+
+.pdf__icon {
+  background-color: #DB0E0E;
+  min-height: var(--size);
+  min-width: var(--size);
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pdf__icon img,
+.pdf__icon svg {
+  width: 57%;
+  height: auto;
+}
+
+.pdf__text {
+  padding: 12px;
+  font-size: 13px;
+  line-height: 130%;
+  letter-spacing: -0.05em;
+}
+
+.pdf__text strong {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.pdf__text span {
+  font-size: 0.57em;
+  color: #696969;
+}
+
 @media (min-width: 768px) {
   [class*=container-wide] {
     padding-left: var(--padding-global-25);
@@ -3679,10 +3778,6 @@ button.button-arrow:hover {
     backdrop-filter: blur(15px);
   }
 
-  .about-service__documents {
-    width: auto;
-  }
-
   .cost-service__banner {
     width: auto;
   }
@@ -3740,6 +3835,10 @@ button.button-arrow:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  .pdf {
+    width: auto;
   }
 }
 
@@ -4009,15 +4108,6 @@ button.button-arrow:hover {
     font-size: 15px;
   }
 
-  .about-service__documents {
-    --size: 40px;
-  }
-
-  .about-service__documents-text {
-    padding: 12px 20px;
-    font-size: 15px;
-  }
-
   .cost-service__body {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -4054,8 +4144,37 @@ button.button-arrow:hover {
     width: 40px;
   }
 
+  .car-detailed__body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .car-detailed__report {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
   .filter__dropdown-button {
     min-height: 40px;
+  }
+
+  .pdf {
+    --size: 40px;
+  }
+
+  .pdf__text {
+    padding: 12px 20px;
+    font-size: 15px;
   }
 }
 
@@ -4107,10 +4226,6 @@ button.button-arrow:hover {
     margin-bottom: 24px;
   }
 
-  .about-service__documents:not(:last-child) {
-    margin-bottom: 24px;
-  }
-
   .contacts__grid {
     font-size: var(--fs-md);
   }
@@ -4122,6 +4237,11 @@ button.button-arrow:hover {
 
   .card-gallery__thamb-slide::before {
     border-width: 4px;
+  }
+
+  .car-detailed__table td {
+    padding-top: 12px;
+    padding-bottom: 10px;
   }
 }
 
@@ -4150,14 +4270,6 @@ button.button-arrow:hover {
     margin-bottom: 40px;
   }
 
-  .about-service__documents {
-    --size: 60px;
-  }
-
-  .about-service__documents:not(:last-child) {
-    margin-bottom: 40px;
-  }
-
   .cost-service__banners {
     margin-bottom: 40px;
   }
@@ -4174,6 +4286,15 @@ button.button-arrow:hover {
 
   .card-gallery__thamb-slide::before {
     border-width: 5px;
+  }
+
+  .car-detailed__table td {
+    padding-top: 17px;
+    padding-bottom: 13px;
+  }
+
+  .pdf {
+    --size: 60px;
   }
 }
 
@@ -4387,15 +4508,6 @@ button.button-arrow:hover {
     font-size: 26px;
   }
 
-  .about-service__documents {
-    --size: 73px;
-  }
-
-  .about-service__documents-text {
-    padding: 20px 30px;
-    font-size: 26px;
-  }
-
   .cost-service__banner {
     --border-width: 9px;
     font-size: 50px;
@@ -4459,6 +4571,24 @@ button.button-arrow:hover {
     border-width: 6px;
   }
 
+  .car-detailed__table td {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    font-size: 30px;
+  }
+
+  .car-detailed__columns li {
+    font-size: 28px;
+  }
+
+  .car-detailed__text {
+    font-size: 28px;
+  }
+
+  .car-detailed .pdf__text {
+    font-size: 36px;
+  }
+
   .button {
     --height: 77px;
     font-size: 24px;
@@ -4500,6 +4630,15 @@ button.button-arrow:hover {
 
   .filter__dropdown-button {
     min-height: 65px;
+  }
+
+  .pdf {
+    --size: 73px;
+  }
+
+  .pdf__text {
+    padding: 20px 30px;
+    font-size: 26px;
   }
 }
 
@@ -4557,6 +4696,10 @@ button.button-arrow:hover {
 
   .slider-ordinary__button {
     display: none !important;
+  }
+
+  .car-detailed__header h2 {
+    margin-bottom: 30px;
   }
 }
 
@@ -4839,10 +4982,6 @@ button.button-arrow:hover {
     font-size: calc(16px + (100vw - 1366px) / 554 * 4);
   }
 
-  .about-service__documents-text {
-    font-size: calc(15px + (100vw - 1366px) / 554 * 5);
-  }
-
   .cost-service__banner {
     font-size: calc(28px + (100vw - 1366px) / 554 * 10);
   }
@@ -4895,6 +5034,22 @@ button.button-arrow:hover {
     font-size: calc(24px + (100vw - 1366px) / 554 * 8);
   }
 
+  .car-detailed__table td {
+    font-size: calc(15px + (100vw - 1366px) / 554 * 7);
+  }
+
+  .car-detailed__columns li {
+    font-size: calc(15px + (100vw - 1366px) / 554 * 5);
+  }
+
+  .car-detailed__text {
+    font-size: calc(15px + (100vw - 1366px) / 554 * 5);
+  }
+
+  .car-detailed .pdf__text {
+    font-size: calc(19px + (100vw - 1366px) / 554 * 7);
+  }
+
   .button {
     --height: calc(40px + (100vw - 1366px) / 554 * 18);
   }
@@ -4945,6 +5100,10 @@ button.button-arrow:hover {
 
   .filter__dropdown-button {
     min-height: calc(40px + (100vw - 1366px) / 554 * 8);
+  }
+
+  .pdf__text {
+    font-size: calc(15px + (100vw - 1366px) / 554 * 5);
   }
 }
 
@@ -5153,10 +5312,6 @@ button.button-arrow:hover {
     font-size: calc(20px + (100vw - 1920px) / 640 * 6);
   }
 
-  .about-service__documents-text {
-    font-size: calc(20px + (100vw - 1920px) / 640 * 6);
-  }
-
   .cost-service__banner {
     font-size: calc(38px + (100vw - 1920px) / 640 * 12);
   }
@@ -5209,6 +5364,22 @@ button.button-arrow:hover {
     font-size: calc(32px + (100vw - 1920px) / 640 * 12);
   }
 
+  .car-detailed__table td {
+    font-size: calc(22px + (100vw - 1920px) / 640 * 8);
+  }
+
+  .car-detailed__columns li {
+    font-size: calc(20px + (100vw - 1920px) / 640 * 8);
+  }
+
+  .car-detailed__text {
+    font-size: calc(20px + (100vw - 1920px) / 640 * 8);
+  }
+
+  .car-detailed .pdf__text {
+    font-size: calc(26px + (100vw - 1920px) / 640 * 10);
+  }
+
   .button {
     --height: calc(58px + (100vw - 1920px) / 640 * 19);
   }
@@ -5259,6 +5430,10 @@ button.button-arrow:hover {
 
   .filter__dropdown-button {
     min-height: calc(48px + (100vw - 1920px) / 640 * 17);
+  }
+
+  .pdf__text {
+    font-size: calc(20px + (100vw - 1920px) / 640 * 6);
   }
 }
 

@@ -28,6 +28,7 @@
 @use '../../html/Components/Contacts/contacts';
 @use '../../html/Components/Contacts-Map/contacts-map';
 @use '../../html/Components/Card-Gallery/card-gallery';
+@use '../../html/Components/Car-Detailed/car-detailed';
 
 @use '../../html/UI/Buttons/Button/button';
 @use '../../html/UI/Card/card';
@@ -35,3 +36,4 @@
 @use '../../html/UI/Tab/tab';
 @use '../../html/UI/Buttons/Link-Back/link-back';
 @use '../../html/UI/Filter/filter';
+@use '../../html/UI/Pdf/pdf';

@@ -1,0 +1,72 @@
+@use '../../../scss/utils' as *;
+
+.pdf {
+   --size: 81px;
+   display: inline-flex;
+   align-items: center;
+   width: 100%;
+   border: 3px solid #DB0E0E;
+
+   @media (min-width:768px) {
+      width: auto;
+   }
+
+   @media (min-width:1024px) {
+      --size: 40px;
+   }
+
+   @media (min-width:1920px) {
+      --size: 60px;
+   }
+
+   @media (min-width:2560px) {
+      --size: 73px;
+   }
+
+   &__icon {
+      background-color: #DB0E0E;
+      min-height: var(--size);
+      min-width: var(--size);
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img,
+      svg {
+         width: 57%;
+         height: auto;
+      }
+   }
+
+   &__text {
+      padding: 12px;
+      font-size: 13px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+
+      @media (min-width:1024px) {
+         padding: 12px 20px;
+         font-size: 15px;
+      }
+
+      @include size_adaptive (font-size, 15, 20, 1366, 1920);
+      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+
+      @media (min-width:2560px) {
+         padding: 20px 30px;
+         font-size: 26px;
+      }
+
+      strong {
+         font-weight: 600;
+         text-transform: uppercase;
+         text-decoration: underline;
+      }
+
+      span {
+         font-size: 0.57em;
+         color: #696969;
+      }
+   }
+}

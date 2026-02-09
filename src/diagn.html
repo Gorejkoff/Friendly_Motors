@@ -51,12 +51,9 @@
                         </ul>
                      </div>
                      <p class="about-service__addition">Дополнительно мы запрашиваем данные в дилерской базе и предоставляем клиенту выгрузку по истории обслуживания автомобиля.</p>
-                     <div class="about-service__documents">
-                        <div class="about-service__documents-icon">
-                           <img src="@img/svg/pdf.svg" alt="pdf">
-                        </div>
-                        <div class="about-service__documents-text">По результатам осмотра клиент получает готовый <strong>PDF-документ</strong> с подробными разделами по каждому этапу диагностики.</div>
-                     </div>
+                     @@include('html/UI/Pdf/Pdf.html',{
+                     text:'По результатам осмотра клиент получает готовый <strong>PDF-документ</strong> с подробными разделами по каждому этапу диагностики.'
+                     })
                   </div>
                </section>
 
