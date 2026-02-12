@@ -30,7 +30,7 @@
    &__body {
       display: flex;
       align-items: stretch;
-      min-height: var(--height-header);
+      min-height: var(--header-height);
 
       @media (max-width:1023.98px) {
          gap: 10px;

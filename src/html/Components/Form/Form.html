@@ -62,7 +62,15 @@
                </label>
                @@include('../../UI/Buttons/Button/Button.html',{
                text:'отправить',
-               link:'#0'
+               class:'form__button-sent'
+               })
+            </div>
+            <div class="form__sent">
+               <img class="form__sent-image" src="@img/webp/image-29.webp" alt="сотрудник за компьютером">
+               <div class="form__sent-title title-lg">Заявка успешно отправлена!</div>
+               @@include('../../UI/Buttons/Button/Button.html',{
+               text:'закрыть',
+               class:'form__sent-close'
                })
             </div>
          </form>

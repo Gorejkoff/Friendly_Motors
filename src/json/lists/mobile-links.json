@@ -1,6 +1,6 @@
 [
    {
-      "link": "#0",
+      "link": "about.html",
       "text": "О нас"
    },
    {
@@ -8,15 +8,15 @@
       "text": "Услуги"
    },
    {
-      "link": "#0",
+      "link": "works.html",
       "text": "Наши работы"
    },
    {
-      "link": "#0",
+      "link": "selling.html",
       "text": "Авто в продаже"
    },
    {
-      "link": "#0",
+      "link": "contacts.html",
       "text": "Контакты"
    }
 ]

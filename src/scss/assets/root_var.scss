@@ -30,7 +30,7 @@
    --padding-global: 20px;
    --padding-global-25: 10px;
    --padding-global-75: 20px;
-   --height-header: 86px;
+   --header-height: 86px;
 
    @include size_adaptive (--padding-global, 20, 40, 768, 1366);
    @include size_adaptive (--padding-global, 40, 60, 1366, 1920);
@@ -57,8 +57,8 @@
    @include size_adaptive (--clip, 24, 34, 1366, 1920);
    @include size_adaptive (--clip, 34, 45, 1920, 2560);
 
-   @include size_adaptive (--height-header, 86, 120, 1366, 1920);
-   @include size_adaptive (--height-header, 120, 162, 1920, 2560);
+   @include size_adaptive (--header-height, 86, 120, 1366, 1920);
+   @include size_adaptive (--header-height, 120, 162, 1920, 2560);
 
    @media (min-width:1366px) {
       --padding-global-25: calc(var(--padding-global) * 0.25);
@@ -66,7 +66,7 @@
    }
 
    @media (min-width:2560px) {
-      --height-header: 162px;
+      --header-height: 162px;
       --padding-global: 80px;
       --margin-section: 100px;
       --link-fs: 26px;

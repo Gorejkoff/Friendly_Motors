@@ -1,4 +1,4 @@
-<section class="banner-offer margin-section">
+<section class="banner-offer margin-section banner-offer__action">
    <div class="banner-offer__container">
       <div class="banner-offer__body">
          <img class="banner-offer__background" src="@img/webp/image-25.webp" alt="фон" aria-hidden="true">
@@ -17,7 +17,78 @@
             <div>
                @@include('../../UI/Buttons/Button/Button.html',{
                text:'подробнее',
-               link:'#0'
+               class:'banner-offer__button-action'
+               })
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="banner-offer margin-section banner-offer__form hide">
+   <div class="banner-offer__container">
+      <div class="banner-offer__body">
+         <img class="banner-offer__background" src="@img/webp/image-25.webp" alt="фон" aria-hidden="true">
+         <div class="banner-offer__title">
+            <h2>Оставить заявку</h2>
+            <div class="form__grid columns-2">
+               <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+               <input class="form__input" type="tel" name="phone" placeholder="Номер телефона">
+            </div>
+            <textarea class="form__textarea" name="message" placeholder="Сообщение"></textarea>
+            <div class="form__actions">
+               <label class="form__checkbox">
+                  <input type="checkbox" name="rules" hidden>
+                  <span class="form__checkbox-icon">
+                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.03813 7.2773L12.3155 0L13.435 1.11958L5.03813 9.51645L0 4.47836L1.11959 3.35879L5.03813 7.2773Z" fill="currentColor" />
+                     </svg>
+                  </span>
+                  <span class="form__checkbox-text">С <a href="#0">Правилами конфиденциальности</a> хранением личных данных ознакомлен и согласен</span>
+               </label>
+               @@include('../../UI/Buttons/Button/Button.html',{
+               text:'отправить',
+               class:'form__button-sent banner-offer__button-sent'
+               })
+            </div>
+         </div>
+         <div class="banner-offer__contant">
+            <div>
+               <div class="banner-offer__info">
+                  При заказе <span>3-х</span> выездных диагностик
+               </div>
+               <div class="banner-offer__text">
+                  Проверка по дилерской базе обслуживания автомобиля — <strong>бесплатно</strong>
+               </div>
+            </div>
+            <div>
+               <div class="banner-offer__subtext">
+                  Количество информации зависит от марки и модели автомобиля.<br>
+                  Проверка по дилерской базе доступна не для всех брендов.
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="banner-offer margin-section banner-offer__close hide">
+   <div class="banner-offer__container">
+      <div class="banner-offer__body">
+         <img class="banner-offer__background" src="@img/webp/image-25.webp" alt="фон" aria-hidden="true">
+         <div class="banner-offer__title">
+            <h2>Благодарим за вашу заявку!</h2>
+         </div>
+         <div class="banner-offer__contant">
+            <div>
+               <div class="banner-offer__text">
+                  В ближайшее время мы свяжемся с вами!
+               </div>
+            </div>
+            <div>
+               @@include('../../UI/Buttons/Button/Button.html',{
+               text:'Закрыть',
+               class:'banner-offer__button-close'
                })
             </div>
          </div>

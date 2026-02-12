@@ -58,6 +58,47 @@ document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.open-mobile-menu')) { openMobileMenu() }
    if (event.target.closest('.close-mobile-menu')) { closeMobileMenu() }
    if (event.target.closest('.switching-tabs')) { setUnderlineSwitchibgTabs(event.target.closest('.switching-tabs')) }
+   // в "оставить заявку" показать "Заявка успешно отправлена!"
+   if (event.target.closest('.form__button-sent')) {
+      const sentItem = document.querySelector('.form__sent');
+      if (sentItem) { sentItem.classList.add('visible') }
+   }
+   // в "оставить заявку" скрыть "Заявка успешно отправлена!"
+   if (event.target.closest('.form__sent-close')) {
+      const sentItem = document.querySelector('.form__sent');
+      if (sentItem) { sentItem.classList.remove('visible') }
+   }
+   // переключение блоков banner-offer
+   if (event.target.closest('.banner-offer__button-action')) {
+      const action = document.querySelector('.banner-offer__action');
+      const form = document.querySelector('.banner-offer__form');
+      const close = document.querySelector('.banner-offer__close');
+      if (action && form && close) {
+         action.classList.add('hide');
+         form.classList.remove('hide');
+         close.classList.add('hide');
+      }
+   }
+   if (event.target.closest('.banner-offer__button-sent')) {
+      const action = document.querySelector('.banner-offer__action');
+      const form = document.querySelector('.banner-offer__form');
+      const close = document.querySelector('.banner-offer__close');
+      if (action && form && close) {
+         action.classList.add('hide');
+         form.classList.add('hide');
+         close.classList.remove('hide');
+      }
+   }
+   if (event.target.closest('.banner-offer__button-close')) {
+      const action = document.querySelector('.banner-offer__action');
+      const form = document.querySelector('.banner-offer__form');
+      const close = document.querySelector('.banner-offer__close');
+      if (action && form && close) {
+         action.classList.remove('hide');
+         form.classList.add('hide');
+         close.classList.add('hide');
+      }
+   }
 })
 
 function openMobileMenu() {
@@ -88,3 +129,19 @@ function setUnderlineSwitchibgTabs(target) {
 if (document.querySelector('.switching-tabs')) {
    setUnderlineSwitchibgTabs(document.querySelector('.switching-tabs'))
 }
+
+let lastWidth = window.innerWidth;
+function setVH() {
+   const h = document.body.offsetHeight;
+   document.body.style.setProperty('--vh', h + 'px');
+}
+if (!MIN1024.matches) {
+   setVH();
+}
+window.addEventListener('resize', () => {
+   const currentWidth = window.innerWidth;
+   if (!MIN1024.matches && currentWidth !== lastWidth) {
+      setVH()
+   }
+   lastWidth = window.innerWidth;
+})
