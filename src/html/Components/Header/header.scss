@@ -30,19 +30,13 @@
    &__body {
       display: flex;
       align-items: stretch;
-      min-height: 86px;
+      min-height: var(--height-header);
 
       @media (max-width:1023.98px) {
          gap: 10px;
          justify-content: space-between;
       }
 
-      @include size_adaptive (min-height, 86, 120, 1366, 1920);
-      @include size_adaptive (min-height, 120, 162, 1920, 2560);
-
-      @media (min-width:2560px) {
-         min-height: 162px;
-      }
    }
 
    &__logo {

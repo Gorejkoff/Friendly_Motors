@@ -1,0 +1,168 @@
+<div id="modal-work" class="modal js-modal-hidden js-modal-close">
+
+   <div class="modal__header-container js-modal-stop-close">
+      <div class="modal__header">
+         <div class="modal__header-logo">
+            <img src="@img/svg/logo-1-2.svg" alt="логотип friendly-Motors">
+         </div>
+         <div>
+            <button class="modal__header-close js-modal-close" type="button">
+               <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.66162" width="27" height="2" transform="rotate(45 1.66162 0)" fill="currentColor" />
+                  <rect y="19.3438" width="27" height="2" transform="rotate(-45 0 19.3438)" fill="currentColor" />
+               </svg>
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <div class="modal__container">
+      <div class="modal__body js-modal-stop-close">
+         <div class="modal__swiper-body">
+            <div class="modal__swiper-thumb swiper">
+               <div class="swiper-wrapper">
+                  <div class="-thumb swiper-slide">
+                     <div class="modal__swiper-image-thumb">
+                        <img src="@img/webp/porsche-1.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class="-thumb swiper-slide">
+                     <div class="modal__swiper-image-thumb">
+                        <img src="@img/webp/porsche-2.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class="-thumb swiper-slide">
+                     <div class="modal__swiper-image-thumb">
+                        <img src="@img/webp/porsche-3.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class="-thumb swiper-slide">
+                     <div class="modal__swiper-image-thumb">
+                        <img src="@img/webp/porsche-4.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class="-thumb swiper-slide">
+                     <div class="modal__swiper-image-thumb">
+                        <img src="@img/webp/porsche-5.webp" alt="auto">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal__content">
+            <button class="modal__close js-modal-close" type="button">
+               <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.66162" width="27" height="2" transform="rotate(45 1.66162 0)" fill="currentColor" />
+                  <rect y="19.3438" width="27" height="2" transform="rotate(-45 0 19.3438)" fill="currentColor" />
+               </svg>
+            </button>
+            <div class="modal__title">Porsche 997 911 GT3</div>
+            <div class="modal__services">
+               <div class="modal__services-name">услуга</div>
+               <div class="modal__services-value">поиск авто под ключ</div>
+            </div>
+            <div class="modal__block">
+               <div class="modal__block-title">характеристики</div>
+               <table class="modal__block-table" cellspacing="0" cellpadding="0">
+                  <tbody>
+                     <tr>
+                        <td>Марка</td>
+                        <td>Porsche</td>
+                     </tr>
+                     <tr>
+                        <td>модель</td>
+                        <td>997 911 GT3</td>
+                     </tr>
+                     <tr>
+                        <td>Год выпуска</td>
+                        <td>01/2008</td>
+                     </tr>
+                     <tr>
+                        <td>Пробег</td>
+                        <td>29 580 km</td>
+                     </tr>
+                     <tr>
+                        <td>Цена</td>
+                        <td>€139 890</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="modal__swiper swiper" data-da=".modal__swiper-body,0,1024">
+               <div class="swiper-wrapper">
+                  <div class=" swiper-slide">
+                     <div class="modal__swiper-image">
+                        <img src="@img/webp/porsche-1.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class=" swiper-slide">
+                     <div class="modal__swiper-image">
+                        <img src="@img/webp/porsche-2.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class=" swiper-slide">
+                     <div class="modal__swiper-image">
+                        <img src="@img/webp/porsche-3.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class=" swiper-slide">
+                     <div class="modal__swiper-image">
+                        <img src="@img/webp/porsche-4.webp" alt="auto">
+                     </div>
+                  </div>
+                  <div class=" swiper-slide">
+                     <div class="modal__swiper-image">
+                        <img src="@img/webp/porsche-5.webp" alt="auto">
+                     </div>
+                  </div>
+               </div>
+
+               @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+               button:true,
+               class:'modal__swiper-button prev',
+               left: true,
+               })
+               @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{
+               button:true,
+               class:'modal__swiper-button next',
+               right: true
+               })
+
+            </div>
+            <div class="modal__block">
+               <div class="modal__block-title">Запрос клиента</div>
+               <div class="modal__block-text">Основные требования клиента к искомому автомобилю:</div>
+               <ul class="modal__block-list">
+                  <li>ПТС оригинал</li>
+                  <li>Не старше 2024 года</li>
+                  <li>Не более двух владельцев</li>
+                  <li>Пробег не более 20.000 км.</li>
+                  <li>Без ДТП, Заводское ЛКП</li>
+                  <li>Комплектация luxury</li>
+                  <li>Два комплекта резины ( Зима+лето)</li>
+               </ul>
+            </div>
+            <div class="modal__block">
+               <div class="modal__block-title">Состояние автомобиля</div>
+               <div class="modal__block-text">Что было проверено и обнаружено в результате осмотра автомобиля:</div>
+               <ul class="modal__block-list">
+                  <li>ПТС оригинал, два хозяина, полный комплект ключей.</li>
+                  <li>Без ДТП, один окрас заднего крыла вторым слоем.</li>
+                  <li>Хорошее техническое состояние</li>
+                  <li>Два комплекта резины</li>
+                  <li>Очень богатая комплектация</li>
+                  <li>Полный комплект ключей</li>
+                  <li>Не скрученный пробег</li>
+                  <li>Диллерское авто</li>
+               </ul>
+            </div>
+            <div class="modal__button">
+               @@include('../../UI/Buttons/Button/Button.html',{
+               text:'закрыть',
+               class:'js-modal-close'
+               })
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

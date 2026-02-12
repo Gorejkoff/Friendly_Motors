@@ -152,8 +152,39 @@ if (document.querySelector('.card-gallery__swiper')) {
    });
 }
 
+if (document.querySelector('.modal__swiper') && document.querySelector('.modal__swiper-thumb')) {
 
 
+   const swiper_thumb = new Swiper('.modal__swiper-thumb', {
+      allowTouchMove: true,
+      speed: 300,
+      slidesPerView: 5,
+      grabCursor: true,
+      // navigation: {
+      //    nextEl: ".next",
+      //    prevEl: ".prev",
+      // },
+   });
+
+   const swiperItem = document.querySelector('.modal__swiper');
+   const swiper = new Swiper(swiperItem, {
+      allowTouchMove: true,
+      speed: 300,
+      slidesPerView: 1,
+      grabCursor: true,
+      thumbs: {
+         swiper: swiper_thumb,
+      },
+      navigation: {
+         nextEl: swiperItem.querySelector('.next'),
+         prevEl: swiperItem.querySelector('.prev'),
+      },
+   });
+
+
+
+
+}
 
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
