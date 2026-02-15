@@ -2,9 +2,9 @@
    <div class="sequence__container-wide">
       <div class="sequence__body @@if(!context.masklb){mask-lt}@@if(context.masklb){mask-lb}">
          <div class="sequence__header">
-            <h2 class="title-lg">@@title</h2>
+            <h2 class="title-lg js-text-animate">@@title</h2>
          </div>
-         <div class="sequence__content">
+         <div class="sequence__content js-animate-opacity">
             <ol>
                @@loop('./Sequence-Item.html', 'json/lists/@@json')
             </ol>

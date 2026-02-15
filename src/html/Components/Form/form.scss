@@ -192,11 +192,18 @@
       font-weight: 300;
       line-height: 130%;
       letter-spacing: -0.05em;
+      text-transform: none;
 
       a {
          font-weight: 500;
          text-transform: uppercase;
          text-decoration: underline;
+         transition: color 0.3s, text-decoration-color 0.3s;
+
+         &:hover {
+            color: #DB0E0E;
+            text-decoration-color: transparent;
+         }
       }
    }
 
@@ -339,6 +346,12 @@
 
       &.visible {
          display: flex;
+      }
+
+      @media (max-width:767.98px) {
+         .button {
+            width: 100%;
+         }
       }
    }
 

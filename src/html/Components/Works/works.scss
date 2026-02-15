@@ -6,12 +6,21 @@
 
    &__body {
       position: relative;
-      margin-bottom: 50px;
-      padding-bottom: 36px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
       min-width: max-content;
       display: flex;
       gap: 50px;
       border-bottom: 1px solid #1C1C1C;
+      @include size_adaptive (margin-bottom, 20, 40, 1366, 1920);
+      @include size_adaptive (margin-bottom, 40, 50, 1920, 2560);
+      @include size_adaptive (padding-bottom, 15, 20, 1366, 1920);
+      @include size_adaptive (padding-bottom, 20, 36, 1920, 2560);
+
+      @media (min-width:2560px) {
+         padding-bottom: 36px;
+         margin-bottom: 50px;
+      }
 
       &::before {
          content: '';

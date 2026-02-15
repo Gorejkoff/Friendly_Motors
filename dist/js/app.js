@@ -99,6 +99,25 @@ document.documentElement.addEventListener("click", (event) => {
          close.classList.add('hide');
       }
    }
+
+   // включает событие pointer-events, смена цвета шрифта #filter-model, #filter-brand
+   if (event.target.closest('#filter-brand .js-data-get')) {
+      const filter_model = document.querySelector('#filter-model');
+      const filter_brand = document.querySelector('#filter-brand');
+      if (filter_brand) filter_brand.classList.remove('choice-not-made');
+      if (filter_model) filter_model.classList.remove('disabled');
+   }
+   if (event.target.closest('#filter-model .js-data-get')) {
+      const filter_model = document.querySelector('#filter-model');
+      if (filter_model) filter_model.classList.remove('choice-not-made');
+   }
+   if (event.target.closest('.filter__open')) {
+      const filter = document.getElementById('filter');
+      console.log(filter);
+      if (filter) {
+         filter.classList.add('filter-visible');
+      }
+   }
 })
 
 function openMobileMenu() {
@@ -145,6 +164,7 @@ window.addEventListener('resize', () => {
    }
    lastWidth = window.innerWidth;
 })
+
 // перемещение блоков при адаптиве
 // data-da=".class,3,768,min" 
 // класс родителя куда перемещать
@@ -268,37 +288,7 @@ document.addEventListener('click', (event) => {
 
 var smoother;
 
-// function textWpapSpan(element) {
-//    const listSpan = element.querySelectorAll('span');
-//    listSpan.forEach(element => {
-//       const words = element.innerHTML.trim().split(' ');
-//       const wordWrap = words.map(item => { return item.split('').map(e => { return `<span class="letter">${e}</span>` }).join('') })
-//       element.innerHTML = `<span class="word">${wordWrap.join('</span>&#32;<span class="word">')}</span>`
-//    })
-// }
-
-// function addTextAnimatePin(name) {
-//    textWpapSpan(element)
-//    let tl = gsap.timeline({
-//       scrollTrigger: {
-//          trigger: `${name}`,
-//          start: "0% 0%",
-//          end: `100% 0%`,
-//          pin: true,
-//          scrub: true,
-//       }
-//    })
-//    const text = document.querySelectorAll(`${name} .letter`);
-//    text && text.forEach((e) => {
-//       tl.to(e, 1, { opacity: 1 })
-//    })
-// }
-
-
-
-
-
-function addTextAnimate(element) {
+function addTextAnimate(element, fast) {
    wrapLetters(element)
    let tl = gsap.timeline({
       scrollTrigger: {
@@ -306,15 +296,15 @@ function addTextAnimate(element) {
          start: "0% 90%",
          end: `0% 5%`,
          // scrub: true,
+         toggleActions: "play none none reverse"
       }
    })
    const text = element.querySelectorAll(`.letter`);
    text && text.forEach((element, index) => {
-      tl.to(element, { y: 0, rotate: 0, duration: 0.1 }, index === 0 ? 0 : `-=${0.06}`)
+      tl.to(element, { y: 0, rotate: 0, duration: 0.1 }, index === 0 ? 0 : `-=${fast ? 0.09 : 0}`)
    })
 }
 
-// обворачивает буквы так же если есть вложенные теги
 function wrapLetters(element) {
    function wrapper(element) {
       const words = element.innerHTML.trim().split(' ');
@@ -376,6 +366,65 @@ function animateSmallCounter(element, target) {
    return animation;
 }
 
+function bottomToTop(element) {
+   gsap.fromTo(element,
+      {
+         y: 200,
+         opacity: 0
+      },
+      {
+         y: 0,
+         opacity: 1,
+         duration: 0.5,
+         scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "top 20%",
+            toggleActions: "play none none reverse"
+         }
+      }
+   );
+}
+function opacity(element) {
+   gsap.fromTo(element,
+      {
+         opacity: 0
+      },
+      {
+         opacity: 1,
+         duration: 0.5,
+         scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            end: "top 15%",
+            toggleActions: "play none none reverse"
+         }
+      }
+   );
+}
+
+function servicesAnimate() {
+   const services_grid = document.querySelector('.services__grid')
+   if (!services_grid) return;
+   let tl = gsap.timeline({
+      scrollTrigger: {
+         trigger: services_grid,
+         start: "0% 90%",
+         end: `0% 5%`,
+         // scrub: true,
+         toggleActions: "play none none reverse"
+      }
+   })
+   const list = services_grid.querySelectorAll(`.services__card`);
+   if (list.length <= 0) return;
+   list && list.forEach((item, index) => {
+      tl.fromTo(item, { x: '-300%', opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, `-=0.2`)
+   })
+
+}
+
+
+
 window.addEventListener('load', function (event) {
    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);/* , ScrollToPlugin */
 
@@ -393,30 +442,19 @@ window.addEventListener('load', function (event) {
       })
    }
 
-
-   // прокрутка по якорям
-   // document.body.addEventListener('click', (event) => {
-   //    if (event.target.closest('[href^="#"]')) {
-   //       event.preventDefault();
-   //       let getName = event.target.closest('[href^="#"]').getAttribute('href');
-   //       closeHeaderMenu();
-   //       gsap.to(window, { scrollTo: getName, ease: "power2" })
-   //    }
-   // })
-
-
-
-
-   // инициализация анимации текста
-   // const ANIMATE_PIN = document.querySelectorAll('.js-text-animate-pin');
-   // ANIMATE_PIN.forEach(element => { addTextAnimate(element) });
+   servicesAnimate()
 
    const ANIMATE_FREE = document.querySelectorAll('.js-text-animate');
-   if (ANIMATE_FREE.length > 0) { ANIMATE_FREE.forEach(element => addTextAnimate(element)) }
+   if (ANIMATE_FREE.length > 0) { ANIMATE_FREE.forEach(element => addTextAnimate(element, true)) }
 
-   // анимация счетчика
    const counterList = document.querySelectorAll('.js-counter-animate');
    if (counterList.length > 0) { counterList.forEach(e => animateSmallCounter(e, e.dataset.value)) }
+
+   const toTop = this.document.querySelectorAll('.js-animate-to-top');
+   if (toTop.length > 0) toTop.forEach((e) => bottomToTop(e));
+
+   const opacityList = this.document.querySelectorAll('.js-animate-opacity');
+   if (opacityList.length > 0) opacityList.forEach((e) => opacity(e));
 
 
    const stapsList = this.document.querySelectorAll('.staps__card');
@@ -440,11 +478,7 @@ window.addEventListener('load', function (event) {
             delay: index * 0.3 // задержка между карточками
          }, index * 0.1); // на timeline смещение
       });
-
    }
-
-
-
 })
 // map
 const mapContainer = document.querySelector('#map');

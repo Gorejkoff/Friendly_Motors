@@ -99,6 +99,25 @@ document.documentElement.addEventListener("click", (event) => {
          close.classList.add('hide');
       }
    }
+
+   // включает событие pointer-events, смена цвета шрифта #filter-model, #filter-brand
+   if (event.target.closest('#filter-brand .js-data-get')) {
+      const filter_model = document.querySelector('#filter-model');
+      const filter_brand = document.querySelector('#filter-brand');
+      if (filter_brand) filter_brand.classList.remove('choice-not-made');
+      if (filter_model) filter_model.classList.remove('disabled');
+   }
+   if (event.target.closest('#filter-model .js-data-get')) {
+      const filter_model = document.querySelector('#filter-model');
+      if (filter_model) filter_model.classList.remove('choice-not-made');
+   }
+   if (event.target.closest('.filter__open')) {
+      const filter = document.getElementById('filter');
+      console.log(filter);
+      if (filter) {
+         filter.classList.add('filter-visible');
+      }
+   }
 })
 
 function openMobileMenu() {

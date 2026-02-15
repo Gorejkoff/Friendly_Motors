@@ -1,6 +1,11 @@
 @use '../../../scss/utils' as *;
 
 .founder {
+   @media (max-width:767.98px) {
+      .header-section {
+         margin-bottom: 0;
+      }
+   }
 
    &__cpntainer {}
 
@@ -87,7 +92,7 @@
       margin-top: 1em;
       font-weight: 500;
       font-size: 16px;
-      line-height: 140%;
+      line-height: 100%;
       letter-spacing: -0.05em;
 
       @media (min-width:768px) {

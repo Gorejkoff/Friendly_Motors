@@ -3,9 +3,9 @@
       <div class="enumeration__bg mask-lt">}
          @@if(!context.black){<div class="enumeration__container">}
             @@if(context.title){<div class="header-section">
-               <h2 class="enumeration__title title-xl">@@title</h2>
+               <h2 class="enumeration__title title-xl js-text-animate">@@title</h2>
             </div>}
-            <div class="enumeration__body">
+            <div class="enumeration__body js-animate-opacity">
                @@loop('./Enumeration-Card.html', 'json/lists/@@json')
             </div>
             @@ if(!context.black){

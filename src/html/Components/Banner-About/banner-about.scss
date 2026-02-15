@@ -30,7 +30,7 @@
    &__title {
       font-weight: 500;
       font-size: 26px;
-      line-height: 100%;
+      line-height: 78%;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       @include size_adaptive (font-size, 42, 60, 1366, 1920);

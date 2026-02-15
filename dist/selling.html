@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
 <!-- <link rel="preload" as="font" type="font/woff2" href="./fonts/Raleway-Regular.woff2" crossorigin=""> -->
-<link rel="stylesheet" href="css/style.css?t=1770927453693">
+<link rel="stylesheet" href="css/style.css?t=1771196711791">
 </head>
 
 
@@ -92,10 +92,10 @@
                <div class="selling">
    <div class="selling__container">
 
-      <div class="filter">
+      <div id="filter" class="filter">
    <div class="filter__title">Фильтр</div>
 
-   <div class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope">
+   <div id="filter-brand" class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope choice-not-made">
       <button class="filter__dropdown-button " type="button">
          <span class="js-data-replace">Выберите бренд автомобиля</span>
          <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@
    </div>
 
 
-   <div class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope">
+   <div id="filter-model" class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope disabled choice-not-made">
       <button class="filter__dropdown-button " type="button">
          <span class="js-data-replace">Выберите модель</span>
          <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +141,7 @@
    <div class="filter__dropdown-reset">
       <button type="button" class="button ">
    
-      <span class="button__text">Сбросить</span>
+      <span class="button__text">oчистить</span>
       <span class="button__icon">
          <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="-1" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="3" />
@@ -151,19 +151,32 @@
       </span>
       
    </button>
+
    </div>
+   <button type="button" class="button filter__open">
+   
+      <span class="button__text">открыть фильтр</span>
+      <span class="button__icon">
+         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="-1" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="3" />
+            <line x1="17.0607" y1="9.06066" x2="8.06066" y2="18.0607" stroke="currentColor" stroke-width="3" />
+            <line x1="16.9393" y1="11.0607" x2="7.93934" y2="2.06066" stroke="currentColor" stroke-width="3" />
+         </svg>
+      </span>
+      
+   </button>
 </div>
 
       <div class="grid-cards">
-   <div class="js-modal-open" data-modal_open="modal-work">
    
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -183,16 +196,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -212,16 +225,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -241,16 +254,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -270,16 +283,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -299,16 +312,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -328,16 +341,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -357,16 +370,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -386,16 +399,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -415,16 +428,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -444,16 +457,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -473,16 +486,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -502,16 +515,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -531,16 +544,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -560,16 +573,16 @@
          </div>
       </div>
       
+   </a>
    
-</div><div class="js-modal-open" data-modal_open="modal-work">
-   
+   <a href="car-detailed.html">
       <div class="card__slider">
          <div class="card__images mask-card">
-            <img src="./img/webp/image-15.webp" alt="фото машины">
-            <img src="./img/webp/image-17.webp" alt="фото машины">
-            <img src="./img/webp/image-12.webp" alt="фото машины">
-            <img src="./img/webp/image-14.webp" alt="фото машины">
-            <img src="./img/webp/image-16.webp" alt="фото машины">
+            <img src="./img/webp/image-13-1.webp" alt="фото машины">
+            <img src="./img/webp/image-13-2.webp" alt="фото машины">
+            <img src="./img/webp/image-13-3.webp" alt="фото машины">
+            <img src="./img/webp/image-13-4.webp" alt="фото машины">
+            <img src="./img/webp/image-13-5.webp" alt="фото машины">
          </div>
          <div class="card__pagination"></div>
          <div class="card__sections"></div>
@@ -589,8 +602,8 @@
          </div>
       </div>
       
+   </a>
    
-</div>
 </div>
 
       <div class="show-more">
@@ -616,9 +629,9 @@
                <section class="margin-section">
    <div class="container">
       <div class="header-section">
-         <h2 class="title-lg">Вопросы / ответы</h2>
+         <h2 class="title-lg js-text-animate">Вопросы / ответы</h2>
       </div>
-      <div class="tab js-tabs-body js-tabs-closing">
+      <div class="tab js-tabs-body js-tabs-closing js-animate-opacity">
    <button class="tab__button js-tabs-toggle" type="button">
       <span class="tab__title">Какие вы даете гарантии на автомобиль?</span>
       <span class="tab__icon"></span>
@@ -628,7 +641,7 @@
          <p>Гарантия на новый автомобиль 1 год, без ограничения пробега. С пробегом (до 3 лет) - 1 год или 30.000 км.</p>
       </div>
    </div>
-</div><div class="tab js-tabs-body js-tabs-closing">
+</div><div class="tab js-tabs-body js-tabs-closing js-animate-opacity">
    <button class="tab__button js-tabs-toggle" type="button">
       <span class="tab__title">ПОрядок заключения договора и этапы оплаты</span>
       <span class="tab__icon"></span>
@@ -638,7 +651,7 @@
          <p>Гарантия на новый автомобиль 1 год, без ограничения пробега. С пробегом (до 3 лет) - 1 год или 30.000 км.</p>
       </div>
    </div>
-</div><div class="tab js-tabs-body js-tabs-closing">
+</div><div class="tab js-tabs-body js-tabs-closing js-animate-opacity">
    <button class="tab__button js-tabs-toggle" type="button">
       <span class="tab__title">Что вы проверяете в автомобилях перед его покупкой? На что обращаете внимание?</span>
       <span class="tab__icon"></span>
@@ -648,7 +661,7 @@
          <p>Гарантия на новый автомобиль 1 год, без ограничения пробега. С пробегом (до 3 лет) - 1 год или 30.000 км.</p>
       </div>
    </div>
-</div><div class="tab js-tabs-body js-tabs-closing">
+</div><div class="tab js-tabs-body js-tabs-closing js-animate-opacity">
    <button class="tab__button js-tabs-toggle" type="button">
       <span class="tab__title">Можно ли купить у вас машину с трейд-ин?</span>
       <span class="tab__icon"></span>
@@ -658,7 +671,7 @@
          <p>Гарантия на новый автомобиль 1 год, без ограничения пробега. С пробегом (до 3 лет) - 1 год или 30.000 км.</p>
       </div>
    </div>
-</div><div class="tab js-tabs-body js-tabs-closing">
+</div><div class="tab js-tabs-body js-tabs-closing js-animate-opacity">
    <button class="tab__button js-tabs-toggle" type="button">
       <span class="tab__title">Безопасно ли покупать автомобиль с пробегом на аукционах?</span>
       <span class="tab__icon"></span>
@@ -675,8 +688,8 @@
    <div class="form__container-wide">
       <div class="form__wrapper">
          <div class="form__header mask-lt">
-            <div class="form__title title-lg">оставить заявку</div>
-            <div class="form__text text-lg">Мы свяжемся с вами в самое ближайшее время</div>
+            <h2 class="form__title title-lg js-text-animate">оставить заявку</h2>
+            <div class="form__text text-lg js-text-animate">Мы свяжемся с вами в самое ближайшее время</div>
             <img src="./img/webp/image-24.webp" alt="img">
          </div>
          <form class="form__body" action="#" method="post" name="request">
@@ -815,19 +828,19 @@
       <div class="footer__right">
          <div class="footer__right-top">
             <div class="footer__nav">
-               <a class="hover-red" href="#0">О нас</a>
+               <a class="hover-red" href="adout.html">О нас</a>
                <a class="hover-red" href="services.html">Услуги</a>
-               <a class="hover-red" href="#0">Наши работы</a>
-               <a class="hover-red" href="#0">Авто в продаже</a>
-               <a class="hover-red" href="#0">Контакты</a>
+               <a class="hover-red" href="works.html">Наши работы</a>
+               <a class="hover-red" href="selling">Авто в продаже</a>
+               <a class="hover-red" href="contacts.html">Контакты</a>
             </div>
             <div class="footer__links">
-               <a class="hover-red" href="#0">Покупка авто на аукционе</a>
-               <a class="hover-red" href="#0">Поиск авто под ключ</a>
-               <a class="hover-red" href="#0">Выездная диагностика автомобиля</a>
-               <a class="hover-red" href="#0">Сопровождение на СТО</a>
-               <a class="hover-red" href="#0">Комиссионная продажа</a>
-               <a class="hover-red" href="#0">Срочный выкуп авто</a>
+               <a class="hover-red" href="auction.html">Покупка авто на аукционе</a>
+               <a class="hover-red" href="search.html">Поиск авто под ключ</a>
+               <a class="hover-red" href="diagn.html">Выездная диагностика автомобиля</a>
+               <a class="hover-red" href="sto.html">Сопровождение на СТО</a>
+               <a class="hover-red" href="comission.html">Комиссионная продажа</a>
+               <a class="hover-red" href="ransom.html">Срочный выкуп авто</a>
             </div>
          </div>
          <div class="footer__bottom">
@@ -835,7 +848,7 @@
                <a class="hover-white-inderline" href="#0">Политика конфиденциальности</a>
                <a class="hover-white-inderline" href="#0">Карта сайта</a>
             </div>
-            <div>Разработка сайта — Vadim Prusakov</div>
+            <a href="#0" class="hover-white-inderline">Разработка сайта — Vadim Prusakov</a>
          </div>
       </div>
    </div>
@@ -867,7 +880,7 @@
       </svg>
    </span>
    <span class="mobile-menu__link-text">О нас</span>
-</a><a href="/services.html" class="mobile-menu__link">
+</a><a href="services.html" class="mobile-menu__link">
    <span class="mobile-menu__link-arrow">
       <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <line x1="-1" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="3" />
@@ -941,10 +954,10 @@
 </div>
 
    
-<script defer src='./js/gsap.min.js?t=1770927453693'></script>
-<script defer src='./js/ScrollTrigger.min.js?t=1770927453693'></script>
-<script defer src='./js/ScrollSmoother.js?t=1770927453693'></script>
-<script defer src='./js/app.js?t=1770927453693'></script>
+<script defer src='./js/gsap.min.js?t=1771196711791'></script>
+<script defer src='./js/ScrollTrigger.min.js?t=1771196711791'></script>
+<script defer src='./js/ScrollSmoother.js?t=1771196711791'></script>
+<script defer src='./js/app.js?t=1771196711791'></script>
 
 
 </body>

@@ -103,6 +103,7 @@ body {
 .text-lg {
    margin-top: 10px;
    font-size: 14px;
+   letter-spacing: -0.05em;
    color: #696969;
 
    @include size_adaptive (font-size, 15, 20, 1366, 1920);
@@ -217,9 +218,10 @@ body {
 }
 
 .hover-red {
+   transition: color 0.3s;
+
    &:hover {
       color: #DB0E0E;
-      transition: color 0.3s;
    }
 }
 
@@ -276,7 +278,7 @@ button {
 
    .letter {
       display: inline-block;
-      transform: translate(0, 120%) rotate(45deg);
+      transform: translate(0, 120%) rotate(30deg);
    }
 }
 

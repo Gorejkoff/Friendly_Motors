@@ -256,10 +256,10 @@
       }
 
       @include size_adaptive (font-size, 18, 24, 1366, 1920);
-      @include size_adaptive (font-size, 24, 50, 1920, 2560);
+      @include size_adaptive (font-size, 24, 32, 1920, 2560);
 
       @media (min-width:2560px) {
-         font-size: 50px;
+         font-size: 32px;
       }
    }
 

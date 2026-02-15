@@ -104,6 +104,12 @@
       @media (min-width:1024px) {
          padding: var(--padding-global);
       }
+
+      .banner-offer__form & {
+         @media (max-width:767.98px) {
+            display: none;
+         }
+      }
    }
 
    &__info {

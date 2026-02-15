@@ -35,6 +35,12 @@
          border-color: var(--color-border-1);
       }
 
+      &.hidden {
+         @media (max-width:1023.98px) {
+            display: none;
+         }
+      }
+
       @include size_adaptive (font-size, 22, 29, 1366, 1920);
       @include size_adaptive (font-size, 29, 40, 1920, 2560);
 

@@ -3,11 +3,17 @@
 .filter {
    margin-bottom: 50px;
    display: flex;
+   flex-direction: column;
    align-items: stretch;
-   gap: 20px;
+   gap: 12px;
+
+   @media (min-width:1024px) {
+      gap: 20px;
+      flex-direction: row;
+   }
 
    &__title {
-      display: flex;
+      display: none;
       align-items: center;
       font-weight: 600;
       font-size: var(--fs-md);
@@ -15,6 +21,10 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: #1C1C1C;
+
+      @media (min-width:1024px) {
+         display: flex;
+      }
    }
 
    &__dropdown {
@@ -25,6 +35,14 @@
       letter-spacing: -0.05em;
       color: #000;
 
+      @media (max-width:1023.98px) {
+         display: none;
+
+         .filter-visible & {
+            display: block;
+         }
+      }
+
       @include size_adaptive (--clip, 14, 18, 1366, 1920);
       @include size_adaptive (--clip, 18, 24, 1920, 2560);
 
@@ -33,7 +51,12 @@
       }
 
       button {
+         letter-spacing: inherit;
          height: 100%;
+      }
+
+      &.disabled {
+         pointer-events: none;
       }
    }
 
@@ -46,7 +69,11 @@
       gap: 20px;
       padding: 12px 20px;
       background-color: #F4F4F4;
-      color: #0000004d;
+
+      .disabled &,
+      .choice-not-made & {
+         color: #0000004d;
+      }
 
       @media (min-width:1024px) {
          min-height: 40px;
@@ -65,7 +92,6 @@
       }
 
       .js-tabs-open & {
-         color: #000000;
 
          svg,
          img {
@@ -87,6 +113,7 @@
 
    &__dropdown-list {
       background-color: #F4F4F4;
+      color: #000;
 
       li {
          cursor: pointer;
@@ -102,5 +129,33 @@
    &__dropdown-reset {
       display: flex;
       align-items: center;
+
+      @media (max-width:1023.98px) {
+         display: none;
+
+         .filter-visible & {
+            display: flex;
+         }
+      }
+
+      .button {
+         @media (max-width:1023.98px) {
+            width: 100%;
+         }
+      }
+   }
+
+   &__open {
+      background-color: #D9D9D9;
+      color: #1C1C1C;
+      width: 100%;
+
+      .filter-visible & {
+         display: none;
+      }
+
+      @media (min-width:1024px) {
+         display: none;
+      }
    }
 }

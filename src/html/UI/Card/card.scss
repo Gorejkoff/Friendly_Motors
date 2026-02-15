@@ -43,11 +43,12 @@
 
       &:not(:first-child) {
          text-transform: none;
-         margin-top: 10px;
+         margin-top: 20px;
       }
    }
 
    &__info-right {
+      text-align: right;
       padding-top: var(--padding);
       padding-bottom: var(--padding);
       padding-left: var(--padding);

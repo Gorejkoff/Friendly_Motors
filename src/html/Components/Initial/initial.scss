@@ -28,7 +28,9 @@
 
    }
 
-   &__container {}
+   &__container {
+      max-width: none;
+   }
 
    &__body {
       display: flex;

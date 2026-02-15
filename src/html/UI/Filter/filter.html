@@ -1,7 +1,7 @@
-<div class="filter">
+<div id="filter" class="filter">
    <div class="filter__title">Фильтр</div>
 
-   <div class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope">
+   <div id="filter-brand" class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope choice-not-made">
       <button class="filter__dropdown-button " type="button">
          <span class="js-data-replace">Выберите бренд автомобиля</span>
          <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@
    </div>
 
 
-   <div class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope">
+   <div id="filter-model" class="filter__dropdown js-tabs-body js-tabs-closing js-tabs-toggle js-data-scope disabled choice-not-made">
       <button class="filter__dropdown-button " type="button">
          <span class="js-data-replace">Выберите модель</span>
          <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,12 @@
 
    <div class="filter__dropdown-reset">
       @@include('../../UI/Buttons/Button/Button.html',{
-      text:'Сбросить'
+      text:'oчистить'
       })
+
    </div>
+   @@include('../../UI/Buttons/Button/Button.html',{
+   text:'открыть фильтр',
+   class:'filter__open'
+   })
 </div>

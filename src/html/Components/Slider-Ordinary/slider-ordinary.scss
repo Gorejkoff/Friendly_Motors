@@ -5,6 +5,8 @@
    }
 
    &__container-swiper {
+      overflow: hidden;
+
       @media (max-width:767.98px) {
          padding-left: 0;
          padding-right: 0;
@@ -19,7 +21,7 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
 
-      span {
+      .color {
          color: #DB0E0E;
       }
    }

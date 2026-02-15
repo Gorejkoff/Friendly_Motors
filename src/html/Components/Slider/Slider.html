@@ -2,54 +2,36 @@
    <div class="slider__container">
       <div class="header-section">
          <div>
-            <h2 class="title-lg">@@title</h2>
+            <h2 class="title-lg js-text-animate">@@title</h2>
             @@if(context.text){<p class="text-lg">@@text</p>}
          </div>
 
       </div>
-      <div class="slider__shell">
+      <div class="slider__shell js-animate-opacity">
          <div class="slider__body swiper">
             <div class="swiper-wrapper">
                <div class="swiper-slide">
-                  @@include('../../UI/Card/Card.html',{
-                  price: '13 334 560 Р.',
-                  pricetext: '9800 км',
-                  model: 'BМW M3 Competition',
-                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
-                  })
+                  @@include('../../UI/Card/@@card',{ })
                </div>
                <div class="swiper-slide">
-                  @@include('../../UI/Card/Card.html',{
-                  price: '13 334 560 Р.',
-                  pricetext: '9800 км',
-                  model: 'BМW M3 Competition',
-                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
-                  })
+                  @@include('../../UI/Card/@@card',{ })
                </div>
                <div class="swiper-slide">
-                  @@include('../../UI/Card/Card.html',{
-                  price: '13 334 560 Р.',
-                  pricetext: '9800 км',
-                  model: 'BМW M3 Competition',
-                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
-                  })
+                  @@include('../../UI/Card/@@card',{ })
                </div>
                <div class="swiper-slide">
-                  @@include('../../UI/Card/Card.html',{
-                  price: '13 334 560 Р.',
-                  pricetext: '9800 км',
-                  model: 'BМW M3 Competition',
-                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
-                  })
+                  @@include('../../UI/Card/@@card',{ })
                </div>
                <div class="swiper-slide">
-                  @@include('../../UI/Card/Card.html',{
-                  price: '13 334 560 Р.',
-                  pricetext: '9800 км',
-                  model: 'BМW M3 Competition',
-                  modeltext: '3.0 литра, Mild-Hybrid, Автомат',
-                  })
+                  @@include('../../UI/Card/@@card',{ })
                </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/@@card',{ })
+               </div>
+               <div class="swiper-slide">
+                  @@include('../../UI/Card/@@card',{ })
+               </div>
+
             </div>
          </div>
          @@include('../../UI/Buttons/Button-Arrow/Button-Arrow.html',{

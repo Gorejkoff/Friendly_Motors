@@ -13,16 +13,10 @@
       </div>
       <div class="card__info">
          <div class="card__info-left">
-            @@if(context.price){<div class="card__info-price">@@price</div>}
-            @@if(!context.price){<div class="card__info-price">13 334 560 Р.</div>}
-            @@if(context.pricetext){<div class="card__info-text">@@pricetext</div>}
-            @@if(!context.pricetext){<div class="card__info-text">9800 км</div>}
+            <div class="card__info-text">Поиск авто под ключ</div>
          </div>
          <div class="card__info-right">
-            @@if(context.model){<div class="card__info-model">@@model</div>}
-            @@if(!context.model){<div class="card__info-model">BМW M3 Competition</div>}
-            @@if(context.modeltext){<div class="card__info-text">@@modeltext</div>}
-            @@if(!context.modeltext){<div class="card__info-text">3.0 литра, Mild-Hybrid, Автомат</div>}
+            <div class="card__info-model">BMW XM</div>
          </div>
       </div>
       @@if(context.link){
