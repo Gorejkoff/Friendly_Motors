@@ -61,6 +61,12 @@ body {
    }
 }
 
+.mask-block {
+   @media (min-width:768px) {
+      clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% calc(100% - var(--clip, 36px)), calc(100% - var(--clip, 36px)) 100%);
+   }
+}
+
 .mask-rt {
    @media (min-width:768px) {
       clip-path: polygon(0% 0%, calc(100% - var(--clip, 45px)) 0%, 100% var(--clip, 45px), 100% 100%, 0% 100%);

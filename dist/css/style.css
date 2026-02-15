@@ -3233,6 +3233,27 @@ input:checked + .form__checkbox-icon img {
   gap: 10px;
 }
 
+.car-detailed__video {
+  margin-left: calc(var(--padding-global) * -1);
+  width: 100vw;
+  position: relative;
+  height: 60vw;
+  padding: 0;
+}
+
+.car-detailed__video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .modal {
   --height-modal: var(--vh);
   position: fixed;
@@ -4123,6 +4144,10 @@ button.button-arrow:hover {
     padding-right: var(--padding-global-25);
   }
 
+  .mask-block {
+    clip-path: polygon(0% 100%, 0% var(--clip, 45px), var(--clip, 45px) 0%, 100% 0%, 100% calc(100% - var(--clip, 36px)), calc(100% - var(--clip, 36px)) 100%);
+  }
+
   .mask-rt {
     clip-path: polygon(0% 0%, calc(100% - var(--clip, 45px)) 0%, 100% var(--clip, 45px), 100% 100%, 0% 100%);
   }
@@ -4361,6 +4386,12 @@ button.button-arrow:hover {
 
   .card-gallery {
     padding-top: calc(20px + var(--height-header, 146px) + var(--padding-global));
+  }
+
+  .car-detailed__video {
+    height: 240px;
+    margin: 0;
+    width: 100%;
   }
 
   .modal__swiper-slide-thumb::after {
@@ -5186,6 +5217,10 @@ button.button-arrow:hover {
     font-size: 36px;
   }
 
+  .car-detailed__video {
+    height: 675px;
+  }
+
   .modal__title {
     margin-bottom: 30px;
   }
@@ -5743,6 +5778,10 @@ button.button-arrow:hover {
     font-size: calc(19px + (100vw - 1366px) / 554 * 7);
   }
 
+  .car-detailed__video {
+    height: calc(360px + (100vw - 1366px) / 554 * 140);
+  }
+
   .modal__title {
     margin-bottom: calc(16px + (100vw - 1366px) / 554 * 6);
   }
@@ -6109,6 +6148,10 @@ button.button-arrow:hover {
     font-size: calc(26px + (100vw - 1920px) / 640 * 10);
   }
 
+  .car-detailed__video {
+    height: calc(500px + (100vw - 1920px) / 640 * 175);
+  }
+
   .modal__title {
     margin-bottom: calc(22px + (100vw - 1920px) / 640 * 8);
   }
@@ -6211,6 +6254,10 @@ button.button-arrow:hover {
 
   .form__title {
     font-size: 24px;
+  }
+
+  .car-detailed__video {
+    height: calc(240px + (100vw - 1024px) / 342 * 120);
   }
 
   .card__info {
