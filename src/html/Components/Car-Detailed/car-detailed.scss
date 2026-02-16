@@ -82,8 +82,12 @@
    }
 
    &__columns {
-      column-count: 3;
+      column-count: 2;
       column-gap: 30px;
+
+      @media (min-width:1024px) {
+         column-count: 3;
+      }
 
       li {
          margin-left: 1em;
@@ -104,7 +108,7 @@
    }
 
    &__text {
-      font-size: 28px;
+      font-size: 14px;
       line-height: 140%;
       letter-spacing: -0.05em;
       color: #323232;
@@ -162,6 +166,14 @@
          height: 675px;
       }
 
+      .play {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         z-index: 5;
+      }
+
       video {
          position: absolute;
          top: 50%;
@@ -170,6 +182,8 @@
          width: 100%;
          height: 100%;
          object-fit: cover;
+
+
       }
    }
 }

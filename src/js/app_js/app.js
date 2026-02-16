@@ -118,6 +118,18 @@ document.documentElement.addEventListener("click", (event) => {
          filter.classList.add('filter-visible');
       }
    }
+   if (event.target.closest('.play')) {
+      const play = event.target.closest('.play');
+      if (!play) return;
+      const body = event.target.closest('.car-detailed__video');
+      if (!body) return;
+      const video = body.querySelector('video');
+      if (video) {
+         video.setAttribute('controls', '');
+         video.play();
+         play.remove();
+      }
+   }
 })
 
 function openMobileMenu() {
@@ -164,3 +176,5 @@ window.addEventListener('resize', () => {
    }
    lastWidth = window.innerWidth;
 })
+
+
