@@ -293,6 +293,10 @@ body.mobile-menu-is-open {
   backdrop-filter: blur(15.75px);
 }
 
+.car--detailed .blur {
+  background-color: rgba(28, 28, 28, 0.75);
+}
+
 .link {
   position: relative;
   padding: 0 calc(var(--padding-global) / 2);
@@ -1086,12 +1090,21 @@ button.hover-white-inderline:hover {
 }
 
 .intro__nav {
+  margin-right: calc(var(--padding-global) * -1);
+  padding-right: var(--padding-global);
   pointer-events: all;
   position: relative;
   --color-hover: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.intro__nav .link::after {
+  display: none;
 }
 
 .intro__nav::before {
@@ -1105,6 +1118,14 @@ button.hover-white-inderline:hover {
 
 .intro__nav .link:last-child {
   padding-right: 0;
+}
+
+.intro__nav-line {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 1em;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .intro__content {
@@ -2391,6 +2412,7 @@ input:checked + .form__checkbox-icon img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: #ffffff;
 }
 
 .initial__header h1 {
@@ -2405,6 +2427,13 @@ input:checked + .form__checkbox-icon img {
 
 .initial__header h1 span {
   color: #DB0E0E;
+}
+
+.initial__header p {
+  margin-top: 0.5em;
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
 }
 
 .initial__footer {
@@ -2726,6 +2755,7 @@ input:checked + .form__checkbox-icon img {
   line-height: 100%;
   letter-spacing: -0.05em;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .slider-ordinary__title .color {
@@ -3011,8 +3041,12 @@ input:checked + .form__checkbox-icon img {
   position: relative;
   margin-top: calc(var(--height-header, 146px) * -1);
   padding-top: calc(10px + var(--height-header, 146px) + var(--padding-global));
-  height: var(--vh);
+  height: min(var(--vh), 100vw + var(--header-height));
   overflow: hidden;
+}
+
+.card-gallery__container {
+  max-width: none;
 }
 
 .card-gallery__swiper {
@@ -3027,6 +3061,29 @@ input:checked + .form__checkbox-icon img {
 .card-gallery__swiper .swiper-wrapper,
 .card-gallery__swiper .swiper-slide {
   height: 100%;
+}
+
+.card-gallery__pagination {
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 0;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.card-gallery__pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+}
+
+.card-gallery__pagination .swiper-pagination-bullet-active {
+  background-color: #DB0E0E;
 }
 
 .card-gallery__button {
@@ -3069,6 +3126,7 @@ input:checked + .form__checkbox-icon img {
   left: 0;
   z-index: 3;
   width: 100%;
+  display: none;
 }
 
 .card-gallery__thamb .swiper-slide {
@@ -3231,6 +3289,10 @@ input:checked + .form__checkbox-icon img {
       -ms-flex-align: stretch;
           align-items: stretch;
   gap: 10px;
+}
+
+.car-detailed__report .button {
+  background-color: #1C1C1C;
 }
 
 .car-detailed__video {
@@ -3834,8 +3896,8 @@ input:checked + .form__checkbox-icon img {
   height: auto;
 }
 
-a.button-arrow:hover,
-button.button-arrow:hover {
+._pc a.button-arrow:hover,
+._pc button.button-arrow:hover {
   background-color: #1C1C1C;
 }
 
@@ -4131,10 +4193,25 @@ button.button-arrow:hover {
 }
 
 .pdf__text {
+  --fs: 13px;
   padding: 12px;
-  font-size: 13px;
+  font-size: var(--fs);
   line-height: 130%;
   letter-spacing: -0.05em;
+}
+
+.fs--lg .pdf__text {
+  padding-top: 4px;
+  padding-bottom: 0;
+  font-weight: 600;
+  font-size: calc(var(--fs) * 1.5);
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+.fs--lg .pdf__text span {
+  font-weight: 400;
+  text-transform: none;
 }
 
 .pdf__text strong {
@@ -4725,6 +4802,10 @@ button.button-arrow:hover {
     width: 40px;
   }
 
+  .card-gallery__thamb {
+    display: block;
+  }
+
   .car-detailed__body {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -4808,7 +4889,7 @@ button.button-arrow:hover {
 
   .pdf__text {
     padding: 12px 20px;
-    font-size: 15px;
+    --fs: 15px;
   }
 }
 
@@ -5127,6 +5208,10 @@ button.button-arrow:hover {
     font-size: 22px;
   }
 
+  .initial__header p {
+    font-size: 32px;
+  }
+
   .initial__footer {
     font-size: 36px;
   }
@@ -5311,7 +5396,7 @@ button.button-arrow:hover {
 
   .pdf__text {
     padding: 20px 30px;
-    font-size: 26px;
+    --fs: 26px;
   }
 }
 
@@ -5377,6 +5462,14 @@ button.button-arrow:hover {
 
   .slider-ordinary__button {
     display: none !important;
+  }
+
+  .contacts-map {
+    margin-bottom: 0;
+  }
+
+  .contacts-map + .form {
+    margin-top: 0;
   }
 
   .car-detailed__header h2 {
@@ -5698,6 +5791,10 @@ button.button-arrow:hover {
     font-size: calc(12px + (100vw - 1366px) / 554 * 6);
   }
 
+  .initial__header p {
+    font-size: calc(16px + (100vw - 1366px) / 554 * 6);
+  }
+
   .initial__footer {
     font-size: calc(20px + (100vw - 1366px) / 554 * 6);
   }
@@ -5875,7 +5972,7 @@ button.button-arrow:hover {
   }
 
   .pdf__text {
-    font-size: calc(15px + (100vw - 1366px) / 554 * 5);
+    --fs: calc(15px + (100vw - 1366px) / 554 * 5);
   }
 }
 
@@ -6068,6 +6165,10 @@ button.button-arrow:hover {
     font-size: calc(18px + (100vw - 1920px) / 640 * 4);
   }
 
+  .initial__header p {
+    font-size: calc(22px + (100vw - 1920px) / 640 * 10);
+  }
+
   .initial__footer {
     font-size: calc(26px + (100vw - 1920px) / 640 * 10);
   }
@@ -6245,7 +6346,7 @@ button.button-arrow:hover {
   }
 
   .pdf__text {
-    font-size: calc(20px + (100vw - 1920px) / 640 * 6);
+    --fs: calc(20px + (100vw - 1920px) / 640 * 6);
   }
 }
 
@@ -6321,6 +6422,28 @@ button.button-arrow:hover {
 @media (min-width: 320px) and (max-width: 767.98px) {
   .services__card-text {
     font-size: calc(14px + (100vw - 320px) / 448 * 6);
+  }
+}
+
+@media (orientation: portrait) {
+  .car--detailed .blur {
+    background-color: rgba(28, 28, 28, 0.9);
+  }
+
+  .card-gallery {
+    margin-top: 0;
+    padding-top: var(--padding-global);
+    height: 100vw;
+  }
+
+  .card-gallery__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .card-gallery__button {
+    display: none !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -139,6 +139,14 @@ body {
 .blur {
    background-color: rgba(18, 18, 18, 0.27);
    backdrop-filter: blur(15.75px);
+
+   .car--detailed & {
+      background-color: rgba(28, 28, 28, 0.75);
+
+      @media (orientation: portrait) {
+         background-color: rgba(28, 28, 28, 0.9);
+      }
+   }
 }
 
 .link {

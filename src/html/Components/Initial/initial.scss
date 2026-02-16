@@ -73,6 +73,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+      color: #ffffff;
 
       h1 {
          position: relative;
@@ -85,6 +86,19 @@
 
          span {
             color: #DB0E0E;
+         }
+      }
+
+      p {
+         margin-top: 0.5em;
+         position: relative;
+         z-index: 2;
+         font-size: 16px;
+         @include size_adaptive (font-size, 16, 22, 1366, 1920);
+         @include size_adaptive (font-size, 22, 32, 1920, 2560);
+
+         @media (min-width:2560px) {
+            font-size: 32px;
          }
       }
    }

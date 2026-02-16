@@ -112,6 +112,7 @@
       line-height: 140%;
       letter-spacing: -0.05em;
       color: #323232;
+
       @include size_adaptive (font-size, 15, 20, 1366, 1920);
       @include size_adaptive (font-size, 20, 28, 1920, 2560);
 
@@ -142,6 +143,10 @@
          flex-direction: row;
          justify-content: space-between;
          align-items: flex-start;
+      }
+
+      .button {
+         background-color: #1C1C1C;
       }
    }
 

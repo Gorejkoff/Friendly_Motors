@@ -40,22 +40,37 @@
    }
 
    &__text {
+      --fs: 13px;
       padding: 12px;
-      font-size: 13px;
+      font-size: var(--fs);
       line-height: 130%;
       letter-spacing: -0.05em;
 
       @media (min-width:1024px) {
          padding: 12px 20px;
-         font-size: 15px;
+         --fs: 15px;
       }
 
-      @include size_adaptive (font-size, 15, 20, 1366, 1920);
-      @include size_adaptive (font-size, 20, 26, 1920, 2560);
+      @include size_adaptive (--fs, 15, 20, 1366, 1920);
+      @include size_adaptive (--fs, 20, 26, 1920, 2560);
 
       @media (min-width:2560px) {
          padding: 20px 30px;
-         font-size: 26px;
+         --fs: 26px;
+      }
+
+      .fs--lg & {
+         padding-top: 4px;
+         padding-bottom: 0;
+         font-weight: 600;
+         font-size: calc(var(--fs) * 1.5);
+         text-transform: uppercase;
+         line-height: 100%;
+
+         span {
+            font-weight: 400;
+            text-transform: none;
+         }
       }
 
       strong {

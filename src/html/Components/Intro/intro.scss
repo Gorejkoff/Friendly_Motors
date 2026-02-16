@@ -139,10 +139,13 @@
    }
 
    &__nav {
+      margin-right: calc(var(--padding-global) * -1);
+      padding-right: var(--padding-global);
       pointer-events: all;
       position: relative;
       --color-hover: #ffffff;
       display: flex;
+      justify-content: space-between;
 
       @media (max-width:1023.98px) {
          display: none;
@@ -153,6 +156,10 @@
 
       @media (min-width:2560px) {
          min-height: 108px;
+      }
+
+      & .link::after {
+         display: none;
       }
 
       &::before {
@@ -167,6 +174,12 @@
       .link:last-child {
          padding-right: 0;
       }
+   }
+
+   &__nav-line {
+      align-self: center;
+      height: 1em;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
    }
 
    &__content {

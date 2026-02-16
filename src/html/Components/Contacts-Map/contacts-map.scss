@@ -1,6 +1,13 @@
 @use '../../../scss/utils' as *;
 
 .contacts-map {
+   @media (max-width:1023.98px) {
+      margin-bottom: 0;
+
+      &+.form {
+         margin-top: 0;
+      }
+   }
 
    &__container {}
 

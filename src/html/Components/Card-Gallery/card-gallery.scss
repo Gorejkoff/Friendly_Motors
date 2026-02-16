@@ -2,11 +2,21 @@
    position: relative;
    margin-top: calc(var(--height-header, 146px) * -1);
    padding-top: calc(10px + var(--height-header, 146px) + var(--padding-global));
-   height: var(--vh);
+   height: min(var(--vh), calc(100vw + var(--header-height)));
    overflow: hidden;
 
    @media (min-width:768px) {
       padding-top: calc(20px + var(--height-header, 146px) + var(--padding-global));
+   }
+
+   @media (orientation: portrait) {
+      margin-top: 0;
+      padding-top: var(--padding-global);
+      height: 100vw;
+   }
+
+   &__container {
+      max-width: none;
    }
 
    &__swiper {
@@ -23,10 +33,39 @@
       }
    }
 
+   &__pagination {
+      position: absolute;
+      z-index: 2;
+      bottom: 40px;
+      left: 0;
+      display: none;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+
+      @media (orientation: portrait) {
+         display: flex;
+      }
+
+      .swiper-pagination-bullet {
+         width: 7px;
+         height: 7px;
+         background-color: #ffffff;
+      }
+
+      .swiper-pagination-bullet-active {
+         background-color: #DB0E0E;
+      }
+   }
+
    &__button {
       position: absolute;
       top: 50%;
       z-index: 3;
+
+      @media (orientation: portrait) {
+         display: none !important;
+      }
 
       &.prev {
          left: var(--padding-global);
@@ -60,6 +99,11 @@
       left: 0;
       z-index: 3;
       width: 100%;
+      display: none;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
 
       .swiper-slide {
          position: relative;

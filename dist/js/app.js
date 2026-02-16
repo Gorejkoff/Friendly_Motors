@@ -763,6 +763,11 @@ if (document.querySelector('.card-gallery__swiper')) {
       thumbs: {
          swiper: swiper,
       },
+      pagination: {
+         el: '.card-gallery__pagination',
+         type: 'bullets',
+         clickable: true,
+      },
    });
 }
 
