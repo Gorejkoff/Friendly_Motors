@@ -1,6 +1,9 @@
-<a href="#0" class="pdf @@if(context.class){@@class}" download>
-   <div class="pdf__icon">
-      <img src="@img/svg/pdf.svg" alt="pdf">
-   </div>
-   <div class="pdf__text">@@text @@if(context.subtext){<span>@@subtext</span>}</div>
-</a>
+@@if(context.link){<a href="@@link" class="pdf @@if(context.class){@@class}" download>}
+   @@if(!context.link){<div class="pdf @@if(context.class){@@class}">}
+      <div class="pdf__icon">
+         <img src="@img/@@icon" alt="pdf">
+      </div>
+      <div class="pdf__text">@@text @@if(context.subtext){<span>@@subtext</span>}</div>
+      @@if(!context.link){
+   </div>}
+   @@if(context.link){</a>}

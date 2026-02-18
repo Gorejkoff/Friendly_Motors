@@ -8,6 +8,7 @@
             <div class="enumeration__body js-animate-opacity">
                @@loop('./Enumeration-Card.html', 'json/lists/@@json')
             </div>
+            @@if(context.note){<div class="enumeration__note">@@note</div>}
             @@ if(!context.black){
          </div>}
          @@if(context.black){</div>

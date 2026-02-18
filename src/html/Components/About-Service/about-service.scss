@@ -120,6 +120,7 @@
    }
 
    &__addition {
+      margin-top: calc(var(--padding-global) / 2);
       font-size: 14px;
       line-height: 130%;
       letter-spacing: -0.05em;

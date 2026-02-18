@@ -126,4 +126,22 @@
       padding: var(--padding-global);
       background-color: #1C1C1C;
    }
+
+   &__note {
+      margin-top: 1em;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      color: #838080;
+      @include size_adaptive (font-size, 14, 18, 1366, 1920);
+      @include size_adaptive (font-size, 18, 24, 1920, 2560);
+
+      @media (min-width:2560px) {
+         font-size: 24px;
+      }
+
+      span {
+         color: #DB0E0E;
+      }
+   }
 }

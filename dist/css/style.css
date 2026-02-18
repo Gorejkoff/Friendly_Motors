@@ -1335,6 +1335,18 @@ button.hover-white-inderline:hover {
   background-color: #1C1C1C;
 }
 
+.enumeration__note {
+  margin-top: 1em;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: -0.05em;
+  color: #838080;
+}
+
+.enumeration__note span {
+  color: #DB0E0E;
+}
+
 .services {
   --tr-time: 0.5s;
 }
@@ -2571,6 +2583,7 @@ input:checked + .form__checkbox-icon img {
 }
 
 .about-service__addition {
+  margin-top: calc(var(--padding-global) / 2);
   font-size: 14px;
   line-height: 130%;
   letter-spacing: -0.05em;
@@ -2755,7 +2768,7 @@ input:checked + .form__checkbox-icon img {
   line-height: 100%;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #000000;
 }
 
 .slider-ordinary__title .color {
@@ -5130,6 +5143,10 @@ input:checked + .form__checkbox-icon img {
     height: 90px;
   }
 
+  .enumeration__note {
+    font-size: 24px;
+  }
+
   .services__card-content {
     padding: 50px;
   }
@@ -5733,6 +5750,10 @@ input:checked + .form__checkbox-icon img {
     font-size: calc(22px + (100vw - 1366px) / 554 * 7);
   }
 
+  .enumeration__note {
+    font-size: calc(14px + (100vw - 1366px) / 554 * 4);
+  }
+
   .services__card-content {
     padding: calc(24px + (100vw - 1366px) / 554 * 14);
   }
@@ -6101,6 +6122,10 @@ input:checked + .form__checkbox-icon img {
 
   .enumeration__card {
     font-size: calc(29px + (100vw - 1920px) / 640 * 11);
+  }
+
+  .enumeration__note {
+    font-size: calc(18px + (100vw - 1920px) / 640 * 6);
   }
 
   .services__card-content {
