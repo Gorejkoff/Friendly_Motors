@@ -1121,6 +1121,7 @@ button.hover-white-inderline:hover {
 }
 
 .intro__nav-line {
+  padding: 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

@@ -138,7 +138,7 @@ function servicesAnimate() {
 
 
 window.addEventListener('load', function (event) {
-   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);/* , ScrollToPlugin */
+   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
    // ScrollTrigger.config({ ignoreMobileResize: true });
    // ScrollTrigger.isTouch && ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
@@ -190,5 +190,15 @@ window.addEventListener('load', function (event) {
             delay: index * 0.3 // задержка между карточками
          }, index * 0.1); // на timeline смещение
       });
+   }
+})
+
+
+// прокрутка по якорям
+document.body.addEventListener('click', (event) => {
+   if (event.target.closest('[href^="#"]')) {
+      event.preventDefault();
+      let getName = event.target.closest('[href^="#"]').getAttribute('href');
+      gsap.to(window, { scrollTo: getName })
    }
 })

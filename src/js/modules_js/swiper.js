@@ -76,9 +76,6 @@ if (introSwiperMain &&
          init: function () {
             initCustomPagination();
          },
-         slideChange: function () {
-            // updateActiveNav();
-         }
       }
    });
 
@@ -87,12 +84,17 @@ if (introSwiperMain &&
          button.addEventListener('click', function (e) {
             e.preventDefault();
             const slideIndex = parseInt(this.getAttribute('data-index'));
-            swiperMain.slideTo(slideIndex);
+            swiperMain.slideToLoop(slideIndex, 300, false);
+            navButtons.forEach(e => {
+               e.classList.toggle('active', e.dataset.index == slideIndex)
+            })
+
          });
       });
    }
 
    swiperMain.on('slideChange', () => {
+      console.log(swiperMain.realIndex, '---- realIndex');
       navButtons.forEach(e => {
          e.classList.toggle('active', e.dataset.index == swiperMain.realIndex)
       })
@@ -159,7 +161,6 @@ if (document.querySelector('.card-gallery__swiper')) {
 
 if (document.querySelector('.modal__swiper') && document.querySelector('.modal__swiper-thumb')) {
 
-
    const swiper_thumb = new Swiper('.modal__swiper-thumb', {
       allowTouchMove: true,
       speed: 300,
@@ -185,63 +186,9 @@ if (document.querySelector('.modal__swiper') && document.querySelector('.modal__
          prevEl: swiperItem.querySelector('.prev'),
       },
    });
-
-
-
-
 }
 
-/* пример инициализации слайдера */
-// if (document.querySelector('.swiper')) {
-//    const swiper = new Swiper('.swiper', {
-//       keyboard: {
-//          enabled: true,
-//          onlyInViewport: true,
-//       },
-//       allowTouchMove: false,
-//       loop: true,
-//       spaceBetween: 10,
-//       speed: 300,
-//       slidesPerView: 2.5,
-//       slidesPerView: 'auto', // количаство слайдеров без авто ширины
-//       grabCursor: true,
-//       initialSlide: 2,
-//       centeredSlides: true,
-//       effect: "fade",
-//       breakpoints: {
-//          1024: {
-//             spaceBetween: 20,
-//             slidesPerView: 3
-//          },
-//          768: {
-//             slidesPerView: 2
-//          }
-//       },
-//       navigation: {
-//          nextEl: ".next",
-//          prevEl: ".prev",
-//       },
-//       pagination: {
-//          el: '.pagination__body',
-//          type: 'bullets',
-//          type: 'fraction',
-//          clickable: true,
-//       },
-//       scrollbar: {
-//          el: ".projects__swiper-pagination",
-//       },
-//       autoplay: {
-//          delay: 2000,
-//       },
-//       virtual: {
-//          enabled: true,
-//       },
-//       freeMode: {
-//          enabled: true,
-//          momentum: false // Отключаем инерцию для точного позиционирования
-//       },
-//    });
-// }
+
 
 
 if (document.querySelector('.staps')) {
