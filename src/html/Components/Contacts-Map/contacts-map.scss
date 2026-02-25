@@ -23,25 +23,9 @@
          height: 750px;
       }
 
-      .ymaps3x0--main-engine-container {
-         filter: grayscale(1);
-      }
 
       [class*="container"] {
          padding: 0;
       }
-   }
-}
-
-.mask-lt {}
-
-.map-mark {
-   position: relative;
-
-   svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transform: translate(-50%, 0);
    }
 }

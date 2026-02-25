@@ -1,63 +1,188 @@
-// map
-const mapContainer = document.querySelector('#map');
-const coordinates = '10.289079, 53.485049';
 
-function loadYMapsAPI() {
-   return new Promise((resolve, reject) => {
-      if (window.ymaps3) {
-         resolve();
-         // console.log(" API Яндекс Карт загружен");
-         return;
+// map
+function initMap() {
+   const centerLocation = { lat: 53.485049, lng: 10.289079 };
+   const grayscaleStyles = [
+      {
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#f5f5f5"
+            }
+         ]
+      },
+      {
+         "elementType": "labels.icon",
+         "stylers": [
+            {
+               "visibility": "off"
+            }
+         ]
+      },
+      {
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#616161"
+            }
+         ]
+      },
+      {
+         "elementType": "labels.text.stroke",
+         "stylers": [
+            {
+               "color": "#f5f5f5"
+            }
+         ]
+      },
+      {
+         "featureType": "administrative.land_parcel",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#bdbdbd"
+            }
+         ]
+      },
+      {
+         "featureType": "poi",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#eeeeee"
+            }
+         ]
+      },
+      {
+         "featureType": "poi",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#757575"
+            }
+         ]
+      },
+      {
+         "featureType": "poi.park",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#e5e5e5"
+            }
+         ]
+      },
+      {
+         "featureType": "poi.park",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#9e9e9e"
+            }
+         ]
+      },
+      {
+         "featureType": "road",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#ffffff"
+            }
+         ]
+      },
+      {
+         "featureType": "road.arterial",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#757575"
+            }
+         ]
+      },
+      {
+         "featureType": "road.highway",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#dadada"
+            }
+         ]
+      },
+      {
+         "featureType": "road.highway",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#616161"
+            }
+         ]
+      },
+      {
+         "featureType": "road.local",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#9e9e9e"
+            }
+         ]
+      },
+      {
+         "featureType": "transit.line",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#e5e5e5"
+            }
+         ]
+      },
+      {
+         "featureType": "transit.station",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#eeeeee"
+            }
+         ]
+      },
+      {
+         "featureType": "water",
+         "elementType": "geometry",
+         "stylers": [
+            {
+               "color": "#c9c9c9"
+            }
+         ]
+      },
+      {
+         "featureType": "water",
+         "elementType": "labels.text.fill",
+         "stylers": [
+            {
+               "color": "#9e9e9e"
+            }
+         ]
       }
+   ];
+
+   const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15, // Уровень масштабирования
+      center: centerLocation,
+      styles: grayscaleStyles
+   });
+   const svgMarker = {
+      path: "M0 0H90V90H0V0Z M54 90L45 100L36 90H45H54Z M75 46.5L44.5 16L42.1655 18.3345L44.4961 20.669L44.5 20.6651L49.7478 25.9168L70.3388 46.5L44.5 72.3388L23.9051 51.7439L27.3855 48.2635L32.4585 53.3365L42.923 63.8009L42.9191 63.8048L45.4323 66.318L45.4361 66.3102L45.44 66.318L47.7706 63.9835L47.7667 63.9796L52.8358 58.9105L50.3227 56.4012L34.7619 40.8444L38.6074 37.0027L43.6726 42.0718L54.1293 52.5246L54.1216 52.5363L56.6347 55.0534L56.6425 55.0417L56.6542 55.0534L58.9887 52.7189L58.977 52.7111L64.081 47.6032L61.5718 45.09L61.5679 45.0939L38.4948 22.0169L38.4754 22.0363L38.4715 22.0285L14 46.5L16.3384 48.8423L18.669 46.5078L18.6651 46.5L38.4831 26.682L38.487 26.6859L38.4948 26.682L43.7425 31.9336L59.2334 47.4206L56.4638 50.194L38.4249 32.1551L37.8849 32.6911L32.2526 38.3273L29.9142 40.6657L32.2487 42.9963L32.2526 42.9924L37.5004 48.2441L47.9881 58.7357L45.2575 61.4664L27.2107 43.4197L27.2068 43.4236L27.2029 43.4197L21.3919 49.2307L19.376 51.2506L19.0613 51.5652L44.5 77L75 46.5Z",
+      fillColor: "#DB0E0E",
+      fillOpacity: 1,
+      strokeWeight: 0,
+      scale: 0.5,  // Масштабируем, так как оригинал большой (90x100)
+      anchor: new google.maps.Point(45, 100),  // Якорь внизу (центр по X, низ по Y)
+   };
+
+   new google.maps.Marker({
+      position: centerLocation,
+      map: map,
+      icon: svgMarker,
    });
 }
 
-async function initMap() {
-   await loadYMapsAPI();
-   await ymaps3.ready;
-   const { YMap, YMapMarker, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
-
-   const map = new YMap(
-      mapContainer,
-      {
-         location: {
-            center: coordinates.split(','),
-            zoom: 16,
-         }
-      }, [
-      new YMapDefaultSchemeLayer(),
-      new YMapDefaultFeaturesLayer()
-   ]
-   );
-   const div = document.createElement('div');
-   div.classList.add('map-mark')
-   div.innerHTML = `<svg width="90" height="100" viewBox="0 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M0 0H90V90H0V0Z" fill="#DB0E0E"/>
-   <path d="M54 90L45 100L36 90H45H54Z" fill="#DB0E0E"/>
-   <path d="M75 46.5L44.5 16L42.1655 18.3345L44.4961 20.669L44.5 20.6651L49.7478 25.9168L70.3388 46.5L44.5 72.3388L23.9051 51.7439L27.3855 48.2635L32.4585 53.3365L42.923 63.8009L42.9191 63.8048L45.4323 66.318L45.4361 66.3102L45.44 66.318L47.7706 63.9835L47.7667 63.9796L52.8358 58.9105L50.3227 56.4012L34.7619 40.8444L38.6074 37.0027L43.6726 42.0718L54.1293 52.5246L54.1216 52.5363L56.6347 55.0534L56.6425 55.0417L56.6542 55.0534L58.9887 52.7189L58.977 52.7111L64.081 47.6032L61.5718 45.09L61.5679 45.0939L38.4948 22.0169L38.4754 22.0363L38.4715 22.0285L14 46.5L16.3384 48.8423L18.669 46.5078L18.6651 46.5L38.4831 26.682L38.487 26.6859L38.4948 26.682L43.7425 31.9336L59.2334 47.4206L56.4638 50.194L38.4249 32.1551L37.8849 32.6911L32.2526 38.3273L29.9142 40.6657L32.2487 42.9963L32.2526 42.9924L37.5004 48.2441L47.9881 58.7357L45.2575 61.4664L27.2107 43.4197L27.2068 43.4236L27.2029 43.4197L21.3919 49.2307L19.376 51.2506L19.0613 51.5652L44.5 77L75 46.5Z" fill="white"/>
-   </svg>`
-
-   const marker = new YMapMarker(
-      {
-         coordinates: coordinates.split(','),
-      },
-      div
-   );
-   map.addChild(marker);
-}
-initMap();
-
-
-// const center = { lat: 53.485049, lng: 10.289079 };
-
-// let map;
-// async function initMap() {
-//    const { Map } = (await google.maps.importLibrary('maps'));
-//    map = new Map(document.getElementById('map'), {
-//       center: center,
-//       zoom: 8,
-//    });
-// }
-// initMap();
-
+window.onload = initMap;
 

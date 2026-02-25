@@ -3029,26 +3029,8 @@ input:checked + .form__checkbox-icon img {
   height: 400px;
 }
 
-.contacts-map__body .ymaps3x0--main-engine-container {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-}
-
 .contacts-map__body [class*=container] {
   padding: 0;
-}
-
-.map-mark {
-  position: relative;
-}
-
-.map-mark svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
 }
 
 .card-gallery {
