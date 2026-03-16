@@ -4751,6 +4751,7 @@ input:checked + .form__checkbox-icon img {
 
   .banner-offer__body {
     position: relative;
+    overflow: hidden;
   }
 
   .banner-offer__title {

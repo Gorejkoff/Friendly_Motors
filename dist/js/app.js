@@ -76,29 +76,31 @@ if (socialList.length > 0) {
 }
 
 
-// const bannerOfferList = document.querySelectorAll('.banner-offer');
-// function bannerOfferFitting() {
-//    let height = 0;
-//    bannerOfferList.forEach(e => {
-//       e.classList.remove('hide');
-//       e.style.minHeight = '';
-//    })
-//    requestAnimationFrame(() => {
-//       bannerOfferList.forEach(e => {
-//          console.log(e.offsetHeight);
-//          if (e.offsetHeight > height) height = e.offsetHeight;
-//       })
-//       bannerOfferList.forEach((e, i) => {
-//          // e.classList.toggle('hide', i > 0)
-//          e.style.minHeight = height + 'px';
-//       })
-//    })
-// }
+const bannerOfferList = document.querySelectorAll('.banner-offer');
+function bannerOfferFitting() {
+   let height = 0;
+   bannerOfferList.forEach(e => {
+      e.classList.remove('hide');
+      e.style.minHeight = '';
+   })
+   requestAnimationFrame(() => {
+      bannerOfferList.forEach(e => {
+         console.log(e.offsetHeight);
+         if (e.offsetHeight > height) height = e.offsetHeight;
+      })
+      bannerOfferList.forEach((e, i) => {
+         e.classList.toggle('hide', i > 0)
+         e.style.minHeight = height + 'px';
+      })
+   })
+}
 
-// if (bannerOfferList.length > 0) {
-//    bannerOfferFitting();
-//    window.addEventListener('resize', bannerOfferFitting)
-// }
+if (bannerOfferList.length > 0) {
+   setTimeout(() => {
+      bannerOfferFitting();
+   }, 1000)
+   window.addEventListener('resize', bannerOfferFitting)
+}
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
