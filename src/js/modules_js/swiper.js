@@ -94,7 +94,7 @@ if (introSwiperMain &&
    }
 
    swiperMain.on('slideChange', () => {
-      console.log(swiperMain.realIndex, '---- realIndex');
+      // console.log(swiperMain.realIndex, '---- realIndex');
       navButtons.forEach(e => {
          e.classList.toggle('active', e.dataset.index == swiperMain.realIndex)
       })

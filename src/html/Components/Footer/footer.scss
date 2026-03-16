@@ -179,6 +179,10 @@
    &__social {
       display: flex;
       gap: calc(var(--padding-global) / 2);
+
+      a {
+         transition: opacity 0.3s;
+      }
    }
 
    &__address {

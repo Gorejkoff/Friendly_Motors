@@ -52,6 +52,53 @@ window.addEventListener('resize', () => {
    closeMobileMenu();
 })
 
+const socialList = document.querySelectorAll('.footer__social a');
+
+function socialHoverEnter(event) {
+   socialList.forEach(e => {
+      if (e == event.target) {
+         e.style.opacity = 1;
+      } else {
+         e.style.opacity = 0.5;
+      }
+   })
+}
+function socialHoverLeave() {
+   socialList.forEach(e => e.style.opacity = 1)
+}
+if (socialList.length > 0) {
+   socialList.forEach(link => {
+      link.addEventListener('mouseenter', socialHoverEnter)
+   })
+   socialList.forEach(link => {
+      link.addEventListener('mouseleave', socialHoverLeave)
+   })
+}
+
+
+// const bannerOfferList = document.querySelectorAll('.banner-offer');
+// function bannerOfferFitting() {
+//    let height = 0;
+//    bannerOfferList.forEach(e => {
+//       e.classList.remove('hide');
+//       e.style.minHeight = '';
+//    })
+//    requestAnimationFrame(() => {
+//       bannerOfferList.forEach(e => {
+//          console.log(e.offsetHeight);
+//          if (e.offsetHeight > height) height = e.offsetHeight;
+//       })
+//       bannerOfferList.forEach((e, i) => {
+//          // e.classList.toggle('hide', i > 0)
+//          e.style.minHeight = height + 'px';
+//       })
+//    })
+// }
+
+// if (bannerOfferList.length > 0) {
+//    bannerOfferFitting();
+//    window.addEventListener('resize', bannerOfferFitting)
+// }
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
@@ -113,7 +160,7 @@ document.documentElement.addEventListener("click", (event) => {
    }
    if (event.target.closest('.filter__open')) {
       const filter = document.getElementById('filter');
-      console.log(filter);
+      // console.log(filter);
       if (filter) {
          filter.classList.add('filter-visible');
       }
@@ -843,7 +890,7 @@ if (introSwiperMain &&
    }
 
    swiperMain.on('slideChange', () => {
-      console.log(swiperMain.realIndex, '---- realIndex');
+      // console.log(swiperMain.realIndex, '---- realIndex');
       navButtons.forEach(e => {
          e.classList.toggle('active', e.dataset.index == swiperMain.realIndex)
       })

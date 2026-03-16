@@ -2,7 +2,7 @@
 
 .banner-offer {
    position: relative;
-   min-height: min(22.2vw, 570px);
+   min-height: 420px;
    display: flex;
    align-items: stretch;
 
@@ -10,6 +10,13 @@
       .button {
          width: 100%;
       }
+   }
+
+   @include size_adaptive (min-height, 304, 460, 1366, 1920);
+   @include size_adaptive (min-height, 460, 570, 1920, 2560);
+
+   @media (min-width:2560px) {
+      min-height: 570px;
    }
 
    &.hide {
@@ -182,8 +189,8 @@
 
    .form__textarea {
       flex: 1 1 auto;
-      height: auto;
-      min-height: 100px;
+      // height: auto;
+      height: 116px;
    }
 
    .form__actions {
