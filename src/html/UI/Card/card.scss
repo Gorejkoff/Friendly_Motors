@@ -51,6 +51,7 @@
    }
 
    &__info-right {
+      flex: 1 1 auto;
       text-align: right;
       padding-top: var(--padding);
       padding-bottom: var(--padding);

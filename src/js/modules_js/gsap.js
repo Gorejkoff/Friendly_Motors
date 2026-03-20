@@ -109,7 +109,8 @@ function opacity(element) {
             trigger: element,
             start: "top 85%",
             end: "top 15%",
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none reverse",
+            // markers: true
          }
       }
    );
@@ -156,18 +157,25 @@ window.addEventListener('load', function (event) {
 
    servicesAnimate()
 
-   const ANIMATE_FREE = document.querySelectorAll('.js-text-animate');
-   if (ANIMATE_FREE.length > 0) { ANIMATE_FREE.forEach(element => addTextAnimate(element, true)) }
+   function initAnimations() {
+      const ANIMATE_FREE = document.querySelectorAll('.js-text-animate');
+      if (ANIMATE_FREE.length > 0) { ANIMATE_FREE.forEach(element => addTextAnimate(element, true)) }
 
-   const counterList = document.querySelectorAll('.js-counter-animate');
-   if (counterList.length > 0) { counterList.forEach(e => animateSmallCounter(e, e.dataset.value)) }
+      const counterList = document.querySelectorAll('.js-counter-animate');
+      if (counterList.length > 0) { counterList.forEach(e => animateSmallCounter(e, e.dataset.value)) }
 
-   const toTop = this.document.querySelectorAll('.js-animate-to-top');
-   if (toTop.length > 0) toTop.forEach((e) => bottomToTop(e));
+      const toTop = document.querySelectorAll('.js-animate-to-top');
+      if (toTop.length > 0) toTop.forEach((e) => bottomToTop(e));
 
-   const opacityList = this.document.querySelectorAll('.js-animate-opacity');
-   if (opacityList.length > 0) opacityList.forEach((e) => opacity(e));
+      const opacityList = document.querySelectorAll('.js-animate-opacity');
+      if (opacityList.length > 0) opacityList.forEach((e) => opacity(e));
+   }
 
+   if (document.querySelector('.banner-offer')) {
+      this.setTimeout(() => { initAnimations() }, 1000)
+   } else {
+      initAnimations()
+   }
 
    const stapsList = this.document.querySelectorAll('.staps__card');
    if (stapsList.length > 0 && MIN768.matches) {

@@ -196,6 +196,7 @@ body {
   color: #1C1C1C;
   --container-width: 2400px;
   --max-width-container: calc(var(--container-width) + var(--padding-global) * 2);
+  background-color: #ffffff;
 }
 
 body.mobile-menu-is-open {
@@ -2922,6 +2923,7 @@ input:checked + .form__checkbox-icon img {
 
 .founder__image img {
   width: 100%;
+  margin-left: auto;
 }
 
 .founder__image-figcaption {
@@ -3832,6 +3834,9 @@ input:checked + .form__checkbox-icon img {
 }
 
 .card__info-right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   text-align: right;
   padding-top: var(--padding);
   padding-bottom: var(--padding);
