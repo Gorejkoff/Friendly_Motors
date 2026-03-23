@@ -564,7 +564,7 @@ document.body.addEventListener('click', (event) => {
 
 // map
 function initMap() {
-   const centerLocation = { lat: 53.485049, lng: 10.289079 };
+   const centerLocation = { lat: 53.48576568603496, lng: 10.29075383755993 };
    const grayscaleStyles = [
       {
          "elementType": "geometry",
