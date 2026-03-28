@@ -564,6 +564,13 @@ document.body.addEventListener('click', (event) => {
 
 // map
 function initMap() {
+
+   if (!window.google || !window.google.maps) {
+      // console.error('Google Maps API не доступен');
+      return;
+   }
+
+
    const centerLocation = { lat: 53.48576568603496, lng: 10.29075383755993 };
    const grayscaleStyles = [
       {
@@ -814,6 +821,18 @@ if (document.querySelector('.slider__body')) {
          slidesPerView: 1.1,
          grabCursor: true,
          breakpoints: {
+            2560: {
+               spaceBetween: 20,
+               slidesPerView: 3
+            },
+            1920: {
+               spaceBetween: 16,
+               slidesPerView: 3
+            },
+            1366: {
+               spaceBetween: 12,
+               slidesPerView: 3
+            },
             1024: {
                spaceBetween: 10,
                slidesPerView: 3

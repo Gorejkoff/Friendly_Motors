@@ -1,6 +1,13 @@
 
 // map
 function initMap() {
+
+   if (!window.google || !window.google.maps) {
+      // console.error('Google Maps API не доступен');
+      return;
+   }
+
+
    const centerLocation = { lat: 53.48576568603496, lng: 10.29075383755993 };
    const grayscaleStyles = [
       {

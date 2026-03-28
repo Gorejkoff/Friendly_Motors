@@ -3792,6 +3792,7 @@ input:checked + .form__checkbox-icon img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-width: 0px;
 }
 
 .card__info {
@@ -3802,18 +3803,20 @@ input:checked + .form__checkbox-icon img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100%;
   font-size: 14px;
   letter-spacing: -0.05em;
   border-bottom: 1px solid var(--color-border-3);
+  overflow: hidden;
 }
 
 .card__info-left {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
   padding-right: var(--padding);
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   border-right: 1px solid var(--color-border-3);
 }
 
@@ -3826,6 +3829,9 @@ input:checked + .form__checkbox-icon img {
 .card__info-text {
   text-transform: uppercase;
   color: #696969;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card__info-text:not(:first-child) {
@@ -3834,9 +3840,11 @@ input:checked + .form__checkbox-icon img {
 }
 
 .card__info-right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
   text-align: right;
   padding-top: var(--padding);
   padding-bottom: var(--padding);
@@ -3846,6 +3854,9 @@ input:checked + .form__checkbox-icon img {
 .card__info-model {
   font-weight: 600;
   font-size: 1.667em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__slider {
@@ -3871,10 +3882,15 @@ input:checked + .form__checkbox-icon img {
           flex: 1 1 1%;
 }
 
+.card__images {
+  pointer-events: none;
+}
+
 .card__images img {
   opacity: 0;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  pointer-events: none;
 }
 
 ._touch .card__images img {
@@ -4323,7 +4339,7 @@ input:checked + .form__checkbox-icon img {
   }
 
   .services__grid {
-    gap: 12px;
+    gap: 20px;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
@@ -4709,6 +4725,7 @@ input:checked + .form__checkbox-icon img {
   }
 
   .services__grid {
+    gap: 10px;
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -4963,7 +4980,7 @@ input:checked + .form__checkbox-icon img {
   }
 
   .services__grid {
-    gap: 20px;
+    gap: 12px;
   }
 
   .staps__body {
@@ -5012,6 +5029,10 @@ input:checked + .form__checkbox-icon img {
 @media (min-width: 1920px) {
   .banner-about {
     --padding: 40px;
+  }
+
+  .services__grid {
+    gap: 16px;
   }
 
   .headline__title {
@@ -5181,6 +5202,10 @@ input:checked + .form__checkbox-icon img {
 
   .enumeration__note {
     font-size: 24px;
+  }
+
+  .services__grid {
+    gap: 20px;
   }
 
   .services__card-content {

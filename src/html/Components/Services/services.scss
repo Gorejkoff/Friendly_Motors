@@ -13,15 +13,24 @@
       gap: 10px;
 
       @media (min-width:768px) {
-         gap: 12px;
+         gap: 20px;
          grid-template-columns: 1fr 1fr;
       }
 
       @media (min-width:1024px) {
+         gap: 10px;
          grid-template-columns: 1fr 1fr 1fr;
       }
 
       @media (min-width:1366px) {
+         gap: 12px;
+      }
+
+      @media (min-width:1920px) {
+         gap: 16px;
+      }
+
+      @media (min-width:2560px) {
          gap: 20px;
       }
    }

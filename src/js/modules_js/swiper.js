@@ -8,6 +8,18 @@ if (document.querySelector('.slider__body')) {
          slidesPerView: 1.1,
          grabCursor: true,
          breakpoints: {
+            2560: {
+               spaceBetween: 20,
+               slidesPerView: 3
+            },
+            1920: {
+               spaceBetween: 16,
+               slidesPerView: 3
+            },
+            1366: {
+               spaceBetween: 12,
+               slidesPerView: 3
+            },
             1024: {
                spaceBetween: 10,
                slidesPerView: 3
