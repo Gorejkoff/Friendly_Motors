@@ -24,15 +24,16 @@
                @@include('html/Components/Slider/Slider.html',{
                title:'Авто в наличии',
                text:'Лучшие предложения – готовы к покупке уже сегодня',
-               card: 'Card3.html',
-               link:'selling.html'
-
+               card: 'Card.html',
+               link:'selling.html',
+               modal: true
                })
                @@include('html/Components/Slider/Slider.html',{
                title:'Наши работы',
                text:'Гордимся нашей работой и с удовольствием делимся результатами',
                card: 'Card.html',
-               link:'works.html'
+               link:'works.html',
+               modal: true
                })
                @@include('html/Components/Steps/Steps.html',{})
                @@include('html/Components/Questions/Questions.html',{})
@@ -47,7 +48,7 @@
    </div>
 
    @@include('html/Components/Mobile-Menu/Mobile-Menu.html',{})
-
+   @@include('html/Components/Modals/Modal-Work.html',{})
    @@include('html/scripts.html',{
    swiper: true,
    })

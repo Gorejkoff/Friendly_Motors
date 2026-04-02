@@ -1,4 +1,4 @@
-@@if(!context.link){<div class="card js-modal-open" data-modal_open="modal-work">}
+@@if(!context.link){<div class="card@@if(context.modal){ js-modal-open}" @@if(context.modal){data-modal_open="modal-work" }>}
    @@if(context.link){<a href="@@link" class="card">}
       <div class="card__slider">
          <div class="card__images mask-card">
